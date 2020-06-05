@@ -325,6 +325,40 @@ class GroupTest {
     @DisplayName("Verify getDescription() of group")
     public void groupGetDescription() {
 
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 05, 22);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = new Person("Maria", "12-10-1976");
+        Person jose = new Person("Jose", "03-11-1979");
+        Person john = new Person("John", "22-10-1960");
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create group
+        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+        //create expected description
+        String expectedDescription = "Group with consultTeam members";
+
+        //New description
+        String newDescription = "Group with consultTeam members";
+
+        devTeam.setDescription(newDescription);
+
+
+        //Assert
+        assertEquals(expectedDescription, devTeam.getDescription());
 
     }
 
@@ -332,6 +366,39 @@ class GroupTest {
     @DisplayName("Verify setDescription() of group")
     public void groupSetDescription() {
 
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 05, 22);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = new Person("Maria", "12-10-1976");
+        Person jose = new Person("Jose", "03-11-1979");
+        Person john = new Person("John", "22-10-1960");
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create group
+        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+        //create expected description
+        String expectedDescription = "Group with consultTeam members";
+
+        //New escription
+        String newDescription = "Group with consultTeam members";
+
+        devTeam.setDescription(newDescription);
+
+        //Assert
+        assertEquals(expectedDescription, devTeam.getDescription());
 
     }
 
@@ -339,26 +406,140 @@ class GroupTest {
     @DisplayName("Verify getMembers() of group")
     public void groupGetMembers() {
 
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 05, 22);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
+        Person maria = new Person("Maria", "12-10-1976");
+        Person jose = new Person("Jose", "03-11-1979");
+        Person john = new Person("John", "22-10-1960");
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create group
+        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+
+        //Assert
+        assertEquals(membersDevTeam, devTeam.getMembers());
     }
 
     @Test
     @DisplayName("Verify setMembers() of group")
     public void groupSetMembers() {
 
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 05, 22);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
+        Person maria = new Person("Maria", "12-10-1976");
+        Person jose = new Person("Jose", "03-11-1979");
+        Person john = new Person("John", "22-10-1960");
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create group
+        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+        ArrayList<Person> expectedMembersDevTeam = new ArrayList<Person>();
+        expectedMembersDevTeam.add(maria);
+        expectedMembersDevTeam.add(jose);
+
+        devTeam.setMembers(expectedMembersDevTeam);
+
+        //Assert
+        assertEquals(expectedMembersDevTeam, devTeam.getMembers());
     }
 
     @Test
     @DisplayName("Verify getPeopleInCharge() of group")
     public void groupGetPeopleInCharge() {
 
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 05, 22);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = new Person("Maria", "12-10-1976");
+        Person jose = new Person("Jose", "03-11-1979");
+        Person john = new Person("John", "22-10-1960");
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create group
+        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+        ArrayList<Person> expectedPeopleInChargeDT = new ArrayList<Person>();
+        expectedPeopleInChargeDT.add(john);
+
+        //Assert
+        assertEquals(expectedPeopleInChargeDT, devTeam.getPeopleInCharge());
 
     }
 
     @Test
     @DisplayName("Verify setPeopleInCharge() of group")
     public void groupSetPeopleInCharge() {
+
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 05, 22);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = new Person("Maria", "12-10-1976");
+        Person jose = new Person("Jose", "03-11-1979");
+        Person john = new Person("John", "22-10-1960");
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create group
+        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+        ArrayList<Person> expectedPeopleInChargeDT = new ArrayList<Person>();
+        expectedPeopleInChargeDT.add(maria);
+
+        devTeam.setPeopleInCharge(expectedPeopleInChargeDT);
+
+        //Assert
+        assertEquals(expectedPeopleInChargeDT, devTeam.getPeopleInCharge());
 
 
     }
