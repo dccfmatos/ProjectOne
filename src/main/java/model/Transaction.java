@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Transaction {
     private Account debitMov;
     private Account creditMov;
@@ -64,4 +66,18 @@ public class Transaction {
     public void setDate(String date) {
         this.date = date;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transaction)) return false;
+        Transaction that = (Transaction) o;
+        return Double.compare(that.amount, amount) == 0 &&
+                Objects.equals(debitMov, that.debitMov) &&
+                Objects.equals(creditMov, that.creditMov) &&
+                Objects.equals(category, that.category) &&
+                Objects.equals(description.toUpperCase(), that.description.toUpperCase()) &&
+                Objects.equals(date.toUpperCase(), that.date.toUpperCase());
+    }
+
 }
