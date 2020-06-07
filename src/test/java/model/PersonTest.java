@@ -882,8 +882,8 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify checkIfSiblings of Person")
-    public void checkIfSiblingsEquals() {
+    @DisplayName("Verify checkIfSiblings of Person || true")
+    public void checkIfSiblingsTrue() {
 
         //Arrange
         //create parameters for person
@@ -942,8 +942,68 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify checkMother of Person")
-    public void checkMotherEquals() {
+    @DisplayName("Verify checkIfSiblings of Person || false")
+    public void checkIfSiblingsFalse() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        String birthdate = "15-06-1992";
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
+
+        ArrayList<Person> siblings = new ArrayList();
+
+        //create parameters for mother
+        String motherName = "Susan";
+        String motherBirthdate = "08-10-1975";
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        String fatherBirthdate = "17-01-1973";
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //create parameters for girlSibling
+        String girlSiblingName = "Lucy";
+        String girlSiblingBirthdate = "08-10-1998";
+
+        //create Person girSibling
+        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+
+        //create parameters for boySibling
+        String boySiblingName = "Bob";
+        String boySiblingBirthdate = "08-10-1989";
+
+        //create Person boySibling
+        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+
+
+        siblings.add(girlSibling);
+        siblings.add(boySibling);
+
+        //Act
+        //Create persons
+        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+
+
+
+        //Assert
+        //Verify getter method
+        assertFalse(maria.checkIfSiblings(father));
+    }
+
+    @Test
+    @DisplayName("Verify checkMother of Person || true")
+    public void checkMotherTrue() {
 
         //Arrange
         //create parameters for person
@@ -1002,8 +1062,68 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify checkFather of Person")
-    public void checkFatherEquals() {
+    @DisplayName("Verify checkMother of Person || False")
+    public void checkMotherFalse() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        String birthdate = "15-06-1992";
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
+
+        ArrayList<Person> siblings = new ArrayList();
+
+        //create parameters for mother
+        String motherName = "Susan";
+        String motherBirthdate = "08-10-1975";
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        String fatherBirthdate = "17-01-1973";
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //create parameters for girlSibling
+        String girlSiblingName = "Lucy";
+        String girlSiblingBirthdate = "08-10-1998";
+
+        //create Person girSibling
+        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+
+        //create parameters for boySibling
+        String boySiblingName = "Bob";
+        String boySiblingBirthdate = "08-10-1989";
+
+        //create Person boySibling
+        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+
+
+        siblings.add(girlSibling);
+        siblings.add(boySibling);
+
+        //Act
+        //Create persons
+        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person anotherPerson = new Person(name, address, birthdate, birthplace, mother, null, siblings);
+
+
+        //Assert
+        //Verify getter method
+        assertFalse(maria.checkMother(father));
+    }
+
+    @Test
+    @DisplayName("Verify checkFather of Person || true")
+    public void checkFatherTrue() {
 
         //Arrange
         //create parameters for person
@@ -1059,6 +1179,66 @@ class PersonTest {
         //Assert
         //Verify getter method
         assertTrue(maria.checkFather(anotherPerson));
+    }
+
+    @Test
+    @DisplayName("Verify checkFather of Person || False")
+    public void checkFatherFalse() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        String birthdate = "15-06-1992";
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
+
+        ArrayList<Person> siblings = new ArrayList();
+
+        //create parameters for mother
+        String motherName = "Susan";
+        String motherBirthdate = "08-10-1975";
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        String fatherBirthdate = "17-01-1973";
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //create parameters for girlSibling
+        String girlSiblingName = "Lucy";
+        String girlSiblingBirthdate = "08-10-1998";
+
+        //create Person girSibling
+        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+
+        //create parameters for boySibling
+        String boySiblingName = "Bob";
+        String boySiblingBirthdate = "08-10-1989";
+
+        //create Person boySibling
+        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+
+
+        siblings.add(girlSibling);
+        siblings.add(boySibling);
+
+        //Act
+        //Create persons
+        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person anotherPerson = new Person(name, address, birthdate, birthplace, null, father, siblings);
+
+
+        //Assert
+        //Verify getter method
+        assertFalse(maria.checkFather(mother));
     }
 
 
