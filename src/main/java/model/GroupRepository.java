@@ -11,13 +11,13 @@ public class GroupRepository {
         this.groupRepository = groupRepository;
     }
 
-    public void addGroupToList(Group group){
+    public void addGroupToGroupRepository(Group group){
         if(!groupRepository.contains(group)){
             groupRepository.add(group);
         }
     }
 
-    public void removeGroupFromList(Group group){
+    public void removeGroupFromGroupRepository(Group group){
         if(groupRepository.contains(group)){
             groupRepository.remove(group);
         } else{

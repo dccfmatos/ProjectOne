@@ -74,7 +74,7 @@ class GroupRepositoryTest {
 
         //Act
         //verify addGroupToList()
-        companyGroupRepository.addGroupToList(devTeam);
+        companyGroupRepository.addGroupToGroupRepository(devTeam);
 
 
         //Assert
@@ -107,12 +107,12 @@ class GroupRepositoryTest {
         //create groupRepository with the given list
         GroupRepository companyGroupRepository = new GroupRepository(company);
 
-        companyGroupRepository.addGroupToList(devTeam);
-        companyGroupRepository.addGroupToList(consultTeam);
+        companyGroupRepository.addGroupToGroupRepository(devTeam);
+        companyGroupRepository.addGroupToGroupRepository(consultTeam);
 
         //Act
         //remove group from groupRepository
-        companyGroupRepository.removeGroupFromList(consultTeam);
+        companyGroupRepository.removeGroupFromGroupRepository(consultTeam);
         ArrayList<Group> expected = new ArrayList<>();
         expected.add(devTeam);
 
@@ -143,17 +143,17 @@ class GroupRepositoryTest {
         GroupRepository companyGroupRepository = new GroupRepository(company);
 
         //Add groups to lists
-        companyGroupRepository.addGroupToList(devTeam);
-        companyGroupRepository.addGroupToList(consultTeam);
+        companyGroupRepository.addGroupToGroupRepository(devTeam);
+        companyGroupRepository.addGroupToGroupRepository(consultTeam);
 
-        companyGroupRepository.removeGroupFromList(consultTeam);
+        companyGroupRepository.removeGroupFromGroupRepository(consultTeam);
 
         //Act
         ArrayList<Group> anotherCompany = new ArrayList<>();
         GroupRepository anotherCompanyGroupRep = new GroupRepository(company);
         anotherCompanyGroupRep.setGroupRepository(anotherCompany);
 
-        anotherCompanyGroupRep.addGroupToList(devTeam);
+        anotherCompanyGroupRep.addGroupToGroupRepository(devTeam);
 
         assertEquals(anotherCompanyGroupRep.getGroupRepository(), companyGroupRepository.getGroupRepository());
     }

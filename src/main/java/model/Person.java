@@ -4,13 +4,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Person {
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     private String name;
     private String address;
@@ -19,6 +12,14 @@ public class Person {
     private Person fatherP;
     private Person motherP;
     private ArrayList<Person> siblings = new ArrayList<Person>();
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public Person(String name, String birthdate) {
         this.name = name;
