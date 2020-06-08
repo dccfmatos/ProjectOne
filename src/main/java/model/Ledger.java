@@ -11,6 +11,11 @@ public class Ledger {
         this.records = records;
     }
 
+    public Transaction createTransaction(Account account, String movType, Category category, double amount, String description, String date) {
+        Transaction newTransaction = new Transaction(account, movType, category, amount, description, date);
+        return newTransaction;
+    }
+
     public ArrayList<Transaction> getRecords() {
         return records;
     }
