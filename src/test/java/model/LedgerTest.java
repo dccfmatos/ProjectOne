@@ -14,8 +14,8 @@ class LedgerTest {
     public void ledgerConstructorEquals() {
 
         // Arrange
-        Account debitMov = new Account ("Description", "Denomination");
-        Account creditMov = new Account("Description", "Denomination");
+        Account account = new Account ("Description", "Denomination");
+        String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
@@ -25,21 +25,155 @@ class LedgerTest {
 
 
         // Act
-        Transaction transaction = new Transaction(debitMov, creditMov, category, amount, description, date);
-        Transaction transaction2 = new Transaction(debitMov, creditMov, category, amount, description, date);
+        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
 
         records.add(transaction);
         records.add(transaction2);
 
-        Category newCategory = new Category("New category");
+        ArrayList<Transaction> records2 = new ArrayList<>();
 
-        transaction.setCategory(newCategory);
+
+        Ledger ledger = new Ledger(records);
+        Ledger ledger2 = new Ledger(records);
+
+
+        // Assert
+        assertEquals(ledger, ledger2);
+    }
+
+    @Test
+    @DisplayName("Verify getRecords && equals")
+    public void ledgerGetRecordsEquals() {
+
+        // Arrange
+        Account account = new Account ("Description", "Denomination");
+        String movType = "debit";
+        Category category = new Category("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        String date = "25.02.2020";
+
+        ArrayList<Transaction> records = new ArrayList<>();
+
+
+        // Act
+        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+
+        records.add(transaction);
+        records.add(transaction2);
+
+        Ledger ledger = new Ledger(records);
+
+
+        // Assert
+        assertEquals(records, ledger.getRecords());
+    }
+
+    @Test
+    @DisplayName("Verify setRecords && equals")
+    public void ledgerSetRecordsEquals() {
+
+        // Arrange
+        Account account = new Account ("Description", "Denomination");
+        String movType = "debit";
+        Category category = new Category("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        String date = "25.02.2020";
+
+        ArrayList<Transaction> records = new ArrayList<>();
+
+
+        // Act
+        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+
+        records.add(transaction);
+        records.add(transaction2);
 
         ArrayList<Transaction> records2 = new ArrayList<>();
 
 
+        Ledger ledger = new Ledger(records);
+
+        ledger.setRecords(records2);
+
+
+
         // Assert
-        assertEquals(records, records2);
+        assertEquals(records2, ledger.getRecords());
+    }
+
+    @Test
+    @DisplayName("Verify addTransaction && equals")
+    public void ledgerAddTransactionEquals() {
+
+        // Arrange
+        Account account = new Account ("Description", "Denomination");
+        String movType = "debit";
+        Category category = new Category("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        String date = "25.02.2020";
+
+        ArrayList<Transaction> records = new ArrayList<>();
+
+
+        // Act
+        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+
+        records.add(transaction);
+
+
+        Ledger ledger = new Ledger(records);
+        ledger.addTransaction(transaction2);
+
+        ArrayList<Transaction> records2 = new ArrayList<>();
+        records2.add(transaction);
+        records2.add(transaction2);
+
+        // Assert
+        assertEquals(records2, ledger.getRecords());
+    }
+
+
+    @Test
+    @DisplayName("Verify createTransaction constructor && equals")
+    public void ledgerCreateTransactionEquals() {
+
+
+        // Arrange
+        Account account = new Account ("Description", "Denomination");
+        String movType = "debit";
+        Category category = new Category("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        String date = "25.02.2020";
+
+        ArrayList<Transaction> records = new ArrayList<>();
+
+
+        // Act
+        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+
+        records.add(transaction);
+        records.add(transaction2);
+
+
+        Ledger ledger = new Ledger(records);
+
+        //create transaction thru ledger
+        Transaction ledgerTransaction = ledger.createTransaction(account, movType, category, amount, description, date);
+
+        Transaction ledgerTransaction2 = new Transaction(account, movType, category, amount, description, date);
+
+
+        // Assert
+        assertEquals(ledgerTransaction2, ledgerTransaction);
     }
 
 
