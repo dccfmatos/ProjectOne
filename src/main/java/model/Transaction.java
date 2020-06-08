@@ -3,36 +3,36 @@ package model;
 import java.util.Objects;
 
 public class Transaction {
-    private Account debitMov;
-    private Account creditMov;
+    private Account account;
+    private String movType;
     private Category category;
     private double amount;
     private String description;
     private String date;
 
-    public Transaction(Account debitMov, Account creditMov, Category category, double amount, String description, String date) {
-        this.debitMov = debitMov;
-        this.creditMov = creditMov;
+    public Transaction(Account account, String movType, Category category, double amount, String description, String date) {
+        this.account = account;
+        this.movType = movType;
         this.category = category;
         this.amount = amount;
         this.description = description;
         this.date = date;
     }
 
-    public Account getDebitMov() {
-        return debitMov;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setDebitMov(Account debitMov) {
-        this.debitMov = debitMov;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
-    public Account getCreditMov() {
-        return creditMov;
+    public String getMovType() {
+        return movType;
     }
 
-    public void setCreditMov(Account creditMov) {
-        this.creditMov = creditMov;
+    public void setMovType(String movType) {
+        this.movType = movType;
     }
 
     public Category getCategory() {
@@ -73,8 +73,8 @@ public class Transaction {
         if (!(o instanceof Transaction)) return false;
         Transaction that = (Transaction) o;
         return Double.compare(that.amount, amount) == 0 &&
-                Objects.equals(debitMov, that.debitMov) &&
-                Objects.equals(creditMov, that.creditMov) &&
+                Objects.equals(account, that.account) &&
+                Objects.equals(movType, that.movType) &&
                 Objects.equals(category, that.category) &&
                 Objects.equals(description.toUpperCase(), that.description.toUpperCase()) &&
                 Objects.equals(date.toUpperCase(), that.date.toUpperCase());
