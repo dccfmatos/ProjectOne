@@ -78,7 +78,7 @@ public class Group {
         for (Person person2 : peopleInCharge) {
             if (person2.equals(person)) {
 
-                throw new NullPointerException("" +
+                throw new RuntimeException("" +
                         "-------------------------------" +
                         "Can't remove. People in charge." +
                         "-------------------------------");
@@ -91,35 +91,92 @@ public class Group {
         // To be family it must have: father, mother & children => more than 3 person
 
         //How many members on the group?
-
         ArrayList<Person> members = new ArrayList<Person>();
         members = this.getMembers();
 
         int numberOfMembers = members.size();
 
+        ArrayList<Person> membersTemp = new ArrayList<Person>();
+
         //Method should return a boolean
         boolean family = true;
+        boolean isFather, isMother;
+
+        Person father = null;
+        Person mother = null;
 
 
-        // Less than 3 is not a family
-        if (numberOfMembers < 3) {
+            //---- Less than 3 is not a family
+            if (numberOfMembers < 3) {
+                family = false;
+            }
+
+            //---- Check mother and father
+            //---- Find father
+            for (int i = 0; i < members.size(); i++) {
+                for (int j = 0; j < members.size(); j++) {
+                    if ((i != j) && members.get(i).equals(members.get(j).getFatherP())) {
+                        if (father == null) {
+                            father = members.get(i);
+                        } else {
+                            family = false;
+                        }
+                    }
+                }
+            }
+
+        if (father == null) {
             family = false;
+        } else {
+            for (Person person : members) {
+                if (!person.equals(father)) {
+                    membersTemp.add(person);
+                }
+            }
+            members = membersTemp;
+            membersTemp = new ArrayList<Person>();
         }
 
-        // Who is mother?
-        for (Person person : this.getMembers()) {
+        // Find Mother
+        for (int i = 0; i < members.size(); i++) {
+            for (int j = 0; j < members.size(); j++) {
+                if (i != j && members.get(i).equals(members.get(j).getMotherP())) {
+                    if (mother == null) {
+                        mother = members.get(i);
+                    } else {
+                        family = false;
+                    }
+                }
+            }
+        }
+        if (mother == null) {
+            family = false;
+        } else {
+            for (Person person : members) {
+                if (!person.equals(mother)) {
+                    membersTemp.add(person);
+                }
+            }
+            members = membersTemp;
+        }
 
-            if (person.checkMother(person) == true) {
-                continue;
-            } else {
+        // Find Kids
+        for (Person person : members) {
+            isFather = false;
+            isMother = false;
+            if (person.getFatherP() != null) {
+                isFather = person.getFatherP().equals(father);
+            }
+            if (person.getMotherP() != null) {
+                isMother = person.getMotherP().equals(mother);
+            }
+            if (!isFather && !isMother) {
                 family = false;
             }
-            if (person.checkFather(person) == true) {
-                family = true;
-            } else {
-                family = false;
-            }
-        }return family;
+        }
+
+        return  family;
+
     }
 
     @Override

@@ -573,11 +573,10 @@ class GroupTest {
         Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
 
-        Throwable thrown = assertThrows(NullPointerException.class, () -> devTeam.removePersonFromGroup(john));
+        Throwable thrown = assertThrows(RuntimeException.class, () -> devTeam.removePersonFromGroup(john));
 
         //Assert
-        assertEquals(thrown.getMessage(),
-                "-------------------------------" +
+        assertEquals(thrown.getMessage(), "-------------------------------" +
                 "Can't remove. People in charge." +
                 "-------------------------------");
 
@@ -589,9 +588,137 @@ class GroupTest {
     @DisplayName("Verify checkIfFamily() of group")
     public void groupCheckIfFamily() {
 
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
 
+        ArrayList<Person> siblingsMaria = new ArrayList();
+
+
+        //create parameters for mother
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //Create persons
+        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblingsMaria);
+
+
+        //Act
+        //Create group
+        Group familyGroup = new Group(LocalDate.of(2020, 06, 9), "Family Group");
+        familyGroup.addPersonToGroup(maria);
+        familyGroup.addPersonToGroup(mother);
+        familyGroup.addPersonToGroup(father);
+
+        boolean family = familyGroup.checkIfFamily(familyGroup);
+
+        //Assert
+        assertTrue(familyGroup.checkIfFamily(familyGroup));
     }
 
+    @Test
+    @DisplayName("(2) Verify checkIfFamily() of group")
+    public void groupCheckIfFamily2() {
 
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
+
+        ArrayList<Person> siblingsMaria = new ArrayList();
+
+
+        //create parameters for mother
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //Create persons
+        Person maria = new Person(name, address, birthdate, birthplace, mother, null, siblingsMaria);
+
+
+        //Act
+        //Create group
+        Group familyGroup = new Group(LocalDate.of(2020, 06, 9), "Family Group");
+        familyGroup.addPersonToGroup(maria);
+        familyGroup.addPersonToGroup(mother);
+
+        boolean family = familyGroup.checkIfFamily(familyGroup);
+
+        //Assert
+        assertFalse(familyGroup.checkIfFamily(familyGroup));
+    }
+
+    @Test
+    @DisplayName("(3) Verify checkIfFamily() of group")
+    public void groupCheckIfFamily3() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
+
+        ArrayList<Person> siblingsMaria = new ArrayList();
+
+
+        //create parameters for mother
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //Create persons
+        Person maria = new Person(name, address, birthdate, birthplace, null, father, siblingsMaria);
+
+
+        //Act
+        //Create group
+        Group familyGroup = new Group(LocalDate.of(2020, 06, 9), "Family Group");
+        familyGroup.addPersonToGroup(maria);
+        familyGroup.addPersonToGroup(mother);
+        familyGroup.addPersonToGroup(father);
+
+        boolean family = familyGroup.checkIfFamily(familyGroup);
+
+        //Assert
+        assertFalse(familyGroup.checkIfFamily(familyGroup));
+    }
 
 }
