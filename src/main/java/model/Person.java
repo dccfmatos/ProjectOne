@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -7,10 +8,8 @@ public class Person {
 
     private String name;
     private String address;
-    private String birthdate;
-    //private LocalDate dateOfCreation;
+    private LocalDate birthdate;
     private String birthplace;
-    //private LocalDate dateOfCreation;
     private Person fatherP;
     private Person motherP;
     private ArrayList<Person> siblings = new ArrayList<Person>();
@@ -23,19 +22,19 @@ public class Person {
         this.address = address;
     }
 
-    public Person(String name, String birthdate) {
+    public Person(String name, LocalDate birthdate) {
         this.name = name;
         this.birthdate = birthdate;
     }
 
-    public Person(String name, String birthdate, Person motherP, Person fatherP) {
+    public Person(String name, LocalDate birthdate, Person motherP, Person fatherP) {
         this.name = name;
         this.birthdate = birthdate;
         this.motherP = motherP;
         this.fatherP = fatherP;
     }
 
-    public Person(String name, String address, String birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
+    public Person(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
         this.name = name;
         this.address = address;
         this.birthdate = birthdate;
@@ -67,11 +66,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 

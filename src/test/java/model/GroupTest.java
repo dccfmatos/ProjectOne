@@ -45,10 +45,10 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person diana = new Person("Diana", "15-07-1992");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person diana = new Person("Diana", LocalDate.of(1992, 7, 15));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -64,9 +64,9 @@ class GroupTest {
         ArrayList<Person> membersConsultTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeCT = new ArrayList<Person>();
 
-        Person max = new Person("Max", "01/01/2017");
-        Person molly = new Person("Molly", "16-08-2019");
-        Person susan = new Person("Susan", "16-09-1992");
+        Person max = new Person("Max", LocalDate.of(2017, 1, 1));
+        Person molly = new Person("Molly", LocalDate.of(2019, 8, 16));
+        Person susan = new Person("Susan", LocalDate.of(1992, 9, 16));
 
         membersConsultTeam.add(max);
         membersConsultTeam.add(molly);
@@ -97,10 +97,10 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person diana = new Person("Diana", "15-07-1992");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person diana = new Person("Diana", LocalDate.of(1992, 7, 15));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -139,10 +139,10 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person diana = new Person("Diana", "15-07-1992");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person diana = new Person("Diana", LocalDate.of(1992, 7, 15));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -181,9 +181,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -217,9 +217,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -256,9 +256,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -291,9 +291,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -333,9 +333,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -374,9 +374,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -414,9 +414,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -446,9 +446,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -483,9 +483,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -518,9 +518,9 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = new Person("Maria", "12-10-1976");
-        Person jose = new Person("Jose", "03-11-1979");
-        Person john = new Person("John", "22-10-1960");
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);

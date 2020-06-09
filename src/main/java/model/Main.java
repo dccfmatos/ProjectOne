@@ -17,10 +17,10 @@ public class Main {
         ArrayList<Person> membersTest2 = new ArrayList<Person>();
         ArrayList<Person> peopleInCharge = new ArrayList<Person>();
 
-        Person Manuel = new Person("Manuel", "12-10-1976");
-        Person João = new Person("João", "03-11-1979");
-        Person Diana = new Person("Diana", "16-09-1992");
-        Person Maria = new Person("Maria", "22-10-1960");
+        Person Manuel = new Person("Manuel",  LocalDate.of(1976, 10, 12));
+        Person João = new Person("João",  LocalDate.of(1979, 11, 03));
+        Person Diana = new Person("Diana",  LocalDate.of(1992, 01, 26));
+        Person Maria = new Person("Maria",  LocalDate.of(1960, 10, 22));
 
         members.add(Manuel);
         members.add(João);

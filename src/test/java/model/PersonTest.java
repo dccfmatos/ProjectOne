@@ -3,6 +3,7 @@ package model;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,7 +17,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         //Act
         //Create persons
@@ -35,13 +36,13 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
 
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
 
 
         //create person mother and father
@@ -67,7 +68,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -75,7 +76,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -84,7 +85,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -93,14 +94,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -127,7 +128,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         //Act
         //Create persons
@@ -145,7 +146,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         //Act
         //Create persons
@@ -164,7 +165,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -172,7 +173,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -181,7 +182,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -190,14 +191,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -227,7 +228,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -235,7 +236,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -244,7 +245,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -253,14 +254,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -288,7 +289,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -296,7 +297,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -305,7 +306,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -314,14 +315,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -347,7 +348,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -355,7 +356,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -364,7 +365,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -373,14 +374,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -406,8 +407,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
-
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         //Act
         //Create persons
         Person maria = new Person(name, birthdate);
@@ -426,13 +426,12 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
-
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         //Act
         //Create persons
         Person maria = new Person(name, birthdate);
 
-        String expectedBirthdate = "18-06-1992";
+        LocalDate expectedBirthdate = LocalDate.of(1992, 06, 18);
         maria.setBirthdate(expectedBirthdate);
 
         //Assert
@@ -448,15 +447,14 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
-        String address = "7th Street";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);        String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
         ArrayList<Person> siblings = new ArrayList();
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -465,7 +463,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -474,14 +472,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -512,7 +510,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -520,7 +518,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -529,7 +527,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -538,14 +536,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -575,7 +573,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -583,7 +581,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -592,7 +590,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -601,14 +599,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -636,7 +634,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -644,7 +642,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -653,7 +651,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -662,14 +660,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -699,7 +697,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -707,7 +705,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -716,7 +714,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -725,14 +723,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -758,7 +756,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -766,7 +764,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -775,7 +773,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -784,14 +782,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -820,7 +818,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -828,7 +826,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -837,7 +835,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -846,14 +844,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -866,7 +864,7 @@ class PersonTest {
         //Create persons
         Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
 
-        Person newSibling = new Person("test", "16/07/2002");
+        Person newSibling = new Person("test", LocalDate.of(1995, 8, 7));
         maria.addSiblings(newSibling);
 
         ArrayList<Person> expectedSiblings = new ArrayList();
@@ -886,7 +884,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -894,7 +892,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -903,7 +901,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -912,14 +910,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -946,7 +944,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -954,7 +952,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -963,7 +961,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -972,14 +970,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -1006,7 +1004,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -1014,7 +1012,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -1023,7 +1021,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -1032,14 +1030,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -1066,7 +1064,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -1074,7 +1072,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -1083,7 +1081,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -1092,14 +1090,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -1126,7 +1124,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -1134,7 +1132,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -1143,7 +1141,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -1152,14 +1150,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
@@ -1186,7 +1184,7 @@ class PersonTest {
         //Arrange
         //create parameters for person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String address = "7th Street";
         String birthplace = "Place were Maria was born";
 
@@ -1194,7 +1192,7 @@ class PersonTest {
 
         //create parameters for mother
         String motherName = "Susan";
-        String motherBirthdate = "08-10-1975";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
         String motherAddress = "7th Street";
         String motherBirthplace = "Place were Susan was born";
 
@@ -1203,7 +1201,7 @@ class PersonTest {
 
         //create parameters for father
         String fatherName = "Tomas";
-        String fatherBirthdate = "17-01-1973";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
         String fatherAddress = "7th Street";
         String fatherBirthplace = "Place were Tomas was born";
 
@@ -1212,14 +1210,14 @@ class PersonTest {
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
-        String girlSiblingBirthdate = "08-10-1998";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
         Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
-        String boySiblingBirthdate = "08-10-1989";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
         Person boySibling = new Person(boySiblingName, boySiblingBirthdate);

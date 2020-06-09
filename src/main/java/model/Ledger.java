@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -11,7 +12,7 @@ public class Ledger {
         this.records = records;
     }
 
-    public Transaction createTransaction(Account account, String movType, Category category, double amount, String description, String date) {
+    public Transaction createTransaction(Account account, String movType, Category category, double amount, String description,  LocalDate date) {
         Transaction newTransaction = new Transaction(account, movType, category, amount, description, date);
         return newTransaction;
     }

@@ -3,6 +3,7 @@ package model;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,7 @@ class PersonRepositoryTest {
 
         //create parameters for object Person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         //create object Person
         Person maria = new Person(name, birthdate);
@@ -59,7 +60,7 @@ class PersonRepositoryTest {
 
         //create parameters for object Person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         //create object Person
         Person maria = new Person(name, birthdate);
@@ -90,14 +91,14 @@ class PersonRepositoryTest {
 
         //create parameters for object Person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         //create object Person
         Person maria = new Person(name, birthdate);
 
         //create parameters for object Person
         String name2 = "Oreo";
-        String birthdate2 = "18-06-1992";
+        LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
 
         //create another object Person
         Person oreo = new Person(name2, birthdate2);
@@ -135,14 +136,14 @@ class PersonRepositoryTest {
 
         //create parameters for object Person
         String name = "Maria";
-        String birthdate = "15-06-1992";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
 
         //create object Person
         Person maria = new Person(name, birthdate);
 
         //create parameters for object Person
         String name2 = "Oreo";
-        String birthdate2 = "18-06-1992";
+        LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
 
         //create another object Person
         Person oreo = new Person(name2, birthdate2);

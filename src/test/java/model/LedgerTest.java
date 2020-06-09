@@ -3,6 +3,7 @@ package model;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,7 +20,7 @@ class LedgerTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
+        LocalDate date = LocalDate.of(2020, 02, 25);
 
         ArrayList<Transaction> records = new ArrayList<>();
 
@@ -52,7 +53,7 @@ class LedgerTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
+        LocalDate date = LocalDate.of(2020, 02, 25);
 
         ArrayList<Transaction> records = new ArrayList<>();
 
@@ -81,7 +82,7 @@ class LedgerTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
+        LocalDate date = LocalDate.of(2020, 02, 25);
 
         ArrayList<Transaction> records = new ArrayList<>();
 
@@ -116,7 +117,7 @@ class LedgerTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
+        LocalDate date = LocalDate.of(2020, 02, 25);
 
         ArrayList<Transaction> records = new ArrayList<>();
 
@@ -151,7 +152,7 @@ class LedgerTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
+        LocalDate date = LocalDate.of(2020, 02, 25);
 
         ArrayList<Transaction> records = new ArrayList<>();
 
