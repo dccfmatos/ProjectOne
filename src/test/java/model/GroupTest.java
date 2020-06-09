@@ -544,6 +544,47 @@ class GroupTest {
 
     }
 
+
+    @Test
+    @DisplayName("Verify removePersonFromGroup() of group | personInCharge")
+    public void removePeopleInChargeFromGroup() {
+
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 05, 22);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create group
+        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+
+        Throwable thrown = assertThrows(NullPointerException.class, () -> devTeam.removePersonFromGroup(john));
+
+        //Assert
+        assertEquals(thrown.getMessage(),
+                "-------------------------------" +
+                "Can't remove. People in charge." +
+                "-------------------------------");
+
+
+    }
+
+
     @Test
     @DisplayName("Verify checkIfFamily() of group")
     public void groupCheckIfFamily() {

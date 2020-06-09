@@ -78,9 +78,10 @@ public class Group {
         for (Person person2 : peopleInCharge) {
             if (person2.equals(person)) {
 
-                System.out.println("-------------------------------");
-                System.out.println("Can't remove. People in charge.");
-                System.out.println("-------------------------------");
+                throw new NullPointerException("" +
+                        "-------------------------------" +
+                        "Can't remove. People in charge." +
+                        "-------------------------------");
             }
             members.remove(person);
         }
