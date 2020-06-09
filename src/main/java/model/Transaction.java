@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Transaction {
@@ -8,9 +9,9 @@ public class Transaction {
     private Category category;
     private double amount;
     private String description;
-    private String date;
+    private LocalDate date;
 
-    public Transaction(Account account, String movType, Category category, double amount, String description, String date) {
+    public Transaction(Account account, String movType, Category category, double amount, String description, LocalDate date) {
         this.account = account;
         this.movType = movType;
         this.category = category;
@@ -59,11 +60,11 @@ public class Transaction {
         this.description = description;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -77,7 +78,7 @@ public class Transaction {
                 Objects.equals(movType, that.movType) &&
                 Objects.equals(category, that.category) &&
                 Objects.equals(description.toUpperCase(), that.description.toUpperCase()) &&
-                Objects.equals(date.toUpperCase(), that.date.toUpperCase());
+                Objects.equals(date, that.date);
     }
 
 }

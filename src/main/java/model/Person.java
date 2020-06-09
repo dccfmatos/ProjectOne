@@ -8,7 +8,9 @@ public class Person {
     private String name;
     private String address;
     private String birthdate;
+    //private LocalDate dateOfCreation;
     private String birthplace;
+    //private LocalDate dateOfCreation;
     private Person fatherP;
     private Person motherP;
     private ArrayList<Person> siblings = new ArrayList<Person>();

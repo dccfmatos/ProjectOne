@@ -3,6 +3,8 @@ package model;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TransactionTest {
@@ -17,8 +19,7 @@ class TransactionTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
-
+        LocalDate date = LocalDate.of(2020,02,25);
 
         // Act
         Transaction transaction = new Transaction(account, movType, category, amount, description, date);
@@ -38,7 +39,7 @@ class TransactionTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
+        LocalDate date = LocalDate.of(2020,02,25);
 
 
         // Act
@@ -63,7 +64,7 @@ class TransactionTest {
         Category category = new Category("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
-        String date = "25.02.2020";
+        LocalDate date = LocalDate.of(2020,02,25);
 
 
         // Act
@@ -74,7 +75,7 @@ class TransactionTest {
         Category category2 = new Category("Pet Care - for sleeping");
         double amount2 = 124.78;
         String description2 = "Dog bed - for sleeping";
-        String date2 = "25.04.2020";
+        LocalDate date2 = LocalDate.of(2020,03,25);
 
         transaction.setAccount(account2);
         transaction.setMovType(movType2);
