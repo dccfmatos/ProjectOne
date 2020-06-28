@@ -6,6 +6,7 @@ import java.util.Objects;
 public class PersonRepository {
 
     private ArrayList<Person> personRepository;
+    private int socialNumber;
 
     public PersonRepository (ArrayList<Person> personRepository) {
         this.personRepository = personRepository;
@@ -17,13 +18,27 @@ public class PersonRepository {
         }
     }
 
+    public Person checkIfPersonExistsInRepository(int socialNumber){
+        boolean exists = true;
+
+        for (Person person: personRepository
+            ) {
+            if (person.getSocialNumber() == socialNumber) {
+                return person;
+            }
+            exists = false;
+        }
+        return null;
+    }
+
     public void removePersonFromPersonRepository(Person person){
         if(personRepository.contains(person)){
             personRepository.remove(person);
         } else{
-            System.out.println("--------------------");
-            System.out.printf("Can't remove, person does not belong.");
-            System.out.println("--------------------");
+            throw new RuntimeException("" +
+                    "-------------------------------" +
+                    "Can't remove. Person does not belong." +
+                    "-------------------------------");
         }
     }
 

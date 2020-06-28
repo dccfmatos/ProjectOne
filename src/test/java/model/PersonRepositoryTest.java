@@ -12,7 +12,7 @@ class PersonRepositoryTest {
 
     @Test
     @DisplayName("Verify PersonRepository constructor && equals")
-    public void personRepositoryConstructorEquals(){
+    public void personRepositoryConstructorEquals() {
 
         //Arrange
         //Create parameters for personRepository
@@ -25,7 +25,7 @@ class PersonRepositoryTest {
         Person maria = new Person(name, birthdate);
 
         //create arrayList of persons
-        ArrayList<Person> personsList1= new ArrayList<>();
+        ArrayList<Person> personsList1 = new ArrayList<>();
 
         //add() person to arraylist personsList1
         personsList1.add(maria);
@@ -66,7 +66,7 @@ class PersonRepositoryTest {
         Person maria = new Person(name, birthdate);
 
         //create arrayList of persons
-        ArrayList<Person> personsList1= new ArrayList<>();
+        ArrayList<Person> personsList1 = new ArrayList<>();
 
 
         //Act
@@ -104,7 +104,7 @@ class PersonRepositoryTest {
         Person oreo = new Person(name2, birthdate2);
 
         //create arrayList of persons
-        ArrayList<Person> personsList1= new ArrayList<>();
+        ArrayList<Person> personsList1 = new ArrayList<>();
 
         personsList1.add(maria);
         personsList1.add(oreo);
@@ -124,7 +124,6 @@ class PersonRepositoryTest {
         //Verify getter method
         assertEquals(expected, personRepository.getPersonRepository());
     }
-
 
 
     @Test
@@ -149,7 +148,7 @@ class PersonRepositoryTest {
         Person oreo = new Person(name2, birthdate2);
 
         //create arrayList of persons
-        ArrayList<Person> personsList1= new ArrayList<>();
+        ArrayList<Person> personsList1 = new ArrayList<>();
 
         personsList1.add(maria);
         personsList1.add(oreo);
@@ -167,5 +166,155 @@ class PersonRepositoryTest {
         //Assert
         //Verify getter method
         assertEquals(expected, personRepository.getPersonRepository());
+    }
+
+    @Test
+    @DisplayName("Verify checkIfPersonExistsInRepository(True) of personRepository")
+    void personRepCheckIfPersonExistsInRepositoryTrue() {
+
+        //Arrange
+        //Create parameters for personRepository
+
+        //create parameters for object Person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        int mariaSocialNumber = 123456;
+
+
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+
+        Person mother = new Person(motherName, motherBirthdate);
+        Person father = new Person(fatherName, fatherBirthdate);
+
+        //create object Person
+        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+
+        //create parameters for object Person
+        String name2 = "Oreo";
+        LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
+        int oreoSocialNumber = 789456;
+
+        //create another object Person
+        Person oreo = new Person(name2, birthdate2, mother, father, oreoSocialNumber);
+
+        //create arrayList of persons
+        ArrayList<Person> personsList1 = new ArrayList<>();
+
+        personsList1.add(maria);
+        personsList1.add(oreo);
+
+
+        //Act
+        //create personRepository with the given list
+        PersonRepository personRepository = new PersonRepository(personsList1);
+
+        Person expected = maria;
+
+        //Assert
+        //Verify getter method
+        assertEquals(expected, personRepository.checkIfPersonExistsInRepository(123456));
+    }
+
+    @Test
+    @DisplayName("Verify checkIfPersonExistsInRepository(False) of personRepository")
+    void personRepCheckIfPersonExistsInRepositoryFalse() {
+
+        //Arrange
+        //Create parameters for personRepository
+
+        //create parameters for object Person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        int mariaSocialNumber = 123456;
+
+
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+
+        Person mother = new Person(motherName, motherBirthdate);
+        Person father = new Person(fatherName, fatherBirthdate);
+
+        //create object Person
+        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+
+        //create parameters for object Person
+        String name2 = "Oreo";
+        LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
+        int oreoSocialNumber = 789456;
+
+        //create another object Person
+        Person oreo = new Person(name2, birthdate2, mother, father, oreoSocialNumber);
+
+        //create arrayList of persons
+        ArrayList<Person> personsList1 = new ArrayList<>();
+
+        personsList1.add(oreo);
+
+
+        //Act
+        //create personRepository with the given list
+        PersonRepository personRepository = new PersonRepository(personsList1);
+
+
+        //Assert
+        //Verify getter method
+        assertEquals(null, personRepository.checkIfPersonExistsInRepository(123456));
+    }
+
+
+    @Test
+    @DisplayName("Verify removePersonFromPersonRepository of personRepository")
+    void personRepRemovePersonFromPersonRepository() {
+
+        //Arrange
+        //Create parameters for personRepository
+
+        //create parameters for object Person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        int mariaSocialNumber = 123456;
+
+
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+
+        Person mother = new Person(motherName, motherBirthdate);
+        Person father = new Person(fatherName, fatherBirthdate);
+
+        //create object Person
+        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+
+        //create parameters for object Person
+        String name2 = "Oreo";
+        LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
+        int oreoSocialNumber = 789456;
+
+        //create another object Person
+        Person oreo = new Person(name2, birthdate2, mother, father, oreoSocialNumber);
+
+        //create arrayList of persons
+        ArrayList<Person> personsList1 = new ArrayList<>();
+
+        personsList1.add(oreo);
+
+        PersonRepository personRepository = new PersonRepository(personsList1);
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> personRepository.removePersonFromPersonRepository(maria));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "-------------------------------" +
+                "Can't remove. Person does not belong." +
+                "-------------------------------");
     }
 }

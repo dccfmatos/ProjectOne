@@ -580,7 +580,6 @@ class GroupTest {
                 "Can't remove. People in charge." +
                 "-------------------------------");
 
-
     }
 
 

@@ -49,11 +49,13 @@ class PersonTest {
         Person mother = new Person(motherName, motherBirthdate);
         Person father = new Person(fatherName, fatherBirthdate);
 
+        int mariaSocialNumber = 123456;
+
 
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate, mother, father);
-        Person diana = new Person(name, birthdate, mother, father);
+        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+        Person diana = new Person(name, birthdate, mother, father, mariaSocialNumber);
 
         //Assert
         //Verify if constructor works fine and if object is the same
@@ -119,6 +121,39 @@ class PersonTest {
         //Verify if constructor works fine and if object is the same
         assertEquals(maria, diana);
 
+    }
+
+
+    @Test
+    @DisplayName("Verify getsocialNumber of Person")
+    public void personGetSocialNumber() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+
+
+        //create person mother and father
+        Person mother = new Person(motherName, motherBirthdate);
+        Person father = new Person(fatherName, fatherBirthdate);
+
+        int mariaSocialNumber = 123456;
+
+
+        //Act
+        //Create persons
+        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+
+        //Assert
+        //Verify if constructor works fine and if object is the same
+        assertEquals(123456, maria.getSocialNumber());
     }
 
     @Test
@@ -398,6 +433,40 @@ class PersonTest {
         //Assert
         //Verify getter method
         assertEquals(siblings, maria.getSiblings());
+    }
+
+
+    @Test
+    @DisplayName("Verify setsocialNumber of Person")
+    public void personSetSocialNumber() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+
+
+        //create person mother and father
+        Person mother = new Person(motherName, motherBirthdate);
+        Person father = new Person(fatherName, fatherBirthdate);
+
+        int mariaSocialNumber = 123456;
+
+
+        //Act
+        //Create persons
+        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+        maria.setSocialNumber(789456);
+
+        //Assert
+        //Verify if constructor works fine and if object is the same
+        assertEquals(789456, maria.getSocialNumber());
     }
 
     @Test

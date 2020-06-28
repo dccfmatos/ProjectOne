@@ -13,6 +13,7 @@ public class Person {
     private Person fatherP;
     private Person motherP;
     private ArrayList<Person> siblings = new ArrayList<Person>();
+    private int socialNumber;
 
     public String getAddress() {
         return address;
@@ -27,11 +28,12 @@ public class Person {
         this.birthdate = birthdate;
     }
 
-    public Person(String name, LocalDate birthdate, Person motherP, Person fatherP) {
+    public Person(String name, LocalDate birthdate, Person motherP, Person fatherP, int socialNumber) {
         this.name = name;
         this.birthdate = birthdate;
         this.motherP = motherP;
         this.fatherP = fatherP;
+        this.socialNumber = socialNumber;
     }
 
     public Person(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
@@ -52,6 +54,14 @@ public class Person {
 
     public Person getMotherP() {
         return motherP;
+    }
+
+    public int getSocialNumber() {
+        return socialNumber;
+    }
+
+    public void setSocialNumber(int socialNumber) {
+        this.socialNumber = socialNumber;
     }
 
     public void setFatherP(Person fatherP) {
@@ -113,12 +123,14 @@ public class Person {
             return true;
         } else return false;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return Objects.equals(name, person.name) &&
+        return socialNumber == person.socialNumber &&
+                Objects.equals(name, person.name) &&
                 Objects.equals(address, person.address) &&
                 Objects.equals(birthdate, person.birthdate) &&
                 Objects.equals(birthplace, person.birthplace) &&
@@ -126,5 +138,6 @@ public class Person {
                 Objects.equals(motherP, person.motherP) &&
                 Objects.equals(siblings, person.siblings);
     }
+
 }
 
