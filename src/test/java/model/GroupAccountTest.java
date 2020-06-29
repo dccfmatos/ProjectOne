@@ -38,8 +38,8 @@ class GroupAccountTest {
         LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
         String denomination = "DevTeam";
 
-        Group devTeamGroup = new Group(dateOfCreation, denomination);
-        Group devTeamGroup2 = new Group(LocalDate.of(2020, 01, 26), denomination);
+        Group devTeamGroup = Group.createGroupWithoutMembers(dateOfCreation, denomination);
+        Group devTeamGroup2 = Group.createGroupWithoutMembers(LocalDate.of(2020, 01, 26), denomination);
 
         // Act
         //create 2 objects groupAccount

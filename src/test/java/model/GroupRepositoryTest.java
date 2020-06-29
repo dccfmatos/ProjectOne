@@ -23,7 +23,7 @@ class GroupRepositoryTest {
             String denomination = "DevTeam Group";
 
             //create object Group
-            Group devTeam = new Group(dateOfCreation, denomination);
+            Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, denomination);
 
         //create arrayList of groups
         ArrayList<Group> company = new ArrayList<>();
@@ -64,7 +64,7 @@ class GroupRepositoryTest {
 
 
         //create object Group
-        Group devTeam = new Group(dateOfCreation, denomination);
+        Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, denomination);
 
         //create arrayList of groups
         ArrayList<Group> company = new ArrayList<>();
@@ -97,8 +97,8 @@ class GroupRepositoryTest {
         String denomination2 = "Consultants Group";
 
         //create objects Group
-        Group devTeam = new Group(dateOfCreation, denomination);
-        Group consultTeam = new Group(dateOfCreation2, denomination2);
+        Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, denomination);
+        Group consultTeam = Group.createGroupWithoutMembers(dateOfCreation2, denomination2);
 
 
         //create arrayList of groups
@@ -135,8 +135,8 @@ class GroupRepositoryTest {
         LocalDate dateOfCreation2 = LocalDate.of(2020, 01, 26);
         String denomination2 = "Consultants Group";
 
-        Group devTeam = new Group(dateOfCreation, denomination);
-        Group consultTeam = new Group(dateOfCreation2, denomination2);
+        Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, denomination);
+        Group consultTeam = Group.createGroupWithoutMembers(dateOfCreation2, denomination2);
 
         //define groupRepository
         ArrayList<Group> company = new ArrayList<>();

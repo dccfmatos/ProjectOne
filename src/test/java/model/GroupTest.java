@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GroupTest {
 
-    // !!! INCOMPLETE
 
     @Test
     @DisplayName("Verify group constructor (without members) && equals")
@@ -24,12 +23,29 @@ class GroupTest {
 
         //Act
         //Create Groups
-        Group devTeam = new Group(dateOfCreation, denomination);
-        Group devTeam2 = new Group(dateOfCreation, denomination);
+        Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, denomination);
+        Group devTeam2 = Group.createGroupWithoutMembers(dateOfCreation, denomination);
 
         //Assert
         //Verify if constructor works fine and if object is the same
         assertEquals(devTeam, devTeam2);
+    }
+
+    @Test
+    @DisplayName("Verify group constructor (without members) && NotEquals")
+    public void groupConstructorNotEquals() {
+
+        //Arrange
+        //Create parameters for Group
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam Group";
+
+        //Act & Assert
+        try {
+            Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, null);
+            assertTrue(false, "Group not created. Denomination can't be Null");
+        } catch (Exception e) {
+        }
     }
 
 
@@ -621,7 +637,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group familyGroup = new Group(LocalDate.of(2020, 06, 9), "Family Group");
+        Group familyGroup = Group.createGroupWithoutMembers(LocalDate.of(2020, 06, 9), "Family Group");
         familyGroup.addPersonToGroup(maria);
         familyGroup.addPersonToGroup(mother);
         familyGroup.addPersonToGroup(father);
@@ -661,7 +677,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group familyGroup = new Group(LocalDate.of(2020, 06, 9), "Family Group");
+        Group familyGroup = Group.createGroupWithoutMembers(LocalDate.of(2020, 06, 9), "Family Group");
         familyGroup.addPersonToGroup(maria);
         familyGroup.addPersonToGroup(mother);
 
@@ -709,7 +725,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group familyGroup = new Group(LocalDate.of(2020, 06, 9), "Family Group");
+        Group familyGroup = Group.createGroupWithoutMembers(LocalDate.of(2020, 06, 9), "Family Group");
         familyGroup.addPersonToGroup(maria);
         familyGroup.addPersonToGroup(mother);
         familyGroup.addPersonToGroup(father);

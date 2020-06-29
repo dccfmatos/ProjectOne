@@ -14,9 +14,19 @@ public class Group {
     private ArrayList<Transaction> groupRecords = new ArrayList<Transaction>();
 
 
-    public Group(LocalDate dateOfCreation, String denomination) {
-        this.dateOfCreation = dateOfCreation;
-        this.denomination = denomination;
+
+    //public method to create Group, accessing the constructor
+    public static Group createGroupWithoutMembers(LocalDate dateOfCreation, String denomination) {
+        return new Group(dateOfCreation, denomination);
+    }
+
+    private Group(LocalDate dateOfCreation, String denomination) {
+        if (denomination == null) {
+            throw new NullPointerException("Group not created. Denomination can't be Null");
+        } else {
+            this.dateOfCreation = dateOfCreation;
+            this.denomination = denomination;
+        }
     }
 
     public Group(LocalDate dateOfCreation, String denomination, String description, ArrayList<Person> members, ArrayList<Person> peopleInCharge) {

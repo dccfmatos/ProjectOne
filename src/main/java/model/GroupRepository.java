@@ -15,6 +15,11 @@ public class GroupRepository {
         if(!groupRepository.contains(group)){
             groupRepository.add(group);
         }
+        else{
+            System.out.println("--------------------");
+        System.out.printf("Can't add, group already exists.");
+        System.out.println("--------------------");
+    }
     }
 
     public void removeGroupFromGroupRepository(Group group){
