@@ -29,7 +29,11 @@ public class Group {
         }
     }
 
-    public Group(LocalDate dateOfCreation, String denomination, String description, ArrayList<Person> members, ArrayList<Person> peopleInCharge) {
+    public static Group createGroupWithMembersAndPersonInCharge(LocalDate dateOfCreation, String denomination, String description, ArrayList<Person> members, ArrayList<Person> peopleInCharge){
+        return new Group(dateOfCreation, denomination, description, members, peopleInCharge);
+    }
+
+    private Group(LocalDate dateOfCreation, String denomination, String description, ArrayList<Person> members, ArrayList<Person> peopleInCharge) {
         this.dateOfCreation = dateOfCreation;
         this.denomination = denomination;
         this.description = description;
@@ -77,24 +81,25 @@ public class Group {
         this.peopleInCharge = peopleInCharge;
     }
 
-
-
     //Add or remove members from group
-    public void addPersonToGroup(Person person) {
+    public ArrayList<Person> addPersonToGroup(Person person) {
         members.add(person);
+        return members;
     }
 
-    public void removePersonFromGroup(Person person) {
+    public ArrayList<Person> removePersonFromGroup(Person person) {
         for (Person person2 : peopleInCharge) {
             if (person2.equals(person)) {
-
-                throw new RuntimeException("" +
-                        "-------------------------------" +
-                        "Can't remove. People in charge." +
-                        "-------------------------------");
+                throw new IllegalArgumentException("Can't remove. People in charge.");
             }
-            members.remove(person);
+            if(members.contains(person)) {
+                members.remove(person);
+            }
+            else{
+                throw new IllegalArgumentException("Can't remove. Person does not belong in Group.");
+            }
         }
+        return members;
     }
 
     public boolean checkIfFamily(Group group) {
@@ -184,9 +189,7 @@ public class Group {
                 family = false;
             }
         }
-
         return  family;
-
     }
 
     @Override

@@ -92,8 +92,8 @@ class GroupTest {
 
         //Act
         //Create Groups
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
-        Group consultTeam = new Group(dateOfCreation2, denomination2, description2, membersConsultTeam, peopleInChargeCT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group consultTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation2, denomination2, description2, membersConsultTeam, peopleInChargeCT);
 
         //Assert
         //Verify if constructor works fine and if objects are not the same
@@ -133,18 +133,51 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         //remove person from group
         devTeam.removePersonFromGroup(diana);
 
         //Assert
         assertEquals(membersExpected, devTeam.getMembers());
+    }
+
+    @Test
+    @DisplayName("Verify removePersonFromGroup of group (Exception)")
+    public void groupRemPersonFromGroupExcep() {
+
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = new Person("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = new Person("Jose", LocalDate.of(1979, 11, 3));
+        Person diana = new Person("Diana", LocalDate.of(1992, 7, 15));
+        Person john = new Person("John", LocalDate.of(1960, 10, 22));
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+        peopleInChargeDT.add(john);
+
+        //Act
+        //Create group
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+
+        //remove person from group
+        Throwable thrown = assertThrows(IllegalArgumentException.class, () -> devTeam.removePersonFromGroup(diana));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't remove. Person does not belong in Group.");
 
     }
 
     @Test
-    @DisplayName("Verify removePersonFromGroup of group")
+    @DisplayName("Verify addPersonFromGroup of group")
     public void groupAddPersonToGroup() {
 
         //Arrange
@@ -176,7 +209,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         //add person to group
         devTeam.addPersonToGroup(diana);
@@ -210,7 +243,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
         //create expected dateOfCreation
         LocalDate expectedDateOfCreation = LocalDate.of(2020, 01, 26);
 
@@ -246,7 +279,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
         //create expected dateOfCreation
         LocalDate expectedDateOfCreation = LocalDate.of(2020, 01, 26);
 
@@ -285,7 +318,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         //create expected denomination
         String expectedDenomination = "DevTeam Group";
@@ -320,7 +353,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         //create expected denomination
         String expectedDenomination = "anotherTeam Group";
@@ -362,7 +395,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         //create expected description
         String expectedDescription = "Group with consultTeam members";
@@ -403,7 +436,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         //create expected description
         String expectedDescription = "Group with consultTeam members";
@@ -443,7 +476,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
 
         //Assert
@@ -475,7 +508,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         ArrayList<Person> expectedMembersDevTeam = new ArrayList<Person>();
         expectedMembersDevTeam.add(maria);
@@ -512,7 +545,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         ArrayList<Person> expectedPeopleInChargeDT = new ArrayList<Person>();
         expectedPeopleInChargeDT.add(john);
@@ -547,7 +580,7 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
 
         ArrayList<Person> expectedPeopleInChargeDT = new ArrayList<Person>();
         expectedPeopleInChargeDT.add(maria);
@@ -586,15 +619,11 @@ class GroupTest {
 
         //Act
         //Create group
-        Group devTeam = new Group(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
-
-
-        Throwable thrown = assertThrows(RuntimeException.class, () -> devTeam.removePersonFromGroup(john));
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Throwable thrown = assertThrows(IllegalArgumentException.class, () -> devTeam.removePersonFromGroup(john));
 
         //Assert
-        assertEquals(thrown.getMessage(), "-------------------------------" +
-                "Can't remove. People in charge." +
-                "-------------------------------");
+        assertEquals(thrown.getMessage(), "Can't remove. People in charge.");
 
     }
 
