@@ -21,8 +21,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate);
-        Person diana = new Person(name, birthdate);
+        Person maria = Person.createPerson(name, birthdate);
+        Person diana = Person.createPerson(name, birthdate);
 
         //Assert
         //Verify if constructor works fine and if object is the same
@@ -46,16 +46,16 @@ class PersonTest {
 
 
         //create person mother and father
-        Person mother = new Person(motherName, motherBirthdate);
-        Person father = new Person(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherName, fatherBirthdate);
 
         int mariaSocialNumber = 123456;
 
 
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
-        Person diana = new Person(name, birthdate, mother, father, mariaSocialNumber);
+        Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
+        Person diana = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
 
         //Assert
         //Verify if constructor works fine and if object is the same
@@ -83,7 +83,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -92,21 +92,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -114,8 +114,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
-        Person diana = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person diana = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
         //Assert
         //Verify if constructor works fine and if object is the same
@@ -141,15 +141,15 @@ class PersonTest {
 
 
         //create person mother and father
-        Person mother = new Person(motherName, motherBirthdate);
-        Person father = new Person(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherName, fatherBirthdate);
 
         int mariaSocialNumber = 123456;
 
 
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+        Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
 
         //Assert
         //Verify if constructor works fine and if object is the same
@@ -167,7 +167,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate);
+        Person maria = Person.createPerson(name, birthdate);
 
         //Assert
         //Verify getter method
@@ -185,7 +185,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate);
+        Person maria = Person.createPerson(name, birthdate);
 
         //Assert
         //Verify getter method
@@ -213,7 +213,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -222,21 +222,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -244,10 +244,10 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person motherExpected = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person motherExpected = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
 
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
 
@@ -276,7 +276,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -285,21 +285,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -307,9 +307,9 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person fatherExpected = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person fatherExpected = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
         //Assert
@@ -337,7 +337,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -346,21 +346,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -368,7 +368,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
         //Assert
@@ -396,7 +396,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -405,21 +405,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -427,7 +427,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
         //Assert
@@ -453,15 +453,15 @@ class PersonTest {
 
 
         //create person mother and father
-        Person mother = new Person(motherName, motherBirthdate);
-        Person father = new Person(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherName, fatherBirthdate);
 
         int mariaSocialNumber = 123456;
 
 
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate, mother, father, mariaSocialNumber);
+        Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
         maria.setSocialNumber(789456);
 
         //Assert
@@ -479,7 +479,7 @@ class PersonTest {
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate);
+        Person maria = Person.createPerson(name, birthdate);
         String newName = "Zoey";
         maria.setName(newName);
 
@@ -498,7 +498,7 @@ class PersonTest {
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
         //Act
         //Create persons
-        Person maria = new Person(name, birthdate);
+        Person maria = Person.createPerson(name, birthdate);
 
         LocalDate expectedBirthdate = LocalDate.of(1992, 06, 18);
         maria.setBirthdate(expectedBirthdate);
@@ -528,7 +528,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -537,21 +537,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -559,10 +559,10 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person motherExpected = new Person("newMother", motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person motherExpected = Person.createPersonWSiblings("newMother", motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
 
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
         maria.setMotherP(motherExpected);
 
@@ -592,7 +592,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -601,21 +601,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -623,9 +623,9 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person fatherExpected = new Person("newFather", fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person fatherExpected = Person.createPersonWSiblings("newFather", fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
         maria.setFatherP(fatherExpected);
 
@@ -655,7 +655,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -664,21 +664,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -686,7 +686,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
         String expectedBirthplace = "Place were Susan was born";
         maria.setBirthplace(expectedBirthplace);
 
@@ -716,7 +716,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -725,21 +725,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -747,7 +747,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
         ArrayList<Person> expectedSiblings = new ArrayList();
 
@@ -779,7 +779,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -788,21 +788,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -810,7 +810,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
         //Assert
@@ -838,7 +838,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -847,21 +847,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -869,7 +869,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
         String expectedAddress = "8th Street";
         maria.setAddress(expectedAddress);
@@ -900,7 +900,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -909,21 +909,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -931,9 +931,9 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
-        Person newSibling = new Person("test", LocalDate.of(1995, 8, 7));
+        Person newSibling = Person.createPerson("test", LocalDate.of(1995, 8, 7));
         maria.addSiblings(newSibling);
 
         ArrayList<Person> expectedSiblings = new ArrayList();
@@ -966,7 +966,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -975,21 +975,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -997,7 +997,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
 
@@ -1026,7 +1026,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1035,21 +1035,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1057,7 +1057,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
 
@@ -1086,7 +1086,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1095,21 +1095,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1117,8 +1117,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
-        Person anotherPerson = new Person(name, address, birthdate, birthplace, mother, null, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblings);
 
 
         //Assert
@@ -1146,7 +1146,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1155,21 +1155,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1177,8 +1177,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
-        Person anotherPerson = new Person(name, address, birthdate, birthplace, mother, null, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblings);
 
 
         //Assert
@@ -1206,7 +1206,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1215,21 +1215,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1237,8 +1237,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
-        Person anotherPerson = new Person(name, address, birthdate, birthplace, null, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, null, father, siblings);
 
 
         //Assert
@@ -1266,7 +1266,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = new Person(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1275,21 +1275,21 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = new Person(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = new Person(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = new Person(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1297,8 +1297,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = new Person(name, address, birthdate, birthplace, mother, father, siblings);
-        Person anotherPerson = new Person(name, address, birthdate, birthplace, null, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
 
 
         //Assert

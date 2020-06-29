@@ -16,19 +16,27 @@ public class Person {
     private int socialNumber;
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public Person(String name, LocalDate birthdate) {
+    public static Person createPerson(String name, LocalDate birthdate){
+        return new Person(name, birthdate);
+    }
+
+    private Person(String name, LocalDate birthdate) {
         this.name = name;
         this.birthdate = birthdate;
     }
 
-    public Person(String name, LocalDate birthdate, Person motherP, Person fatherP, int socialNumber) {
+    public static Person createPersonWMotherAndFather(String name, LocalDate birthdate, Person motherP, Person fatherP, int socialNumber){
+        return new Person(name, birthdate, motherP, fatherP, socialNumber);
+    }
+
+    private Person(String name, LocalDate birthdate, Person motherP, Person fatherP, int socialNumber) {
         this.name = name;
         this.birthdate = birthdate;
         this.motherP = motherP;
@@ -36,7 +44,11 @@ public class Person {
         this.socialNumber = socialNumber;
     }
 
-    public Person(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
+    public static Person createPersonWSiblings(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings){
+        return new Person(name, address, birthdate, birthplace, motherP, fatherP, siblings);
+    }
+
+    private Person(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
         this.name = name;
         this.address = address;
         this.birthdate = birthdate;
@@ -45,19 +57,21 @@ public class Person {
         this.fatherP = fatherP;
         this.siblings = siblings;
     }
+
     public String getName() {
-        return name;
+        return this.name;
     }
+
     public Person getFatherP() {
-        return fatherP;
+        return this.fatherP;
     }
 
     public Person getMotherP() {
-        return motherP;
+        return this.motherP;
     }
 
     public int getSocialNumber() {
-        return socialNumber;
+        return this.socialNumber;
     }
 
     public void setSocialNumber(int socialNumber) {
@@ -77,7 +91,7 @@ public class Person {
     }
 
     public LocalDate getBirthdate() {
-        return birthdate;
+        return this.birthdate;
     }
 
     public void setBirthdate(LocalDate birthdate) {
@@ -85,7 +99,7 @@ public class Person {
     }
 
     public String getBirthplace() {
-        return birthplace;
+        return this.birthplace;
     }
 
     public void setBirthplace(String birthplace) {
