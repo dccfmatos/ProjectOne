@@ -49,7 +49,7 @@ class PersonTest {
         Person mother = Person.createPerson(motherName, motherBirthdate);
         Person father = Person.createPerson(fatherName, fatherBirthdate);
 
-        int mariaSocialNumber = 123456;
+        String mariaSocialNumber = "123456";
 
 
         //Act
@@ -144,7 +144,7 @@ class PersonTest {
         Person mother = Person.createPerson(motherName, motherBirthdate);
         Person father = Person.createPerson(fatherName, fatherBirthdate);
 
-        int mariaSocialNumber = 123456;
+        String mariaSocialNumber = "123456";
 
 
         //Act
@@ -153,7 +153,7 @@ class PersonTest {
 
         //Assert
         //Verify if constructor works fine and if object is the same
-        assertEquals(123456, maria.getSocialNumber());
+        assertEquals("123456", maria.getSocialNumber());
     }
 
     @Test
@@ -456,17 +456,17 @@ class PersonTest {
         Person mother = Person.createPerson(motherName, motherBirthdate);
         Person father = Person.createPerson(fatherName, fatherBirthdate);
 
-        int mariaSocialNumber = 123456;
+        String mariaSocialNumber = "123456";
 
 
         //Act
         //Create persons
         Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
-        maria.setSocialNumber(789456);
+        maria.setSocialNumber("789456");
 
         //Assert
         //Verify if constructor works fine and if object is the same
-        assertEquals(789456, maria.getSocialNumber());
+        assertEquals("789456", maria.getSocialNumber());
     }
 
     @Test
@@ -1304,4 +1304,75 @@ class PersonTest {
         //Verify getter method
         assertFalse(maria.checkFather(mother));
     }
+
+    @Test
+    @DisplayName("Verify createPersonWMother&Father of Person || Exception SocialNumber")
+    public void createPersonWMotherFatherException() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+
+
+        //create parameters for mother
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> Person.createPersonWMotherAndFather(name, birthdate, mother, father, null));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Person. Invalid SocialNumber.");
+    }
+
+    @Test
+    @DisplayName("Verify createPersonWMother&Father of Person || Exception Name")
+    public void createPersonWMotherFatherExceptionName() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+
+        //create parameters for mother
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> Person.createPersonWMotherAndFather(null, birthdate, mother, father, "123456"));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Person. Invalid name.");
+    }
+
 }

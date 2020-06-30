@@ -13,7 +13,7 @@ public class Person {
     private Person fatherP;
     private Person motherP;
     private ArrayList<Person> siblings = new ArrayList<Person>();
-    private int socialNumber;
+    private String socialNumber;
 
     public String getAddress() {
         return this.address;
@@ -23,8 +23,12 @@ public class Person {
         this.address = address;
     }
 
-    public static Person createPerson(String name, LocalDate birthdate){
-        return new Person(name, birthdate);
+    public static Person createPerson(String name, LocalDate birthdate) {
+        if (name == null) {
+            throw new IllegalArgumentException("Can't create Person. Invalid name.");
+        } else {
+            return new Person(name, birthdate);
+        }
     }
 
     private Person(String name, LocalDate birthdate) {
@@ -32,11 +36,19 @@ public class Person {
         this.birthdate = birthdate;
     }
 
-    public static Person createPersonWMotherAndFather(String name, LocalDate birthdate, Person motherP, Person fatherP, int socialNumber){
-        return new Person(name, birthdate, motherP, fatherP, socialNumber);
+    public static Person createPersonWMotherAndFather(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber){
+        if (name == null) {
+            throw new NullPointerException("Can't create Person. Invalid name.");
+        } else {
+            if (socialNumber == null) {
+                throw new NullPointerException("Can't create Person. Invalid SocialNumber.");
+            } else {
+                return new Person(name, birthdate, motherP, fatherP, socialNumber);
+            }
+        }
     }
 
-    private Person(String name, LocalDate birthdate, Person motherP, Person fatherP, int socialNumber) {
+    private Person(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber) {
         this.name = name;
         this.birthdate = birthdate;
         this.motherP = motherP;
@@ -70,11 +82,11 @@ public class Person {
         return this.motherP;
     }
 
-    public int getSocialNumber() {
+    public String getSocialNumber() {
         return this.socialNumber;
     }
 
-    public void setSocialNumber(int socialNumber) {
+    public void setSocialNumber(String socialNumber) {
         this.socialNumber = socialNumber;
     }
 

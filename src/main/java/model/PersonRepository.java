@@ -23,7 +23,8 @@ public class PersonRepository {
 
         for (Person person: personRepository
             ) {
-            if (person.getSocialNumber() == socialNumber) {
+            int i=Integer.parseInt(person.getSocialNumber());
+            if (i == socialNumber) {
                 return person;
             }
             exists = false;

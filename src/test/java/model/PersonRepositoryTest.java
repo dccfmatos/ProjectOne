@@ -178,7 +178,7 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
-        int mariaSocialNumber = 123456;
+        String mariaSocialNumber = "123456";
 
 
         String motherName = "Susan";
@@ -196,7 +196,7 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name2 = "Oreo";
         LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
-        int oreoSocialNumber = 789456;
+        String oreoSocialNumber = "789456";
 
         //create another object Person
         Person oreo = Person.createPersonWMotherAndFather(name2, birthdate2, mother, father, oreoSocialNumber);
@@ -229,7 +229,7 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
-        int mariaSocialNumber = 123456;
+        String mariaSocialNumber = "123456";
 
 
         String motherName = "Susan";
@@ -247,7 +247,7 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name2 = "Oreo";
         LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
-        int oreoSocialNumber = 789456;
+        String oreoSocialNumber = "789456";
 
         //create another object Person
         Person oreo = Person.createPersonWMotherAndFather(name2, birthdate2, mother, father, oreoSocialNumber);
@@ -279,7 +279,7 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
-        int mariaSocialNumber = 123456;
+        String mariaSocialNumber = "123456";
 
 
         String motherName = "Susan";
@@ -297,7 +297,7 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name2 = "Oreo";
         LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
-        int oreoSocialNumber = 789456;
+        String oreoSocialNumber = "789456";
 
         //create another object Person
         Person oreo = Person.createPersonWMotherAndFather(name2, birthdate2, mother, father, oreoSocialNumber);
