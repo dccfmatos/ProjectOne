@@ -14,7 +14,7 @@ class TransactionTest {
     public void transactionConstructorEquals() {
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
@@ -34,7 +34,7 @@ class TransactionTest {
     public void transactionGetMethods() {
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
@@ -59,7 +59,7 @@ class TransactionTest {
     public void transactionSetMethods() {
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
@@ -70,7 +70,7 @@ class TransactionTest {
         // Act
         Transaction transaction = new Transaction(account, movType, category, amount, description, date);
 
-        Account account2 = new Account ("new description", "Denomination");
+        Account account2 = Account.createAccount("new description", "Denomination");
         String movType2 = "credit";
         Category category2 = new Category("Pet Care - for sleeping");
         double amount2 = 124.78;

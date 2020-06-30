@@ -8,7 +8,15 @@ public class Account {
     private String denomination;
     private String description;
 
-    public Account(String denomination, String description) {
+    public static Account createAccount(String denomination, String description) {
+        if (denomination == null || description == null) {
+            throw new IllegalArgumentException("Can't create Account. All arguments must be filled.");
+        } else {
+            return new Account(denomination, description);
+        }
+    }
+
+    private Account(String denomination, String description) {
         this.denomination = denomination;
         this.description = description;
     }
@@ -38,5 +46,4 @@ public class Account {
         return Objects.equals(denomination, account.denomination) &&
                 Objects.equals(description, account.description);
     }
-
 }

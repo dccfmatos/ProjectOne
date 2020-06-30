@@ -17,11 +17,41 @@ class AccountTest {
         String description = "Account for Scrapbooking stuff";
             // Act
             //create two objects Account
-        Account account1 = new Account(denomination, description);
-        Account account2 = new Account("Scrapbooking", "Account for Scrapbooking stuff");
+        Account account1 = Account.createAccount(denomination, description);
+        Account account2 = Account.createAccount("Scrapbooking", "Account for Scrapbooking stuff");
             // Assert
             //Verify if constructor works fine and if object is the same
         assertEquals(account1, account2);
+    }
+
+    @Test
+    @DisplayName("Verify Account constructor && Exception description")
+    public void accountConstructorExceptionDes() {
+
+        // Arrange
+        //Define variables for parameters "denomination" and "description"
+        String denomination = "Scrapbooking";
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> Account.createAccount(denomination, null));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Account. All arguments must be filled.");
+    }
+
+    @Test
+    @DisplayName("Verify Account constructor && Exception denomination")
+    public void accountConstructorExceptionDen() {
+
+        // Arrange
+        //Define variables for parameters "denomination" and "description"
+        String description = "Account for Scrapbooking stuff";
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> Account.createAccount(null, description));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Account. All arguments must be filled.");
     }
 
     @Test
@@ -34,7 +64,7 @@ class AccountTest {
         String description = "Account for Scrapbooking stuff";
             // Act
             //create object Account
-        Account account = new Account(denomination, description);
+        Account account = Account.createAccount(denomination, description);
             // Assert
             //Verify getter method
         assertEquals(denomination, account.getDenomination());
@@ -50,7 +80,7 @@ class AccountTest {
         String description = "Account for Scrapbooking stuff";
             // Act
             //create object Account
-        Account account = new Account(denomination, description);
+        Account account = Account.createAccount(denomination, description);
             // Assert
             //Verify getter method
         assertEquals(description, account.getDescription());
@@ -69,7 +99,7 @@ class AccountTest {
         String description2 = "Account for dogs stuff";
         // Act
         //create object Account
-        Account account = new Account(denomination1, description1);
+        Account account = Account.createAccount(denomination1, description1);
         //Change parameters of account using setter method
         account.setDenomination(denomination2);
         account.setDescription(description2);
@@ -91,7 +121,7 @@ class AccountTest {
         String description2 = "Account for dogs stuff";
             // Act
             //create object Account
-        Account account = new Account(denomination1, description1);
+        Account account = Account.createAccount(denomination1, description1);
             //Change parameters of account using setter method
         account.setDenomination(denomination2);
         account.setDescription(description2);

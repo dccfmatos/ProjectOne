@@ -13,7 +13,7 @@ class AccountRepositoryTest {
 
             // Arrange
             //Create an account object and an ID so that object accountRepository can be created
-        Account account = new Account("Scrapbooking", "Account for Scrapbooking stuff");
+        Account account = Account.createAccount("Scrapbooking", "Account for Scrapbooking stuff");
         int id = 1111;
             // Act
             //create 2 accountRepositories that can be compared
@@ -30,7 +30,7 @@ class AccountRepositoryTest {
 
             // Arrange
             //Create an account object and an ID so that object accountRepository can be created
-        Account account = new Account("Scrapbooking", "Account for Scrapbooking stuff");
+        Account account = Account.createAccount("Scrapbooking", "Account for Scrapbooking stuff");
         int id = 1111;
             // Act
             //Create one accountRepository with the previously defined parameters
@@ -46,7 +46,7 @@ class AccountRepositoryTest {
 
             // Arrange
             //Create an account object and an ID so that object accountRepository can be created
-        Account account = new Account("Scrapbooking", "Account for Scrapbooking stuff");
+        Account account = Account.createAccount("Scrapbooking", "Account for Scrapbooking stuff");
         int id = 1111;
             // Act
             //Create one accountRepository with the previously defined parameters
@@ -62,10 +62,10 @@ class AccountRepositoryTest {
 
             // Arrange
             //Create two account objects and an ID so that objects accountRepository can be created
-        Account account1 = new Account("Scrapbooking", "Account for Scrapbooking stuff");
+        Account account1 = Account.createAccount("Scrapbooking", "Account for Scrapbooking stuff");
         int id1 = 1111;
 
-        Account account2 = new Account("Doggies", "Account for dogs stuff");
+        Account account2 = Account.createAccount("Doggies", "Account for dogs stuff");
         int id2 = 2222;
 
             //Create one accountRepository with the previously defined parameters
@@ -84,10 +84,10 @@ class AccountRepositoryTest {
 
             // Arrange
             //Create two account objects and an ID so that objects accountRepository can be created
-        Account account1 = new Account("Scrapbooking", "Account for Scrapbooking stuff");
+        Account account1 = Account.createAccount("Scrapbooking", "Account for Scrapbooking stuff");
         int id1 = 1111;
 
-        Account account2 = new Account("Doggies", "Account for dogs stuff");
+        Account account2 = Account.createAccount("Doggies", "Account for dogs stuff");
         int id2 = 2222;
 
             //Create one accountRepository with the previously defined parameters

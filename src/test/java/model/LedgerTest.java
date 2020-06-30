@@ -15,7 +15,7 @@ class LedgerTest {
     public void ledgerConstructorEquals() {
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
@@ -48,7 +48,7 @@ class LedgerTest {
     public void ledgerGetRecordsEquals() {
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
@@ -77,7 +77,7 @@ class LedgerTest {
     public void ledgerSetRecordsEquals() {
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
@@ -112,7 +112,7 @@ class LedgerTest {
     public void ledgerAddTransactionEquals() {
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
@@ -147,7 +147,7 @@ class LedgerTest {
 
 
         // Arrange
-        Account account = new Account ("Description", "Denomination");
+        Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
         Category category = new Category("Pet Care");
         double amount = 124.00;
