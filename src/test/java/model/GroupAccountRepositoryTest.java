@@ -13,7 +13,7 @@ class GroupAccountRepositoryTest {
 
         // Arrange
         //Create new group account to be used to create group account repositories
-        GroupAccount groupAccount = new GroupAccount("groupAccount Denomination", "groupAccount description");
+        GroupAccount groupAccount = GroupAccount.createGroupAccount("groupAccount Denomination", "groupAccount description");
         int id = 123;
 
         // Act
@@ -31,7 +31,7 @@ class GroupAccountRepositoryTest {
     public void accountGetAccountId() {
 
         // Arrange
-        GroupAccount groupAccount = new GroupAccount("groupAccount Denomination", "groupAccount description");
+        GroupAccount groupAccount = GroupAccount.createGroupAccount("groupAccount Denomination", "groupAccount description");
         int id = 123;
 
         // Act
@@ -48,7 +48,7 @@ class GroupAccountRepositoryTest {
     public void accountGetGroupAccount()  {
 
         // Arrange
-        GroupAccount groupAccount = new GroupAccount("groupAccount Denomination", "groupAccount description");
+        GroupAccount groupAccount = GroupAccount.createGroupAccount("groupAccount Denomination", "groupAccount description");
         int id = 123;
 
         // Act
@@ -66,10 +66,10 @@ class GroupAccountRepositoryTest {
 
         // Arrange
         //create objects groupAccount
-        GroupAccount groupAccount = new GroupAccount("groupAccount Denomination", "groupAccount description");
+        GroupAccount groupAccount = GroupAccount.createGroupAccount("groupAccount Denomination", "groupAccount description");
         int id = 123;
 
-        GroupAccount groupAccount2 = new GroupAccount("groupAccount Denomination2", "groupAccount description2");
+        GroupAccount groupAccount2 = GroupAccount.createGroupAccount("groupAccount Denomination2", "groupAccount description2");
         int id2 = 1234;
 
         // Act
@@ -91,10 +91,10 @@ class GroupAccountRepositoryTest {
 
         // Arrange
         //create objects groupAccount
-        GroupAccount groupAccount = new GroupAccount("groupAccount Denomination", "groupAccount description");
+        GroupAccount groupAccount = GroupAccount.createGroupAccount("groupAccount Denomination", "groupAccount description");
         int id = 123;
 
-        GroupAccount groupAccount2 = new GroupAccount("groupAccount Denomination2", "groupAccount description2");
+        GroupAccount groupAccount2 = GroupAccount.createGroupAccount("groupAccount Denomination2", "groupAccount description2");
         int id2 = 1234;
 
         // Act

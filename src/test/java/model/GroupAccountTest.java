@@ -20,8 +20,8 @@ class GroupAccountTest {
 
         // Act
         //create 2 objects groupAccount
-        GroupAccount devTeam = new GroupAccount(accountGroupDenomination, accountGroupDescription);
-        GroupAccount devTeam2 = new GroupAccount("DevTeam", "Account for members of DevTeam");
+        GroupAccount devTeam = GroupAccount.createGroupAccount(accountGroupDenomination, accountGroupDescription);
+        GroupAccount devTeam2 = GroupAccount.createGroupAccount("DevTeam", "Account for members of DevTeam");
 
         // Assert
         //Verify if constructor works fine and if object is the same
@@ -43,8 +43,8 @@ class GroupAccountTest {
 
         // Act
         //create 2 objects groupAccount
-        GroupAccount devTeam = new GroupAccount(accountGroupDenomination, accountGroupDescription, devTeamGroup);
-        GroupAccount devTeam2 = new GroupAccount("DevTeam", "Account for members of DevTeam", devTeamGroup);
+        GroupAccount devTeam = GroupAccount.createGroupAccountWGroup(accountGroupDenomination, accountGroupDescription, devTeamGroup);
+        GroupAccount devTeam2 = GroupAccount.createGroupAccountWGroup("DevTeam", "Account for members of DevTeam", devTeamGroup);
 
         // Assert
         //Verify if constructor works fine and if object is the same
@@ -62,7 +62,7 @@ class GroupAccountTest {
 
         //Act
         //create object groupAccount
-        GroupAccount devTeam = new GroupAccount(accountGroupDenomination, accountGroupDescription);
+        GroupAccount devTeam = GroupAccount.createGroupAccount(accountGroupDenomination, accountGroupDescription);
 
         //Assert
         //Verify getter method
@@ -79,7 +79,7 @@ class GroupAccountTest {
 
         //Act
         //create object groupAccount
-        GroupAccount devTeam = new GroupAccount(accountGroupDenomination, accountGroupDescription);
+        GroupAccount devTeam = GroupAccount.createGroupAccount(accountGroupDenomination, accountGroupDescription);
 
         //Assert
         //Verify getter method
@@ -99,7 +99,7 @@ class GroupAccountTest {
 
         //Act
         //create object groupAccount
-        GroupAccount account = new GroupAccount(accountGroupDenomination, accountGroupDescription);
+        GroupAccount account = GroupAccount.createGroupAccount(accountGroupDenomination, accountGroupDescription);
 
         //change parameters for groupAccount using method set()
         account.setAccountGroupDenomination(accountGroupDenomination2);
@@ -123,7 +123,7 @@ class GroupAccountTest {
 
         //Act
         //create object groupAccount
-        GroupAccount account = new GroupAccount(accountGroupDenomination, accountGroupDescription);
+        GroupAccount account = GroupAccount.createGroupAccount(accountGroupDenomination, accountGroupDescription);
 
         //change parameters for groupAccount using method set()
         account.setAccountGroupDescription(accountGroupDescription2);
@@ -134,5 +134,37 @@ class GroupAccountTest {
         assertEquals(accountGroupDenomination2, "Developers Team");
     }
 
+    @Test
+    @DisplayName("Verify createGroupAccount of GroupAccount || Exception")
+    public void groupCreateGroupAccountException() {
+
+        //Arrange
+        String accountGroupDenomination = "DevTeam";
+        String accountGroupDescription = "Account for members of DevTeam";
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, () -> GroupAccount.createGroupAccount(null, accountGroupDescription));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Group not created. Denomination can't be Null");
+    }
+
+    @Test
+    @DisplayName("Verify createGroupAccountWGroup of GroupAccount || Exception")
+    public void groupCreateGroupAccountWGroupException() {
+
+        // Arrange
+        String accountGroupDescription = "Account for members of DevTeam";
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam";
+
+        Group devTeamGroup = Group.createGroupWithoutMembers(dateOfCreation, denomination);
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, () -> GroupAccount.createGroupAccountWGroup(null, accountGroupDescription, devTeamGroup));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Group not created. Denomination can't be Null");
+    }
 
 }

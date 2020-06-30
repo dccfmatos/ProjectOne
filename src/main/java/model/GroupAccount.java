@@ -8,15 +8,31 @@ public class GroupAccount {
     private String accountGroupDescription;
     private Group group;
 
-    public GroupAccount(String accountGroupDenomination, String accountGroupDescription) {
-        this.accountGroupDenomination = accountGroupDenomination;
-        this.accountGroupDescription = accountGroupDescription;
+    public static GroupAccount createGroupAccount(String accountGroupDenomination, String accountGroupDescription){
+        return new GroupAccount(accountGroupDenomination, accountGroupDescription);
     }
 
-    public GroupAccount(String accountGroupDenomination, String accountGroupDescription, Group group) {
-        this.accountGroupDenomination = accountGroupDenomination;
-        this.accountGroupDescription = accountGroupDescription;
-        this.group = group;
+    private GroupAccount(String accountGroupDenomination, String accountGroupDescription) {
+        if (accountGroupDenomination == null) {
+            throw new NullPointerException("Group not created. Denomination can't be Null");
+        } else {
+            this.accountGroupDenomination = accountGroupDenomination;
+            this.accountGroupDescription = accountGroupDescription;
+        }
+    }
+
+    public static GroupAccount createGroupAccountWGroup(String accountGroupDenomination, String accountGroupDescription, Group group){
+        return new GroupAccount(accountGroupDenomination, accountGroupDescription, group);
+    }
+
+    private GroupAccount(String accountGroupDenomination, String accountGroupDescription, Group group) {
+        if (accountGroupDenomination == null) {
+            throw new NullPointerException("Group not created. Denomination can't be Null");
+        } else {
+            this.accountGroupDenomination = accountGroupDenomination;
+            this.accountGroupDescription = accountGroupDescription;
+            this.group = group;
+        }
     }
 
     public String getAccountGroupDenomination() {
