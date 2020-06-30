@@ -17,8 +17,8 @@ class AccountRepositoryTest {
         int id = 1111;
             // Act
             //create 2 accountRepositories that can be compared
-        AccountRepository accountRep1 = new AccountRepository(account, id);
-        AccountRepository accountRep2 = new AccountRepository(account, 1111);
+        AccountRepository accountRep1 = AccountRepository.createAccountRepository(account, id);
+        AccountRepository accountRep2 = AccountRepository.createAccountRepository(account, 1111);
             // Assert
             //Verify if constructor works fine and if object is the same
         assertEquals(accountRep1, accountRep2);
@@ -34,7 +34,7 @@ class AccountRepositoryTest {
         int id = 1111;
             // Act
             //Create one accountRepository with the previously defined parameters
-        AccountRepository accountRep1 = new AccountRepository(account, id);
+        AccountRepository accountRep1 = AccountRepository.createAccountRepository(account, id);
             // Assert
             //verify getter method
         assertEquals(id, accountRep1.getId());
@@ -50,7 +50,7 @@ class AccountRepositoryTest {
         int id = 1111;
             // Act
             //Create one accountRepository with the previously defined parameters
-        AccountRepository accountRep1 = new AccountRepository(account, id);
+        AccountRepository accountRep1 = AccountRepository.createAccountRepository(account, id);
             // Assert
             //verify getter method
         assertEquals(account, accountRep1.getAccount());
@@ -69,7 +69,7 @@ class AccountRepositoryTest {
         int id2 = 2222;
 
             //Create one accountRepository with the previously defined parameters
-        AccountRepository accountRep = new AccountRepository(account1, id1);
+        AccountRepository accountRep = AccountRepository.createAccountRepository(account1, id1);
             //Change parameters of accountRep using setter method
         accountRep.setAccount(account2);
         accountRep.setId(id2);
@@ -91,7 +91,7 @@ class AccountRepositoryTest {
         int id2 = 2222;
 
             //Create one accountRepository with the previously defined parameters
-        AccountRepository accountRep = new AccountRepository(account1, id1);
+        AccountRepository accountRep = AccountRepository.createAccountRepository(account1, id1);
             //Change parameters of accountRep using setter method
         accountRep.setAccount(account2);
         accountRep.setId(id2);

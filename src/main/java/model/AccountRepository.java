@@ -8,7 +8,11 @@ public class AccountRepository {
     private Account account;
     private int id;
 
-    public AccountRepository(Account account, int id) {
+    public static AccountRepository createAccountRepository(Account account, int id){
+        return new AccountRepository(account, id);
+    }
+
+    private AccountRepository(Account account, int id) {
         this.account = account;
         this.id = id;
     }
