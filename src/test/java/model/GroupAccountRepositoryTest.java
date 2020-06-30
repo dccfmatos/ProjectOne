@@ -18,8 +18,8 @@ class GroupAccountRepositoryTest {
 
         // Act
         //create 2 objects groupAccountRepository
-        GroupAccountRepository groupAccountRepository = new GroupAccountRepository(groupAccount, 123);
-        GroupAccountRepository groupAccountRepository2 = new GroupAccountRepository(groupAccount, id);
+        GroupAccountRepository groupAccountRepository = GroupAccountRepository.createGroupAccountRepository(groupAccount, 123);
+        GroupAccountRepository groupAccountRepository2 = GroupAccountRepository.createGroupAccountRepository(groupAccount, id);
 
         // Assert
         //Verify if constructor works fine and if object is the same
@@ -36,7 +36,7 @@ class GroupAccountRepositoryTest {
 
         // Act
         //create object groupAccountRepository
-        GroupAccountRepository groupAccountRepository = new GroupAccountRepository(groupAccount, 123);
+        GroupAccountRepository groupAccountRepository = GroupAccountRepository.createGroupAccountRepository(groupAccount, 123);
 
         // Assert
         //Verify getter method
@@ -53,7 +53,7 @@ class GroupAccountRepositoryTest {
 
         // Act
         //create object groupAccountRepository
-        GroupAccountRepository groupAccountRepository = new GroupAccountRepository(groupAccount, id);
+        GroupAccountRepository groupAccountRepository = GroupAccountRepository.createGroupAccountRepository(groupAccount, id);
 
         // Assert
         //Verify getter method
@@ -74,7 +74,7 @@ class GroupAccountRepositoryTest {
 
         // Act
         //create object groupAccountRepository
-        GroupAccountRepository groupAccountRepository = new GroupAccountRepository(groupAccount, id);
+        GroupAccountRepository groupAccountRepository = GroupAccountRepository.createGroupAccountRepository(groupAccount, id);
 
         //change parameters for groupAccountRepository using method set()
         groupAccountRepository.setGroupAccount(groupAccount2);
@@ -99,7 +99,7 @@ class GroupAccountRepositoryTest {
 
         // Act
         //create object groupAccountRepository
-        GroupAccountRepository groupAccountRepository = new GroupAccountRepository(groupAccount, id);
+        GroupAccountRepository groupAccountRepository = GroupAccountRepository.createGroupAccountRepository(groupAccount, id);
 
         //change parameters for groupAccountRepository using method set()
         groupAccountRepository.setGroupAccount(groupAccount2);

@@ -7,7 +7,11 @@ public class GroupAccountRepository {
     private GroupAccount groupAccount;
     private int groupAccountId;
 
-    public GroupAccountRepository(GroupAccount groupAccount, int groupAccountId) {
+    public static GroupAccountRepository createGroupAccountRepository(GroupAccount groupAccount, int groupAccountId){
+        return new GroupAccountRepository(groupAccount, groupAccountId);
+    }
+
+    private GroupAccountRepository(GroupAccount groupAccount, int groupAccountId) {
         this.groupAccount = groupAccount;
         this.groupAccountId = groupAccountId;
     }
