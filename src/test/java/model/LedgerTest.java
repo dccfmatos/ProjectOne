@@ -17,7 +17,7 @@ class LedgerTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020, 02, 25);
@@ -50,7 +50,7 @@ class LedgerTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020, 02, 25);
@@ -79,7 +79,7 @@ class LedgerTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020, 02, 25);
@@ -114,7 +114,7 @@ class LedgerTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020, 02, 25);
@@ -149,7 +149,7 @@ class LedgerTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020, 02, 25);

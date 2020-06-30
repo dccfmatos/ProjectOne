@@ -16,7 +16,7 @@ class TransactionTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020,02,25);
@@ -36,7 +36,7 @@ class TransactionTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020,02,25);
@@ -61,7 +61,7 @@ class TransactionTest {
         // Arrange
         Account account = Account.createAccount("Description", "Denomination");
         String movType = "debit";
-        Category category = new Category("Pet Care");
+        Category category = Category.createCategory("Pet Care");
         double amount = 124.00;
         String description = "Dog bed";
         LocalDate date = LocalDate.of(2020,02,25);
@@ -72,7 +72,7 @@ class TransactionTest {
 
         Account account2 = Account.createAccount("new description", "Denomination");
         String movType2 = "credit";
-        Category category2 = new Category("Pet Care - for sleeping");
+        Category category2 = Category.createCategory("Pet Care - for sleeping");
         double amount2 = 124.78;
         String description2 = "Dog bed - for sleeping";
         LocalDate date2 = LocalDate.of(2020,03,25);

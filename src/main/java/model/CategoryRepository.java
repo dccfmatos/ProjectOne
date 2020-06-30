@@ -8,7 +8,11 @@ public class CategoryRepository {
 
     private ArrayList<Category> categoryRepository;
 
-    public CategoryRepository(ArrayList<Category> categoryRepository) {
+    public static CategoryRepository createCategoryRepository(ArrayList<Category> categoryRepository){
+        return new CategoryRepository(categoryRepository);
+    }
+
+    private CategoryRepository(ArrayList<Category> categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 

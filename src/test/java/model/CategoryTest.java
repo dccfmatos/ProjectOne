@@ -17,8 +17,8 @@ class CategoryTest {
 
         // Act
         //Create two categories that can be compared
-        Category categoryMontlhyBillsJan = new Category("Monthly Bills");
-        Category categoryMonthlyBillsFeb = new Category(categoryDescription);
+        Category categoryMontlhyBillsJan = Category.createCategory("Monthly Bills");
+        Category categoryMonthlyBillsFeb = Category.createCategory(categoryDescription);
 
         // Assert
         //Verify if constructor works fine and if object is the same
@@ -31,7 +31,7 @@ class CategoryTest {
 
         // Arrange
         //Create a category with some description and a String wth another
-        Category categoryMontlhyBills = new Category("Monthly Bills");
+        Category categoryMontlhyBills = Category.createCategory("Monthly Bills");
         String categoryDescription = "Weekly Bills";
 
         // Act
@@ -49,7 +49,7 @@ class CategoryTest {
 
         // Arrange
         //Create a category with some description and a String wth another
-        Category categoryMontlhyBills = new Category("Monthly Bills");
+        Category categoryMontlhyBills = Category.createCategory("Monthly Bills");
         String categoryDescription = "Weekly Bills";
 
         // Act
@@ -67,7 +67,7 @@ class CategoryTest {
 
         // Arrange
         //Create a category with some description and a String wth another
-        Category categoryMontlhyBills = new Category("Monthly Bills");
+        Category categoryMontlhyBills = Category.createCategory("Monthly Bills");
         String categoryDescription = "Weekly Bills";
 
         // Act
@@ -79,4 +79,15 @@ class CategoryTest {
         assertEquals(categoryMontlhyBills.getDescription(), categoryDescription);
     }
 
+    @Test
+    @DisplayName("Verify category createCategory | Exception")
+    public void categoryCreateCategoryException() {
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> Category.createCategory(null));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Category. Description can't be null.");
+
+    }
 }

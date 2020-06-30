@@ -6,7 +6,15 @@ public class Category {
 
     private String description;
 
-    public Category(String description) {
+    public static Category createCategory(String description) {
+        if (description == null) {
+            throw new IllegalArgumentException("Can't create Category. Description can't be null.");
+        } else {
+            return new Category(description);
+        }
+    }
+
+    private Category(String description) {
         this.description = description;
     }
 

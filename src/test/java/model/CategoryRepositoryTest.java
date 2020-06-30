@@ -18,8 +18,8 @@ class CategoryRepositoryTest {
         ArrayList list1 = new ArrayList();
         // Act
         //create 2 CategoryRepositories that can be compared
-        CategoryRepository categoryRepository1 = new CategoryRepository(list1);
-        CategoryRepository categoryRepository2 = new CategoryRepository(list1);
+        CategoryRepository categoryRepository1 = CategoryRepository.createCategoryRepository(list1);
+        CategoryRepository categoryRepository2 = CategoryRepository.createCategoryRepository(list1);
         // Assert
         //Verify if constructor works fine and if object is the same
         assertEquals(categoryRepository1, categoryRepository2);
@@ -34,8 +34,8 @@ class CategoryRepositoryTest {
         ArrayList list1 = new ArrayList();
         // Act
         //create 2 CategoryRepositories that can be compared
-        CategoryRepository categoryRepository1 = new CategoryRepository(list1);
-        CategoryRepository categoryRepository2 = new CategoryRepository(list1);
+        CategoryRepository categoryRepository1 = CategoryRepository.createCategoryRepository(list1);
+        CategoryRepository categoryRepository2 = CategoryRepository.createCategoryRepository(list1);
         // Assert
         //verify getter method
         assertEquals(categoryRepository1.getCategoryRepository(), categoryRepository2.getCategoryRepository());
@@ -57,7 +57,7 @@ class CategoryRepositoryTest {
         // Act
         //create a CategoryRepository amd the arraylist expected so that ca be
         //compared in Assert
-        CategoryRepository categoryRepository1 = new CategoryRepository(list1);
+        CategoryRepository categoryRepository1 = CategoryRepository.createCategoryRepository(list1);
         ArrayList expected = new ArrayList(categoryRepository1.getCategoryRepository());
         // Assert
         //verify getter method
@@ -79,7 +79,7 @@ class CategoryRepositoryTest {
 
         // Act
         //create a CategoryRepository and change the list using method set()
-        CategoryRepository categoryRepository1 = new CategoryRepository(list2);
+        CategoryRepository categoryRepository1 = CategoryRepository.createCategoryRepository(list2);
         categoryRepository1.setCategoryRepository(list1);
 
         // Assert
@@ -94,14 +94,14 @@ class CategoryRepositoryTest {
 
         // Arrange
         //Create 2 categories to be added to categoryRepository
-        Category categoryMontlhyBills = new Category("Monthly Bills");
-        Category categoryWeeklyBills = new Category("Weekly Bills");
+        Category categoryMontlhyBills = Category.createCategory("Monthly Bills");
+        Category categoryWeeklyBills = Category.createCategory("Weekly Bills");
 
         ArrayList list1 = new ArrayList();
         ArrayList list2 = new ArrayList();
 
         // Act
-        CategoryRepository categoryRepository1 = new CategoryRepository(list1);
+        CategoryRepository categoryRepository1 = CategoryRepository.createCategoryRepository(list1);
 
         //add the categories created before, using the method addCategoryToCategoryRepository()
         categoryRepository1.addCategoryToCategoryRepository(categoryMontlhyBills);
