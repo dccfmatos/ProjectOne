@@ -126,10 +126,13 @@ public class Person {
         this.siblings = siblings;
     }
 
-    public void addSiblings(Person person) {
+    public ArrayList<Person> addSiblings(Person person) {
         if (this != person && !siblings.contains(person)) {
             siblings.add(person);
+        } else{
+            throw new IllegalArgumentException("Person is already defined as Sibling.");
         }
+        return siblings;
     }
 
     public boolean checkIfSiblings(Person person) {

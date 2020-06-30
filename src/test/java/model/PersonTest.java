@@ -947,6 +947,66 @@ class PersonTest {
     }
 
     @Test
+    @DisplayName("Verify addSiblings of Person | Exception")
+    public void personAddSiblingsException() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
+
+        ArrayList<Person> siblings = new ArrayList();
+
+        //create parameters for mother
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherAddress = "7th Street";
+        String motherBirthplace = "Place were Susan was born";
+
+        //create Person mother
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //create parameters for girlSibling
+        String girlSiblingName = "Lucy";
+        LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+
+        //create Person girSibling
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+
+        //create parameters for boySibling
+        String boySiblingName = "Bob";
+        LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
+
+        //create Person boySibling
+        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+
+        siblings.add(girlSibling);
+        siblings.add(boySibling);
+
+        //Act
+        //Create persons
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> maria.addSiblings(boySibling));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Person is already defined as Sibling.");
+    }
+
+
+    @Test
     @DisplayName("Verify checkIfSiblings of Person || true")
     public void checkIfSiblingsTrue() {
 
