@@ -35,7 +35,7 @@ class GroupRepositoryTest {
 
         //Act
         //create groupRepository with the given list
-        GroupRepository companyGroupRepository = new GroupRepository(company);
+        GroupRepository companyGroupRepository = GroupRepository.createGroupRepository(company);
 
         //create arrayList of groups
         ArrayList<Group> anotherCompany = new ArrayList<>();
@@ -44,7 +44,7 @@ class GroupRepositoryTest {
         anotherCompany.add(devTeam);
 
         //create groupRepository2 with the given list2
-        GroupRepository anotherCompanyGroupRep = new GroupRepository(anotherCompany);
+        GroupRepository anotherCompanyGroupRep = GroupRepository.createGroupRepository(anotherCompany);
 
 
         //Assert
@@ -70,7 +70,7 @@ class GroupRepositoryTest {
         ArrayList<Group> company = new ArrayList<>();
 
         //create groupRepository with the given list
-        GroupRepository companyGroupRepository = new GroupRepository(company);
+        GroupRepository companyGroupRepository = GroupRepository.createGroupRepository(company);
 
         //Act
         //verify addGroupToList()
@@ -105,7 +105,7 @@ class GroupRepositoryTest {
         ArrayList<Group> company = new ArrayList<>();
 
         //create groupRepository with the given list
-        GroupRepository companyGroupRepository = new GroupRepository(company);
+        GroupRepository companyGroupRepository = GroupRepository.createGroupRepository(company);
 
         companyGroupRepository.addGroupToGroupRepository(devTeam);
         companyGroupRepository.addGroupToGroupRepository(consultTeam);
@@ -140,7 +140,7 @@ class GroupRepositoryTest {
 
         //define groupRepository
         ArrayList<Group> company = new ArrayList<>();
-        GroupRepository companyGroupRepository = new GroupRepository(company);
+        GroupRepository companyGroupRepository = GroupRepository.createGroupRepository(company);
 
         //Add groups to lists
         companyGroupRepository.addGroupToGroupRepository(devTeam);
@@ -150,7 +150,7 @@ class GroupRepositoryTest {
 
         //Act
         ArrayList<Group> anotherCompany = new ArrayList<>();
-        GroupRepository anotherCompanyGroupRep = new GroupRepository(company);
+        GroupRepository anotherCompanyGroupRep = GroupRepository.createGroupRepository(company);
         anotherCompanyGroupRep.setGroupRepository(anotherCompany);
 
         anotherCompanyGroupRep.addGroupToGroupRepository(devTeam);

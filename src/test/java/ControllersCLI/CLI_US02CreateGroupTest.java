@@ -23,7 +23,7 @@ class CLI_US02CreateGroupTest {
 
         //Act
         ArrayList<Group> company = new ArrayList<>();
-        GroupRepository groupRepository = new GroupRepository(company);
+        GroupRepository groupRepository = GroupRepository.createGroupRepository(company);
 
         CLI_US02CreateGroup createGroupController = new CLI_US02CreateGroup();
 

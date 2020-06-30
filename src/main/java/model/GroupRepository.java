@@ -7,7 +7,11 @@ public class GroupRepository {
 
     private ArrayList<Group> groupRepository;
 
-    public GroupRepository(ArrayList<Group> groupRepository) {
+    public static GroupRepository createGroupRepository (ArrayList<Group> groupRepository){
+        return new GroupRepository(groupRepository);
+    }
+
+    private GroupRepository(ArrayList<Group> groupRepository) {
         this.groupRepository = groupRepository;
     }
 
