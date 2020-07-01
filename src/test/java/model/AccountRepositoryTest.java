@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AccountRepositoryTest {
 
     @Test
-    @DisplayName("Verify AccountRepository constructor && equals")
+    @DisplayName("Verify AccountRepository constructor || Equals")
     public void accountRepConstructorEquals() {
 
             // Arrange
@@ -25,7 +25,7 @@ class AccountRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify getId() of AccountRepository")
+    @DisplayName("Verify getId() of AccountRepository || Equals")
     public void accountRepGetId() {
 
             // Arrange
@@ -41,7 +41,7 @@ class AccountRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify getAccount() of AccountRepository")
+    @DisplayName("Verify getAccount() of AccountRepository || Equals")
     public void accountRepGetAccount() {
 
             // Arrange
@@ -57,7 +57,7 @@ class AccountRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify setAccount() of AccountRepository")
+    @DisplayName("Verify setAccount() of AccountRepository || Equals")
     public void accountRepSetAccount() {
 
             // Arrange
@@ -78,8 +78,9 @@ class AccountRepositoryTest {
             //Verify if account of accountRep changed after setAccount()
         assertEquals(account2, accountRep.getAccount());
     }
+
     @Test
-    @DisplayName("Verify setId() of AccountRepository")
+    @DisplayName("Verify setId() of AccountRepository || Equals")
     public void accountRepSetId() {
 
             // Arrange

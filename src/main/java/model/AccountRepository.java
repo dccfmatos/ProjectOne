@@ -8,6 +8,7 @@ public class AccountRepository {
     private Account account;
     private int id;
 
+    //Constructors
     public static AccountRepository createAccountRepository(Account account, int id){
         return new AccountRepository(account, id);
     }
@@ -17,22 +18,25 @@ public class AccountRepository {
         this.id = id;
     }
 
+    //Gets
     public Account getAccount() {
         return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
     }
 
     public int getId() {
         return id;
     }
 
+    //Sets
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
 
+    //Override
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
