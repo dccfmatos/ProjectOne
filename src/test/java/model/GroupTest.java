@@ -773,7 +773,7 @@ class GroupTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -782,10 +782,10 @@ class GroupTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblingsMaria);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblingsMaria, null);
 
 
         //Act
@@ -822,10 +822,10 @@ class GroupTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblingsMaria);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblingsMaria, null);
 
 
         //Act
@@ -861,10 +861,10 @@ class GroupTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, null, father, siblingsMaria);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, null, father, siblingsMaria, null);
 
 
         //Act
@@ -907,7 +907,7 @@ class GroupTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -916,12 +916,12 @@ class GroupTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //Create person Maria
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblingsMaria);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblingsMaria, null);
         //create Person Sibling
-        Person sibling = Person.createPersonWSiblings(nameS, addressS, birthdateS, birthplaceS, null, null, siblingsSibling);
+        Person sibling = Person.createPersonWSiblings(nameS, addressS, birthdateS, birthplaceS, null, null, siblingsSibling, null);
 
         siblingsMaria.add(sibling);
         siblingsSibling.add(maria);

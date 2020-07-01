@@ -50,11 +50,11 @@ public class Person {
         }
     }
 
-    public static Person createPersonWSiblings(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
-        return new Person(name, address, birthdate, birthplace, motherP, fatherP, siblings);
+    public static Person createPersonWSiblings(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings, String socialNumber) {
+        return new Person(name, address, birthdate, birthplace, motherP, fatherP, siblings, socialNumber);
     }
 
-    private Person(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
+    private Person(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings, String socialNumber) {
         this.name = name;
         this.address = address;
         this.birthdate = birthdate;
@@ -62,6 +62,7 @@ public class Person {
         this.motherP = motherP;
         this.fatherP = fatherP;
         this.siblings = siblings;
+        this.socialNumber = socialNumber;
     }
 
     //Methods

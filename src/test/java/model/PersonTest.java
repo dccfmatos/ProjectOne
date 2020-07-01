@@ -82,7 +82,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -91,7 +91,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -113,8 +113,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
-        Person diana = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
+        Person diana = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
         //Assert
         //Verify if constructor works fine and if object is the same
@@ -210,7 +210,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -219,7 +219,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -241,10 +241,10 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person motherExpected = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person motherExpected = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
 
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
 
@@ -273,7 +273,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -282,7 +282,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -304,9 +304,9 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person fatherExpected = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person fatherExpected = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
         //Assert
@@ -334,7 +334,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -343,7 +343,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -365,7 +365,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
         //Assert
@@ -393,7 +393,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -402,7 +402,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -424,7 +424,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
         //Assert
@@ -525,7 +525,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -534,7 +534,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -556,10 +556,10 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person motherExpected = Person.createPersonWSiblings("newMother", motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person motherExpected = Person.createPersonWSiblings("newMother", motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
 
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
         maria.setMotherP(motherExpected);
 
@@ -589,7 +589,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -598,7 +598,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -620,9 +620,9 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person fatherExpected = Person.createPersonWSiblings("newFather", fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person fatherExpected = Person.createPersonWSiblings("newFather", fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
         maria.setFatherP(fatherExpected);
 
@@ -652,7 +652,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -661,7 +661,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -683,7 +683,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
         String expectedBirthplace = "Place were Susan was born";
         maria.setBirthplace(expectedBirthplace);
 
@@ -713,7 +713,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -722,7 +722,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -744,7 +744,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
         ArrayList<Person> expectedSiblings = new ArrayList();
 
@@ -776,7 +776,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -785,7 +785,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -807,7 +807,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
         //Assert
@@ -835,7 +835,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -844,7 +844,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -866,7 +866,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
         String expectedAddress = "8th Street";
         maria.setAddress(expectedAddress);
@@ -897,7 +897,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -906,7 +906,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -928,7 +928,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
         Person newSibling = Person.createPerson("test", LocalDate.of(1995, 8, 7));
         maria.addSiblings(newSibling);
@@ -963,7 +963,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -972,7 +972,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -993,7 +993,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
         //Act
         Throwable thrown = assertThrows(RuntimeException.class, () -> maria.addSiblings(boySibling));
@@ -1023,7 +1023,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1032,7 +1032,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -1054,7 +1054,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
 
@@ -1083,7 +1083,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1092,7 +1092,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -1114,7 +1114,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
 
@@ -1143,7 +1143,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1152,7 +1152,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -1174,8 +1174,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
-        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
+        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblings, null);
 
 
         //Assert
@@ -1203,7 +1203,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1212,7 +1212,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -1234,8 +1234,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
-        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
+        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, null, siblings, null);
 
 
         //Assert
@@ -1263,7 +1263,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1272,7 +1272,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -1294,8 +1294,8 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
-        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, null, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
+        Person anotherPerson = Person.createPersonWSiblings(name, address, birthdate, birthplace, null, father, siblings, null);
 
 
         //Assert
@@ -1323,7 +1323,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1332,7 +1332,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
@@ -1354,7 +1354,7 @@ class PersonTest {
 
         //Act
         //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings);
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
 
         //Assert
@@ -1379,7 +1379,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1388,7 +1388,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //Act
         Throwable thrown = assertThrows(RuntimeException.class, () -> Person.createPersonWMotherAndFather(name, birthdate, mother, father, null));
@@ -1413,7 +1413,7 @@ class PersonTest {
         String motherBirthplace = "Place were Susan was born";
 
         //create Person mother
-        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null);
+        Person mother = Person.createPersonWSiblings(motherName, motherAddress, motherBirthdate, motherBirthplace, null, null, null, null);
 
         //create parameters for father
         String fatherName = "Tomas";
@@ -1422,7 +1422,7 @@ class PersonTest {
         String fatherBirthplace = "Place were Tomas was born";
 
         //create Person father
-        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null, null);
 
         //Act
         Throwable thrown = assertThrows(RuntimeException.class, () -> Person.createPersonWMotherAndFather(null, birthdate, mother, father, "123456"));

@@ -233,7 +233,6 @@ class PersonRepositoryTest {
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
         String mariaSocialNumber = "123456";
 
-
         String motherName = "Susan";
         LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
 
@@ -266,10 +265,10 @@ class PersonRepositoryTest {
         PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
         Person expected = maria;
-
+        Person marias = personRepository.checkIfPersonExistsInRepository("123456");
         //Assert
         //Verify getter method
-        assertEquals(expected, personRepository.checkIfPersonExistsInRepository(123456));
+        assertEquals(expected,marias);
     }
 
     @Test
@@ -318,7 +317,7 @@ class PersonRepositoryTest {
 
         //Assert
         //Verify getter method
-        assertEquals(null, personRepository.checkIfPersonExistsInRepository(123456));
+        assertEquals(null, personRepository.checkIfPersonExistsInRepository("123456"));
     }
 
     @Test

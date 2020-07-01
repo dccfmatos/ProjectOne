@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class CLI_US01CheckIfSiblings {
 
-    public boolean controllersCLI_US01CheckIfSiblings (int personSocialNumber, int personToAnalyzeSocialNumber, PersonRepository personRepository) {
+    public boolean controllersCLI_US01CheckIfSiblings (String personSocialNumber, String personToAnalyzeSocialNumber, PersonRepository personRepository) {
 
         Person person = personRepository.checkIfPersonExistsInRepository(personSocialNumber);
         Person personToAnalyze = personRepository.checkIfPersonExistsInRepository(personToAnalyzeSocialNumber);

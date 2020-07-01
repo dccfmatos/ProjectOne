@@ -31,16 +31,12 @@ public class PersonRepository {
         }
     }
 
-    public Person checkIfPersonExistsInRepository(int socialNumber){
-        boolean exists = true;
-
-        for (Person person: personRepository
-            ) {
-            int i=Integer.parseInt(person.getSocialNumber());
-            if (i == socialNumber) {
+    public Person checkIfPersonExistsInRepository(String socialNumber) {
+        for (Person person : personRepository) {
+            String a = person.getSocialNumber();
+            if (person.getSocialNumber().equals(socialNumber)) {
                 return person;
             }
-            exists = false;
         }
         return null;
     }
