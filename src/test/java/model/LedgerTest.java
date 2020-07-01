@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LedgerTest {
 
     @Test
-    @DisplayName("Verify Ledger constructor && equals")
+    @DisplayName("Verify Ledger constructor || Equals")
     public void ledgerConstructorEquals() {
 
         // Arrange
@@ -44,7 +44,7 @@ class LedgerTest {
     }
 
     @Test
-    @DisplayName("Verify getRecords && equals")
+    @DisplayName("Verify getRecords || Equals")
     public void ledgerGetRecordsEquals() {
 
         // Arrange
@@ -73,7 +73,7 @@ class LedgerTest {
     }
 
     @Test
-    @DisplayName("Verify setRecords && equals")
+    @DisplayName("Verify setRecords || Equals")
     public void ledgerSetRecordsEquals() {
 
         // Arrange
@@ -108,7 +108,7 @@ class LedgerTest {
     }
 
     @Test
-    @DisplayName("Verify addTransaction && equals")
+    @DisplayName("Verify addTransaction || Equals")
     public void ledgerAddTransactionEquals() {
 
         // Arrange
@@ -140,9 +140,8 @@ class LedgerTest {
         assertEquals(records2, ledger.getRecords());
     }
 
-
     @Test
-    @DisplayName("Verify createTransaction constructor && equals")
+    @DisplayName("Verify createTransaction constructor || Equals")
     public void ledgerCreateTransactionEquals() {
 
 
