@@ -15,45 +15,39 @@ public class Person {
     private ArrayList<Person> siblings = new ArrayList<Person>();
     private String socialNumber;
 
-    public String getAddress() {
-        return this.address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
+    //Constructors
     public static Person createPerson(String name, LocalDate birthdate) {
+            return new Person(name, birthdate);
+        }
+
+
+    private Person(String name, LocalDate birthdate) {
         if (name == null) {
             throw new IllegalArgumentException("Can't create Person. Invalid name.");
         } else {
-            return new Person(name, birthdate);
+            this.name = name;
+            this.birthdate = birthdate;
         }
     }
 
-    private Person(String name, LocalDate birthdate) {
-        this.name = name;
-        this.birthdate = birthdate;
+    public static Person createPersonWMotherAndFather(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber){
+        return new Person(name, birthdate, motherP, fatherP, socialNumber);
     }
 
-    public static Person createPersonWMotherAndFather(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber){
+    private Person(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber) {
         if (name == null) {
             throw new NullPointerException("Can't create Person. Invalid name.");
         } else {
             if (socialNumber == null) {
                 throw new NullPointerException("Can't create Person. Invalid SocialNumber.");
             } else {
-                return new Person(name, birthdate, motherP, fatherP, socialNumber);
+                this.name = name;
+                this.birthdate = birthdate;
+                this.motherP = motherP;
+                this.fatherP = fatherP;
+                this.socialNumber = socialNumber;
             }
         }
-    }
-
-    private Person(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber) {
-        this.name = name;
-        this.birthdate = birthdate;
-        this.motherP = motherP;
-        this.fatherP = fatherP;
-        this.socialNumber = socialNumber;
     }
 
     public static Person createPersonWSiblings(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings){
@@ -68,6 +62,31 @@ public class Person {
         this.motherP = motherP;
         this.fatherP = fatherP;
         this.siblings = siblings;
+    }
+
+    //Methods
+    public boolean checkIfSiblings(Person person) {
+        if (this.getSiblings().contains(person)) {
+            return true;
+        } else return false;
+    }
+
+    public boolean checkMother(Person person) {
+        if (this.motherP.equals(person.motherP)) {
+            return true;
+        } else return false;
+    }
+
+    public boolean checkFather(Person person) {
+        if (this.fatherP.equals(person.fatherP)) {
+            return true;
+        } else return false;
+    }
+
+
+    //Gets
+    public String getAddress() {
+        return this.address;
     }
 
     public String getName() {
@@ -86,8 +105,22 @@ public class Person {
         return this.socialNumber;
     }
 
+    public String getBirthplace() {
+        return this.birthplace;
+    }
+
+    public ArrayList<Person> getSiblings() {
+        return siblings;
+    }
+
+
+    //Sets
     public void setSocialNumber(String socialNumber) {
         this.socialNumber = socialNumber;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public void setFatherP(Person fatherP) {
@@ -110,16 +143,8 @@ public class Person {
         this.birthdate = birthdate;
     }
 
-    public String getBirthplace() {
-        return this.birthplace;
-    }
-
     public void setBirthplace(String birthplace) {
         this.birthplace = birthplace;
-    }
-
-    public ArrayList<Person> getSiblings() {
-        return siblings;
     }
 
     public void setSiblings(ArrayList<Person> siblings) {
@@ -135,24 +160,8 @@ public class Person {
         return siblings;
     }
 
-    public boolean checkIfSiblings(Person person) {
-        if (this.getSiblings().contains(person)) {
-            return true;
-        } else return false;
-    }
 
-    public boolean checkMother(Person person) {
-        if (this.motherP.equals(person.motherP)) {
-            return true;
-        } else return false;
-    }
-
-    public boolean checkFather(Person person) {
-        if (this.fatherP.equals(person.fatherP)) {
-            return true;
-        } else return false;
-    }
-
+    //Override
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

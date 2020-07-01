@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonTest {
 
     @Test
-    @DisplayName("(1) Verify person constructor && equals")
-    public void personConstructorEquals1() {
+    @DisplayName("(1) Verify createPerson || Equals")
+    public void personCreatePersonEquals() {
 
         //Arrange
         //create parameters for person
@@ -30,8 +30,8 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("(2) Verify person constructor && equals")
-    public void personConstructorEquals2() {
+    @DisplayName("(2) Verify createPersonWMotherAndFather || Equals")
+    public void personCreatePersonWMotherAndFatherEquals() {
 
         //Arrange
         //create parameters for person
@@ -62,9 +62,8 @@ class PersonTest {
         assertEquals(maria, diana);
     }
 
-
     @Test
-    @DisplayName("(3) Verify person constructor && equals")
+    @DisplayName("(3) Verify person constructor || Equals")
     public void personConstructorEquals3() {
 
         //Arrange
@@ -123,9 +122,8 @@ class PersonTest {
 
     }
 
-
     @Test
-    @DisplayName("Verify getsocialNumber of Person")
+    @DisplayName("Verify getsocialNumber of Person || Equals")
     public void personGetSocialNumber() {
 
         //Arrange
@@ -157,7 +155,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify getName of Person")
+    @DisplayName("Verify getName of Person || Equals")
     public void personGetNameEquals() {
 
         //Arrange
@@ -175,7 +173,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify getBirthdate of Person")
+    @DisplayName("Verify getBirthdate of Person || Equals")
     public void personGetBirthdateEquals() {
 
         //Arrange
@@ -192,9 +190,8 @@ class PersonTest {
         assertEquals(birthdate, maria.getBirthdate());
     }
 
-
     @Test
-    @DisplayName("Verify getMother of Person")
+    @DisplayName("Verify getMother of Person || Equals")
     public void personGetMotherEquals() {
 
         //Arrange
@@ -257,7 +254,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify getFather of Person")
+    @DisplayName("Verify getFather of Person || Equals")
     public void personGetFatherEquals() {
 
         //Arrange
@@ -318,7 +315,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify getBirthplace of Person")
+    @DisplayName("Verify getBirthplace of Person || Equals")
     public void personGetBirthplaceEquals() {
 
         //Arrange
@@ -377,7 +374,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify getSiblings of Person")
+    @DisplayName("Verify getSiblings of Person || Equals")
     public void personGetSiblingsEquals() {
 
         //Arrange
@@ -437,7 +434,7 @@ class PersonTest {
 
 
     @Test
-    @DisplayName("Verify setsocialNumber of Person")
+    @DisplayName("Verify setSocialNumber of Person || Equals")
     public void personSetSocialNumber() {
 
         //Arrange
@@ -470,7 +467,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify setName of Person")
+    @DisplayName("Verify setName of Person || Equals")
     public void personSetNameEquals() {
 
         //Arrange
@@ -489,7 +486,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify setBirthdate of Person")
+    @DisplayName("Verify setBirthdate of Person || Equals")
     public void personSetBirthdateEquals() {
 
         //Arrange
@@ -510,7 +507,7 @@ class PersonTest {
 
 
     @Test
-    @DisplayName("Verify setMother of Person")
+    @DisplayName("Verify setMother of Person || Equals")
     public void personSetMotherEquals() {
 
         //Arrange
@@ -573,7 +570,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify setFather of Person")
+    @DisplayName("Verify setFather of Person || Equals")
     public void personSetFatherEquals() {
 
         //Arrange
@@ -636,7 +633,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify setBirthplace of Person")
+    @DisplayName("Verify setBirthplace of Person || Equals")
     public void personSetBirthplaceEquals() {
 
         //Arrange
@@ -697,7 +694,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify setSiblings of Person")
+    @DisplayName("Verify setSiblings of Person || Equals")
     public void personSetSiblingsEquals() {
 
         //Arrange
@@ -760,7 +757,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify getAddress of Person")
+    @DisplayName("Verify getAddress of Person || Equals")
     public void personGetAddressEquals() {
 
         //Arrange
@@ -819,7 +816,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify setAddress of Person")
+    @DisplayName("Verify setAddress of Person || Equals")
     public void personSetAddressEquals() {
 
         //Arrange
@@ -881,7 +878,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify addSiblings of Person")
+    @DisplayName("Verify addSiblings of Person || Equals")
     public void personAddSiblingsEquals() {
 
         //Arrange
@@ -947,7 +944,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify addSiblings of Person | Exception")
+    @DisplayName("Verify addSiblings of Person || Exception")
     public void personAddSiblingsException() {
 
         //Arrange
@@ -1007,7 +1004,7 @@ class PersonTest {
 
 
     @Test
-    @DisplayName("Verify checkIfSiblings of Person || true")
+    @DisplayName("Verify checkIfSiblings of Person || True")
     public void checkIfSiblingsTrue() {
 
         //Arrange
@@ -1067,7 +1064,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify checkIfSiblings of Person || false")
+    @DisplayName("Verify checkIfSiblings of Person || False")
     public void checkIfSiblingsFalse() {
 
         //Arrange
@@ -1127,7 +1124,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify checkMother of Person || true")
+    @DisplayName("Verify checkMother of Person || True")
     public void checkMotherTrue() {
 
         //Arrange
@@ -1247,7 +1244,7 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("Verify checkFather of Person || true")
+    @DisplayName("Verify checkFather of Person || True")
     public void checkFatherTrue() {
 
         //Arrange
@@ -1427,7 +1424,6 @@ class PersonTest {
         //create Person father
         Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
-
         //Act
         Throwable thrown = assertThrows(RuntimeException.class, () -> Person.createPersonWMotherAndFather(null, birthdate, mother, father, "123456"));
 
@@ -1435,4 +1431,20 @@ class PersonTest {
         assertEquals(thrown.getMessage(), "Can't create Person. Invalid name.");
     }
 
+    @Test
+    @DisplayName("Verify createPerson || Exception")
+    public void personCreatePersonException() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, ()
+                -> Person.createPerson(null, birthdate));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Person. Invalid name.");
+    }
 }
