@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonRepositoryTest {
 
     @Test
-    @DisplayName("Verify PersonRepository constructor && equals")
+    @DisplayName("Verify PersonRepository constructor || Equals")
     public void personRepositoryConstructorEquals() {
 
         //Arrange
@@ -33,7 +33,7 @@ class PersonRepositoryTest {
 
         //Act
         //create personRepository with the given list
-        PersonRepository personRepository = new PersonRepository(personsList1);
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
         //create arrayList of persons
         ArrayList<Person> personsList2 = new ArrayList<>();
@@ -42,7 +42,7 @@ class PersonRepositoryTest {
         personsList2.add(maria);
 
         //create personRepository2 with the given personsList2
-        PersonRepository anotherPersonRepository = new PersonRepository(personsList2);
+        PersonRepository anotherPersonRepository = PersonRepository.createPersonRepository(personsList2);
 
 
         //Assert
@@ -50,9 +50,8 @@ class PersonRepositoryTest {
         assertEquals(personRepository, anotherPersonRepository);
     }
 
-
     @Test
-    @DisplayName("Verify getPersonRepository() && addPersonToPersonRepository() of personRepository")
+    @DisplayName("Verify getPersonRepository() && addPersonToPersonRepository() of personRepository || Equals")
     void personRepGetPersonRepAddPerson() {
 
         //Arrange
@@ -71,7 +70,7 @@ class PersonRepositoryTest {
 
         //Act
         //create personRepository with the given list
-        PersonRepository personRepository = new PersonRepository(personsList1);
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
         //Verify addPersonToPersonRepository
         personRepository.addPersonToPersonRepository(maria);
@@ -83,8 +82,63 @@ class PersonRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify getPersonRepository() && removePersonFromPersonRepository() of personRepository")
-    void personRepGetPersonRepRemovePerson() {
+    @DisplayName("Verify addPersonToPersonRepository() of personRepository || Null")
+    void personRepGetPersonRepAddPersonNull() {
+
+        //Arrange
+        //Create parameters for personRepository
+
+        //create parameters for object Person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+
+        //create object Person
+        Person maria = Person.createPerson(name, birthdate);
+
+        //create arrayList of persons
+        ArrayList<Person> personsList1 = new ArrayList<>();
+
+
+        //Act
+        //create personRepository with the given list
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
+
+        Throwable thrown = assertThrows(RuntimeException.class, () -> personRepository.addPersonToPersonRepository(null));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Person can't be null");
+    }
+
+    @Test
+    @DisplayName("Verify addPersonToPersonRepository() of personRepository || Already Exists")
+    void personRepGetPersonRepAddPersonAExists() {
+
+        //Arrange
+        //Create parameters for personRepository
+
+        //create parameters for object Person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+
+        //create object Person
+        Person maria = Person.createPerson(name, birthdate);
+
+        //create arrayList of persons
+        ArrayList<Person> personsList1 = new ArrayList<>();
+        personsList1.add(maria);
+        //Act
+        //create personRepository with the given list
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
+
+        Throwable thrown = assertThrows(RuntimeException.class, () -> personRepository.addPersonToPersonRepository(maria));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Person already exists in PersonRepository");
+    }
+
+    @Test
+    @DisplayName("Verify getPersonRepository() && removePersonFromPersonRepository() of personRepository || Equals")
+    void personRepGetPersonRepAndRemovePerson() {
 
         //Arrange
         //Create parameters for personRepository
@@ -112,7 +166,7 @@ class PersonRepositoryTest {
 
         //Act
         //create personRepository with the given list
-        PersonRepository personRepository = new PersonRepository(personsList1);
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
         //Verify removePersonFromPersonRepository
         personRepository.removePersonFromPersonRepository(oreo);
@@ -127,7 +181,7 @@ class PersonRepositoryTest {
 
 
     @Test
-    @DisplayName("Verify setter() && removePersonFromPersonRepository of personRepository")
+    @DisplayName("Verify setter() && removePersonFromPersonRepository of personRepository || Equals")
     void personRepSetRemovePerson() {
 
         //Arrange
@@ -156,7 +210,7 @@ class PersonRepositoryTest {
 
         //Act
         //create personRepository with the given list
-        PersonRepository personRepository = new PersonRepository(personsList1);
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
         ArrayList<Person> expected = new ArrayList<>();
         expected.add(maria);
@@ -170,7 +224,7 @@ class PersonRepositoryTest {
 
     @Test
     @DisplayName("Verify checkIfPersonExistsInRepository(True) of personRepository")
-    void personRepCheckIfPersonExistsInRepositoryTrue() {
+    void personRepCheckIfPersonExistsTrue() {
 
         //Arrange
         //Create parameters for personRepository
@@ -210,7 +264,7 @@ class PersonRepositoryTest {
 
         //Act
         //create personRepository with the given list
-        PersonRepository personRepository = new PersonRepository(personsList1);
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
         Person expected = maria;
 
@@ -220,8 +274,8 @@ class PersonRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify checkIfPersonExistsInRepository(False) of personRepository")
-    void personRepCheckIfPersonExistsInRepositoryFalse() {
+    @DisplayName("Verify checkIfPersonExistsInRepository(False) of personRepository || False")
+    void personRepCheckIfPersonExistsFalse() {
 
         //Arrange
         //Create parameters for personRepository
@@ -260,7 +314,7 @@ class PersonRepositoryTest {
 
         //Act
         //create personRepository with the given list
-        PersonRepository personRepository = new PersonRepository(personsList1);
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
 
         //Assert
@@ -268,10 +322,9 @@ class PersonRepositoryTest {
         assertEquals(null, personRepository.checkIfPersonExistsInRepository(123456));
     }
 
-
     @Test
-    @DisplayName("Verify removePersonFromPersonRepository of personRepository")
-    void personRepRemovePersonFromPersonRepository() {
+    @DisplayName("Verify removePersonFromPersonRepository of personRepository || Person does not belong")
+    void personRepRemovePersonDontBelong() {
 
         //Arrange
         //Create parameters for personRepository
@@ -307,14 +360,59 @@ class PersonRepositoryTest {
 
         personsList1.add(oreo);
 
-        PersonRepository personRepository = new PersonRepository(personsList1);
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
 
         //Act
         Throwable thrown = assertThrows(RuntimeException.class, () -> personRepository.removePersonFromPersonRepository(maria));
 
         //Assert
-        assertEquals(thrown.getMessage(), "-------------------------------" +
-                "Can't remove. Person does not belong." +
-                "-------------------------------");
+        assertEquals(thrown.getMessage(), "Can't remove. Person does not belong.");
+    }
+
+    @Test
+    @DisplayName("Verify removePersonFromPersonRepository of personRepository || Null")
+    void personRepRemovePersonNull() {
+
+        //Arrange
+        //Create parameters for personRepository
+
+        //create parameters for object Person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
+
+
+        String motherName = "Susan";
+        LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+
+        Person mother = Person.createPerson(motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherName, fatherBirthdate);
+
+        //create object Person
+        Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
+
+        //create parameters for object Person
+        String name2 = "Oreo";
+        LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
+        String oreoSocialNumber = "789456";
+
+        //create another object Person
+        Person oreo = Person.createPersonWMotherAndFather(name2, birthdate2, mother, father, oreoSocialNumber);
+
+        //create arrayList of persons
+        ArrayList<Person> personsList1 = new ArrayList<>();
+
+        personsList1.add(oreo);
+
+        PersonRepository personRepository = PersonRepository.createPersonRepository(personsList1);
+
+        //Act
+        Throwable thrown = assertThrows(RuntimeException.class, () -> personRepository.removePersonFromPersonRepository(null));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Person can't be null");
     }
 }
