@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AccountTest {
 
     @Test
-    @DisplayName("Verify Account constructor && equals")
+    @DisplayName("Verify Account constructor || Equals")
     public void accountConstructorEquals() {
 
             // Arrange
@@ -25,37 +25,55 @@ class AccountTest {
     }
 
     @Test
-    @DisplayName("Verify Account constructor && Exception description")
-    public void accountConstructorExceptionDes() {
+    @DisplayName("Verify Account constructor || Both null")
+    public void accountConstructorBNull() {
 
         // Arrange
         //Define variables for parameters "denomination" and "description"
         String denomination = "Scrapbooking";
-
-        //Act
-        Throwable thrown = assertThrows(RuntimeException.class, () -> Account.createAccount(denomination, null));
-
-        //Assert
-        assertEquals(thrown.getMessage(), "Can't create Account. All arguments must be filled.");
-    }
-
-    @Test
-    @DisplayName("Verify Account constructor && Exception denomination")
-    public void accountConstructorExceptionDen() {
-
-        // Arrange
-        //Define variables for parameters "denomination" and "description"
         String description = "Account for Scrapbooking stuff";
 
         //Act
-        Throwable thrown = assertThrows(RuntimeException.class, () -> Account.createAccount(null, description));
+        Throwable thrown = assertThrows(IllegalArgumentException.class, () -> Account.createAccount(null, null));
 
         //Assert
-        assertEquals(thrown.getMessage(), "Can't create Account. All arguments must be filled.");
+        assertEquals(thrown.getMessage(), "Can't create Account, no field can be null.");
     }
 
     @Test
-    @DisplayName("Verify getDenomination() of Account")
+    @DisplayName("Verify Account constructor || Exception Denomination")
+    public void accountConstructorDenominationNull() {
+
+        // Arrange
+        //Define variables for parameters "denomination" and "description"
+        String denomination = "Scrapbooking";
+        String description = "Account for Scrapbooking stuff";
+
+        //Act
+        Throwable thrown = assertThrows(IllegalArgumentException.class, () -> Account.createAccount(null, description));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Account, no field can be null.");
+    }
+
+    @Test
+    @DisplayName("Verify Account constructor || Exception Description")
+    public void accountConstructorDescriptionNull() {
+
+        // Arrange
+        //Define variables for parameters "denomination" and "description"
+        String denomination = "Scrapbooking";
+        String description = "Account for Scrapbooking stuff";
+
+        //Act
+        Throwable thrown = assertThrows(IllegalArgumentException.class, () -> Account.createAccount(denomination, null));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't create Account, no field can be null.");
+    }
+
+    @Test
+    @DisplayName("Verify getDenomination() of Account || Equals")
     public void accountGetDenomination() {
 
             // Arrange
@@ -71,7 +89,7 @@ class AccountTest {
     }
 
     @Test
-    @DisplayName("Verify getDescription() of Account")
+    @DisplayName("Verify getDescription() of Account || Equals")
     public void accountGetDescription() {
 
             // Arrange
@@ -87,7 +105,7 @@ class AccountTest {
     }
 
     @Test
-    @DisplayName("Verify setDenomination() of Account")
+    @DisplayName("Verify setDenomination() of Account || Equals")
     public void accountSetDenomination() {
 
         // Arrange
@@ -109,7 +127,7 @@ class AccountTest {
     }
 
     @Test
-    @DisplayName("Verify setDescription() of Account")
+    @DisplayName("Verify setDescription() of Account || Equals")
     public void accountSetDescription() {
 
             // Arrange
