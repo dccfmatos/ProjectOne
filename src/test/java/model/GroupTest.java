@@ -12,7 +12,7 @@ class GroupTest {
 
 
     @Test
-    @DisplayName("Verify group constructor (without members) && equals")
+    @DisplayName("Verify group constructor (without members) || Equals")
     public void groupConstructorEquals() {
 
         //Arrange
@@ -32,7 +32,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify group constructor (without members) && NotEquals")
+    @DisplayName("Verify group constructor (without members) || NotEquals")
     public void groupConstructorNotEquals() {
 
         //Arrange
@@ -50,7 +50,7 @@ class GroupTest {
 
 
     @Test
-    @DisplayName("Verify group constructor (with members) && NotEquals")
+    @DisplayName("Verify group constructor (with members) || NotEquals")
     public void groupConstructorWMembNEquals() {
 
         //Arrange
@@ -100,9 +100,96 @@ class GroupTest {
         assertNotEquals(devTeam, consultTeam);
     }
 
+    @Test
+    @DisplayName("Verify group constructor (with members) || Equals")
+    public void groupConstructorWMembEquals() {
+
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(diana);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+
+        //Act
+        //Create Groups
+        Group devTeam = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Group devTeam2 = Group.createGroupWithMembersAndPersonInCharge
+                (LocalDate.of(2020, 01, 26), "DevTeam Group", "Group with devTeam members",
+                        membersDevTeam, peopleInChargeDT);
+
+        //Assert
+        //Verify if constructor works fine and if objects are the same
+        assertEquals(devTeam, devTeam2);
+    }
 
     @Test
-    @DisplayName("Verify removePersonFromGroup of group")
+    @DisplayName("Verify group constructor (with members) || Exception")
+    public void groupConstructorWMembException() {
+
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(diana);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+        //Create parameters for Group2
+        LocalDate dateOfCreation2 = LocalDate.of(2020, 01, 26);
+        String denomination2 = "ConsultTeam Group";
+        String description2 = "Group with ConsultTeam members";
+        ArrayList<Person> membersConsultTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeCT = new ArrayList<Person>();
+
+        Person max = Person.createPerson("Max", LocalDate.of(2017, 1, 1));
+        Person molly = Person.createPerson("Molly", LocalDate.of(2019, 8, 16));
+        Person susan = Person.createPerson("Susan", LocalDate.of(1992, 9, 16));
+
+        membersConsultTeam.add(max);
+        membersConsultTeam.add(molly);
+        membersConsultTeam.add(susan);
+
+        peopleInChargeCT.add(susan);
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, ()
+                -> Group.createGroupWithMembersAndPersonInCharge
+                    (dateOfCreation, null, description, membersDevTeam, peopleInChargeDT));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Group not created. Denomination can't be Null");
+    }
+
+
+    @Test
+    @DisplayName("Verify removePersonFromGroup of group || Equals")
     public void groupRemPersonFromGroup() {
 
         //Arrange
@@ -143,7 +230,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify removePersonFromGroup of group (Exception)")
+    @DisplayName("Verify removePersonFromGroup of group || Exception")
     public void groupRemPersonFromGroupExcep() {
 
         //Arrange
@@ -177,7 +264,47 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify addPersonFromGroup of group")
+    @DisplayName("Verify addPersonToGroup of group || Exception")
+    public void groupAddPersonToGroupException() {
+
+        //Arrange
+        //Create parameters for Group1
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam Group";
+        String description = "Group with devTeam members";
+        ArrayList<Person> membersDevTeam = new ArrayList<Person>();
+        ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+
+        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+
+        membersDevTeam.add(maria);
+        membersDevTeam.add(jose);
+        membersDevTeam.add(john);
+
+        peopleInChargeDT.add(john);
+
+        //create expected members list
+        ArrayList<Person> membersExpected = new ArrayList<Person>();
+        membersExpected.add(maria);
+        membersExpected.add(jose);
+        membersExpected.add(john);
+        membersExpected.add(diana);
+
+
+        //Act
+        Group group = Group.createGroupWithMembersAndPersonInCharge(dateOfCreation, denomination, description, membersDevTeam, peopleInChargeDT);
+        Throwable thrown = assertThrows(IllegalArgumentException.class, () ->
+                group.addPersonToGroup(john));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Person already belong into Group members.");
+    }
+
+    @Test
+    @DisplayName("Verify addPersonToGroup of group || Equals")
     public void groupAddPersonToGroup() {
 
         //Arrange
@@ -219,7 +346,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify getDateOfCreation() of group")
+    @DisplayName("Verify getDateOfCreation() of group || Equals")
     public void groupGetDateCreation() {
 
         //Arrange
@@ -255,7 +382,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify setDateOfCreation() of group")
+    @DisplayName("Verify setDateOfCreation() of group || Equals")
     public void groupSetDateCreation() {
 
         //Arrange
@@ -294,7 +421,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify getDenomination() of group")
+    @DisplayName("Verify getDenomination() of group || Equals")
     public void groupGetDenomination() {
 
         //Arrange
@@ -329,7 +456,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify setDenomination() of group")
+    @DisplayName("Verify setDenomination() of group || Equals")
     public void groupsetDenomination() {
 
         //Arrange
@@ -371,7 +498,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify getDescription() of group")
+    @DisplayName("Verify getDescription() of group || Equals")
     public void groupGetDescription() {
 
         //Arrange
@@ -412,7 +539,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify setDescription() of group")
+    @DisplayName("Verify setDescription() of group || Equals")
     public void groupSetDescription() {
 
         //Arrange
@@ -452,7 +579,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify getMembers() of group")
+    @DisplayName("Verify getMembers() of group || Equals")
     public void groupGetMembers() {
 
         //Arrange
@@ -484,7 +611,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify setMembers() of group")
+    @DisplayName("Verify setMembers() of group || Equals")
     public void groupSetMembers() {
 
         //Arrange
@@ -521,7 +648,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify getPeopleInCharge() of group")
+    @DisplayName("Verify getPeopleInCharge() of group || Equals")
     public void groupGetPeopleInCharge() {
 
         //Arrange
@@ -556,7 +683,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("Verify setPeopleInCharge() of group")
+    @DisplayName("Verify setPeopleInCharge() of group || Equals")
     public void groupSetPeopleInCharge() {
 
         //Arrange
@@ -595,7 +722,7 @@ class GroupTest {
 
 
     @Test
-    @DisplayName("Verify removePersonFromGroup() of group | personInCharge")
+    @DisplayName("Verify removePersonFromGroup() of group || personInCharge")
     public void removePeopleInChargeFromGroup() {
 
         //Arrange
@@ -629,7 +756,7 @@ class GroupTest {
 
 
     @Test
-    @DisplayName("Verify checkIfFamily() of group")
+    @DisplayName("Verify checkIfFamily() of group || True")
     public void groupCheckIfFamily() {
 
         //Arrange
@@ -678,7 +805,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("(2) Verify checkIfFamily() of group")
+    @DisplayName("(2) Verify checkIfFamily() of group || False")
     public void groupCheckIfFamily2() {
 
         //Arrange
@@ -717,7 +844,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("(3) Verify checkIfFamily() of group")
+    @DisplayName("(3) Verify checkIfFamily() of group || False")
     public void groupCheckIfFamily3() {
 
         //Arrange
