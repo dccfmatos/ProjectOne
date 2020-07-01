@@ -6,26 +6,30 @@ public class Category {
 
     private String description;
 
+    //Constructors
     public static Category createCategory(String description) {
-        if (description == null) {
-            throw new IllegalArgumentException("Can't create Category. Description can't be null.");
-        } else {
             return new Category(description);
-        }
     }
 
     private Category(String description) {
-        this.description = description;
+        if (description == null) {
+            throw new IllegalArgumentException("Can't create Category. Description can't be null.");
+        } else {
+            this.description = description;
+        }
     }
 
+    //Gets
     public String getDescription() {
         return description;
     }
 
+    //Sets
     public void setDescription(String description) {
         this.description = description;
     }
 
+    //Override
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

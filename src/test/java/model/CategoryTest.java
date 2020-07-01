@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CategoryTest {
 
     @Test
-    @DisplayName("Verify AccountRepository constructor && equals")
+    @DisplayName("Verify AccountRepository constructor || Equals")
     public void categoryConstructorEquals() {
 
         // Arrange
@@ -26,7 +26,7 @@ class CategoryTest {
     }
 
     @Test
-    @DisplayName("Verify getDescription() of Category | AssertNotEquals")
+    @DisplayName("Verify getDescription() of Category || AssertNotEquals")
     public void categoryGetDescriptionAssertNE() {
 
         // Arrange
@@ -44,7 +44,7 @@ class CategoryTest {
     }
 
     @Test
-    @DisplayName("Verify getDescription() of Category | AssertEquals")
+    @DisplayName("Verify getDescription() of Category || AssertEquals")
     public void categoryGetDescriptionAssertE() {
 
         // Arrange
@@ -62,7 +62,7 @@ class CategoryTest {
     }
 
     @Test
-    @DisplayName("Verify category setDescription | assertEquals")
+    @DisplayName("Verify category setDescription || assertEquals")
     public void categorySetDescriptionAssertE() {
 
         // Arrange
@@ -80,7 +80,7 @@ class CategoryTest {
     }
 
     @Test
-    @DisplayName("Verify category createCategory | Exception")
+    @DisplayName("Verify category createCategory || Exception")
     public void categoryCreateCategoryException() {
 
         //Act
