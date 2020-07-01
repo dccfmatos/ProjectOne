@@ -17,8 +17,8 @@ public class Person {
 
     //Constructors
     public static Person createPerson(String name, LocalDate birthdate) {
-            return new Person(name, birthdate);
-        }
+        return new Person(name, birthdate);
+    }
 
 
     private Person(String name, LocalDate birthdate) {
@@ -30,7 +30,7 @@ public class Person {
         }
     }
 
-    public static Person createPersonWMotherAndFather(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber){
+    public static Person createPersonWMotherAndFather(String name, LocalDate birthdate, Person motherP, Person fatherP, String socialNumber) {
         return new Person(name, birthdate, motherP, fatherP, socialNumber);
     }
 
@@ -50,7 +50,7 @@ public class Person {
         }
     }
 
-    public static Person createPersonWSiblings(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings){
+    public static Person createPersonWSiblings(String name, String address, LocalDate birthdate, String birthplace, Person motherP, Person fatherP, ArrayList<Person> siblings) {
         return new Person(name, address, birthdate, birthplace, motherP, fatherP, siblings);
     }
 
@@ -154,12 +154,11 @@ public class Person {
     public ArrayList<Person> addSiblings(Person person) {
         if (this != person && !siblings.contains(person)) {
             siblings.add(person);
-        } else{
+        } else {
             throw new IllegalArgumentException("Person is already defined as Sibling.");
         }
         return siblings;
     }
-
 
     //Override
     @Override
@@ -167,15 +166,13 @@ public class Person {
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return socialNumber == person.socialNumber &&
-                Objects.equals(name, person.name) &&
+        return Objects.equals(name, person.name) &&
                 Objects.equals(address, person.address) &&
                 Objects.equals(birthdate, person.birthdate) &&
                 Objects.equals(birthplace, person.birthplace) &&
                 Objects.equals(fatherP, person.fatherP) &&
                 Objects.equals(motherP, person.motherP) &&
-                Objects.equals(siblings, person.siblings);
+                Objects.equals(siblings, person.siblings) &&
+                Objects.equals(socialNumber, person.socialNumber);
     }
-
 }
-

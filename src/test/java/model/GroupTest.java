@@ -181,12 +181,11 @@ class GroupTest {
         //Act
         Throwable thrown = assertThrows(NullPointerException.class, ()
                 -> Group.createGroupWithMembersAndPersonInCharge
-                    (dateOfCreation, null, description, membersDevTeam, peopleInChargeDT));
+                (dateOfCreation, null, description, membersDevTeam, peopleInChargeDT));
 
         //Assert
         assertEquals(thrown.getMessage(), "Group not created. Denomination can't be Null");
     }
-
 
     @Test
     @DisplayName("Verify removePersonFromGroup of group || Equals")
@@ -720,7 +719,6 @@ class GroupTest {
 
     }
 
-
     @Test
     @DisplayName("Verify removePersonFromGroup() of group || personInCharge")
     public void removePeopleInChargeFromGroup() {
@@ -754,9 +752,8 @@ class GroupTest {
 
     }
 
-
     @Test
-    @DisplayName("Verify checkIfFamily() of group || True")
+    @DisplayName("Verify checkIfFamily() of group || True (3 members)")
     public void groupCheckIfFamily() {
 
         //Arrange
@@ -805,7 +802,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("(2) Verify checkIfFamily() of group || False")
+    @DisplayName("(2) Verify checkIfFamily() of group || False (no Father)")
     public void groupCheckIfFamily2() {
 
         //Arrange
@@ -844,7 +841,7 @@ class GroupTest {
     }
 
     @Test
-    @DisplayName("(3) Verify checkIfFamily() of group || False")
+    @DisplayName("(3) Verify checkIfFamily() of group || False (no Mother)")
     public void groupCheckIfFamily3() {
 
         //Arrange
@@ -856,6 +853,52 @@ class GroupTest {
 
         ArrayList<Person> siblingsMaria = new ArrayList();
 
+
+        //create parameters for father
+        String fatherName = "Tomas";
+        LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherAddress = "7th Street";
+        String fatherBirthplace = "Place were Tomas was born";
+
+        //create Person father
+        Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
+
+        //Create persons
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, null, father, siblingsMaria);
+
+
+        //Act
+        //Create group
+        Group familyGroup = Group.createGroupWithoutMembers(LocalDate.of(2020, 06, 9), "Family Group");
+        familyGroup.addPersonToGroup(maria);
+        familyGroup.addPersonToGroup(father);
+
+        boolean family = familyGroup.checkIfFamily(familyGroup);
+
+        //Assert
+        assertFalse(familyGroup.checkIfFamily(familyGroup));
+    }
+
+    @Test
+    @DisplayName("(4) Verify checkIfFamily() of group || False (4 members)")
+    public void groupCheckIfFamily4() {
+
+        //Arrange
+        //create parameters for person
+        String name = "Maria";
+        LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String address = "7th Street";
+        String birthplace = "Place were Maria was born";
+
+        ArrayList<Person> siblingsMaria = new ArrayList();
+
+        //create parameters for person
+        String nameS = "Sibling";
+        LocalDate birthdateS = LocalDate.of(1992, 06, 15);
+        String addressS = "7th Street";
+        String birthplaceS = "Place were Sibling was born";
+
+        ArrayList<Person> siblingsSibling = new ArrayList();
 
         //create parameters for mother
         String motherName = "Susan";
@@ -875,9 +918,13 @@ class GroupTest {
         //create Person father
         Person father = Person.createPersonWSiblings(fatherName, fatherAddress, fatherBirthdate, fatherBirthplace, null, null, null);
 
-        //Create persons
-        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, null, father, siblingsMaria);
+        //Create person Maria
+        Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblingsMaria);
+        //create Person Sibling
+        Person sibling = Person.createPersonWSiblings(nameS, addressS, birthdateS, birthplaceS, null, null, siblingsSibling);
 
+        siblingsMaria.add(sibling);
+        siblingsSibling.add(maria);
 
         //Act
         //Create group
@@ -885,11 +932,13 @@ class GroupTest {
         familyGroup.addPersonToGroup(maria);
         familyGroup.addPersonToGroup(mother);
         familyGroup.addPersonToGroup(father);
+        familyGroup.addPersonToGroup(sibling);
 
         boolean family = familyGroup.checkIfFamily(familyGroup);
 
         //Assert
         assertFalse(familyGroup.checkIfFamily(familyGroup));
+
     }
 
 }

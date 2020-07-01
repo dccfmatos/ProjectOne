@@ -46,7 +46,6 @@ public class Group {
     //Methods
     public boolean checkIfFamily(Group group) {
         // To be family it must have: father, mother & children => more than 3 person
-
         //How many members on the group?
         ArrayList<Person> members = new ArrayList<Person>();
         members = this.getMembers();
@@ -61,7 +60,6 @@ public class Group {
 
         Person father = null;
         Person mother = null;
-
 
         //---- Less than 3 is not a family
         if (numberOfMembers < 3) {
