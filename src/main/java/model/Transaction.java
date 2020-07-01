@@ -11,13 +11,23 @@ public class Transaction {
     private String description;
     private LocalDate date;
 
-    public Transaction(Account account, String movType, Category category, double amount, String description, LocalDate date) {
-        this.account = account;
-        this.movType = movType;
-        this.category = category;
-        this.amount = amount;
-        this.description = description;
-        this.date = date;
+
+    //Constructors
+    public static Transaction createTransaction(Account account, String movType, Category category, double amount, String description, LocalDate date){
+        return new Transaction(account, movType, category, amount, description, date);
+    }
+
+    private Transaction(Account account, String movType, Category category, double amount, String description, LocalDate date) {
+        if (account == null || movType == null || category == null || description == null || date == null) {
+            throw new NullPointerException("All fields are required.");
+        } else {
+            this.account = account;
+            this.movType = movType;
+            this.category = category;
+            this.amount = amount;
+            this.description = description;
+            this.date = date;
+        }
     }
 
     public Account getAccount() {

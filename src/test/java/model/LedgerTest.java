@@ -26,8 +26,8 @@ class LedgerTest {
 
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
-        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = Transaction.createTransaction(account, movType, category, amount, description, date);
 
         records.add(transaction);
         records.add(transaction2);
@@ -59,8 +59,8 @@ class LedgerTest {
 
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
-        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = Transaction.createTransaction(account, movType, category, amount, description, date);
 
         records.add(transaction);
         records.add(transaction2);
@@ -88,8 +88,8 @@ class LedgerTest {
 
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
-        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = Transaction.createTransaction(account, movType, category, amount, description, date);
 
         records.add(transaction);
         records.add(transaction2);
@@ -123,8 +123,8 @@ class LedgerTest {
 
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
-        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = Transaction.createTransaction(account, movType, category, amount, description, date);
 
         records.add(transaction);
 
@@ -157,8 +157,8 @@ class LedgerTest {
 
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
-        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = Transaction.createTransaction(account, movType, category, amount, description, date);
 
         records.add(transaction);
         records.add(transaction2);
@@ -169,7 +169,7 @@ class LedgerTest {
         //create transaction thru ledger
         Transaction ledgerTransaction = ledger.createTransaction(account, movType, category, amount, description, date);
 
-        Transaction ledgerTransaction2 = new Transaction(account, movType, category, amount, description, date);
+        Transaction ledgerTransaction2 = Transaction.createTransaction(account, movType, category, amount, description, date);
 
 
         // Assert

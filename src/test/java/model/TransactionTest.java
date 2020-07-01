@@ -22,8 +22,8 @@ class TransactionTest {
         LocalDate date = LocalDate.of(2020,02,25);
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
-        Transaction transaction2 = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
+        Transaction transaction2 = Transaction.createTransaction(account, movType, category, amount, description, date);
 
         // Assert
         assertEquals(transaction, transaction2);
@@ -43,7 +43,7 @@ class TransactionTest {
 
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
 
 
         // Assert
@@ -68,7 +68,7 @@ class TransactionTest {
 
 
         // Act
-        Transaction transaction = new Transaction(account, movType, category, amount, description, date);
+        Transaction transaction = Transaction.createTransaction(account, movType, category, amount, description, date);
 
         Account account2 = Account.createAccount("new description", "Denomination");
         String movType2 = "credit";
@@ -93,5 +93,103 @@ class TransactionTest {
         assertEquals(date2, transaction.getDate());
     }
 
+    @Test
+    @DisplayName("Verify createTransaction || Exception account")
+    public void transactionCreateTransactionExpAccount () {
 
+        // Arrange
+        Account account = Account.createAccount("Description", "Denomination");
+        String movType = "debit";
+        Category category = Category.createCategory("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        LocalDate date = LocalDate.of(2020,02,25);
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, () ->
+                Transaction.createTransaction(null, movType, category, amount, description, date));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "All fields are required.");
+    }
+
+    @Test
+    @DisplayName("Verify createTransaction || Exception movType")
+    public void transactionCreateTransactionExpMovType () {
+
+        // Arrange
+        Account account = Account.createAccount("Description", "Denomination");
+        String movType = "debit";
+        Category category = Category.createCategory("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        LocalDate date = LocalDate.of(2020,02,25);
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, () ->
+                Transaction.createTransaction(account, null, category, amount, description, date));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "All fields are required.");
+    }
+
+    @Test
+    @DisplayName("Verify createTransaction || Exception category")
+    public void transactionCreateTransactionExpCategory () {
+
+        // Arrange
+        Account account = Account.createAccount("Description", "Denomination");
+        String movType = "debit";
+        Category category = Category.createCategory("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        LocalDate date = LocalDate.of(2020,02,25);
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, () ->
+                Transaction.createTransaction(account, movType, null, amount, description, date));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "All fields are required.");
+    }
+
+    @Test
+    @DisplayName("Verify createTransaction || Exception description")
+    public void transactionCreateTransactionExpDescription () {
+
+        // Arrange
+        Account account = Account.createAccount("Description", "Denomination");
+        String movType = "debit";
+        Category category = Category.createCategory("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        LocalDate date = LocalDate.of(2020,02,25);
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, () ->
+                Transaction.createTransaction(account, movType, category, amount, null, date));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "All fields are required.");
+    }
+
+    @Test
+    @DisplayName("Verify createTransaction || Exception date")
+    public void transactionCreateTransactionExpDate () {
+
+        // Arrange
+        Account account = Account.createAccount("Description", "Denomination");
+        String movType = "debit";
+        Category category = Category.createCategory("Pet Care");
+        double amount = 124.00;
+        String description = "Dog bed";
+        LocalDate date = LocalDate.of(2020,02,25);
+
+        //Act
+        Throwable thrown = assertThrows(NullPointerException.class, () ->
+                Transaction.createTransaction(account, movType, category, amount, description, null));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "All fields are required.");
+    }
 }

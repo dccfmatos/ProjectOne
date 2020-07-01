@@ -179,7 +179,6 @@ class PersonRepositoryTest {
         assertEquals(expected, personRepository.getPersonRepository());
     }
 
-
     @Test
     @DisplayName("Verify setter() && removePersonFromPersonRepository of personRepository || Equals")
     void personRepSetRemovePerson() {
