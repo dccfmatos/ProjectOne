@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GroupAccountTest {
 
     @Test
-    @DisplayName("Verify GroupAccount constructor && equals")
+    @DisplayName("Verify GroupAccount constructor || Equals")
     public void groupAccountConstructorEquals() {
 
         // Arrange
@@ -29,7 +29,7 @@ class GroupAccountTest {
     }
 
     @Test
-    @DisplayName("Verify GroupAccount constructor (and group) && equals")
+    @DisplayName("Verify GroupAccount constructor (and group) || Equals")
     public void groupAccountConstructorEqualsWGroup() {
 
         // Arrange
@@ -51,9 +51,8 @@ class GroupAccountTest {
         assertEquals(devTeam, devTeam2 );
     }
 
-
     @Test
-    @DisplayName("Verify getAccountGroupDenomination() of GroupAccount")
+    @DisplayName("Verify getAccountGroupDenomination() of GroupAccount || Equals")
     public void groupAccountGetGroupAccountDenomination() {
 
         //Arrange
@@ -70,7 +69,7 @@ class GroupAccountTest {
     }
 
     @Test
-    @DisplayName("Verify getAccountGroupDescription() of GroupAccount")
+    @DisplayName("Verify getAccountGroupDescription() of GroupAccount || Equals")
     public void groupAccountGetGroupAccountDescription() {
 
         //Arrange
@@ -87,7 +86,7 @@ class GroupAccountTest {
     }
 
     @Test
-    @DisplayName("Verify setAccountGroupDescription() of GroupAccount")
+    @DisplayName("Verify setAccountGroupDescription() of GroupAccount || Equals")
     public void groupAccountSetGroupAccountDescription() {
 
         //Arrange
@@ -111,7 +110,7 @@ class GroupAccountTest {
     }
 
     @Test
-    @DisplayName("Verify setAccountGroupDenomination() of GroupAccount")
+    @DisplayName("Verify setAccountGroupDenomination() of GroupAccount || Equals")
     public void groupAccountSetGroupAccountDenominaton() {
 
         //Arrange
@@ -139,7 +138,6 @@ class GroupAccountTest {
     public void groupCreateGroupAccountException() {
 
         //Arrange
-        String accountGroupDenomination = "DevTeam";
         String accountGroupDescription = "Account for members of DevTeam";
 
         //Act

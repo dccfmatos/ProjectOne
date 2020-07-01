@@ -8,6 +8,7 @@ public class GroupAccount {
     private String accountGroupDescription;
     private Group group;
 
+    //Constructors
     public static GroupAccount createGroupAccount(String accountGroupDenomination, String accountGroupDescription){
         return new GroupAccount(accountGroupDenomination, accountGroupDescription);
     }
@@ -35,22 +36,25 @@ public class GroupAccount {
         }
     }
 
+    //Gets
     public String getAccountGroupDenomination() {
         return accountGroupDenomination;
-    }
-
-    public void setAccountGroupDenomination(String accountGroupDenomination) {
-        this.accountGroupDenomination = accountGroupDenomination;
     }
 
     public String getAccountGroupDescription() {
         return accountGroupDescription;
     }
 
+    //Sets
+    public void setAccountGroupDenomination(String accountGroupDenomination) {
+        this.accountGroupDenomination = accountGroupDenomination;
+    }
+
     public void setAccountGroupDescription(String accountGroupDescription) {
         this.accountGroupDescription = accountGroupDescription;
     }
 
+    //Override
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
