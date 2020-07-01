@@ -1,5 +1,6 @@
 package model;
 
+import javax.imageio.IIOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -7,6 +8,7 @@ public class GroupRepository {
 
     private ArrayList<Group> groupRepository;
 
+    //Constructors
     public static GroupRepository createGroupRepository (ArrayList<Group> groupRepository){
         return new GroupRepository(groupRepository);
     }
@@ -15,35 +17,37 @@ public class GroupRepository {
         this.groupRepository = groupRepository;
     }
 
-    public void addGroupToGroupRepository(Group group){
+    //Methods
+    public ArrayList<Group> addGroupToGroupRepository(Group group){
         if(!groupRepository.contains(group)){
             groupRepository.add(group);
         }
         else{
-            System.out.println("--------------------");
-        System.out.printf("Can't add, group already exists.");
-        System.out.println("--------------------");
-    }
-    }
-
-    public void removeGroupFromGroupRepository(Group group){
-        if(groupRepository.contains(group)){
-            groupRepository.remove(group);
-        } else{
-            System.out.println("--------------------");
-            System.out.printf("Can't remove, group does not belong.");
-            System.out.println("--------------------");
+            throw new IllegalArgumentException("Group already belongs to GroupRepository.");
         }
+        return groupRepository;
     }
 
+    public ArrayList<Group> removeGroupFromGroupRepository(Group group) {
+        if (groupRepository.contains(group)) {
+            groupRepository.remove(group);
+        } else {
+            throw new IllegalArgumentException("Can't remove, group already belongs to groupRepository");
+        }
+        return groupRepository;
+    }
+
+    //Gets
     public ArrayList<Group> getGroupRepository() {
         return groupRepository;
     }
 
+    //Sets
     public void setGroupRepository(ArrayList<Group> groupRepository) {
         this.groupRepository = groupRepository;
     }
 
+    //Override
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

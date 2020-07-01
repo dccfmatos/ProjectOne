@@ -12,7 +12,7 @@ class GroupRepositoryTest {
 
 
     @Test
-    @DisplayName("Verify GroupRepository constructor && equals")
+    @DisplayName("Verify GroupRepository constructor ||Equals")
     public void groupRepositoryConstructorEquals(){
 
         //Arrange
@@ -54,7 +54,7 @@ class GroupRepositoryTest {
 
 
     @Test
-    @DisplayName("Verify getGroupRepository() && addGroupToList() of groupRepository")
+    @DisplayName("Verify getGroupRepository() && addGroupToList() of groupRepository || Equals")
     void groupRepGetGroupRepAddGroup() {
 
         //Arrange
@@ -82,10 +82,63 @@ class GroupRepositoryTest {
         assertEquals(company, companyGroupRepository.getGroupRepository());
     }
 
+    @Test
+    @DisplayName("Verify addGroupToList() of groupRepository || Exception")
+    void groupRepAddGroupException() {
 
+        //Arrange
+        //create parameters for object Group
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam Group";
+
+
+        //create object Group
+        Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, denomination);
+
+        //create arrayList of groups
+        ArrayList<Group> company = new ArrayList<>();
+
+        //create groupRepository with the given list
+        GroupRepository companyGroupRepository = GroupRepository.createGroupRepository(company);
+        company.add(devTeam);
+
+        //Act
+        Throwable thrown = assertThrows(IllegalArgumentException.class, ()
+                -> companyGroupRepository.addGroupToGroupRepository(devTeam));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Group already belongs to GroupRepository.");
+    }
 
     @Test
-    @DisplayName("Verify getGroupRepository() && removeGroupFromList() of groupRepository")
+    @DisplayName("Verify removeGroupToList() of groupRepository || Exception")
+    void groupRepremoveGroupException() {
+
+        //Arrange
+        //create parameters for object Group
+        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
+        String denomination = "DevTeam Group";
+
+
+        //create object Group
+        Group devTeam = Group.createGroupWithoutMembers(dateOfCreation, denomination);
+
+        //create arrayList of groups
+        ArrayList<Group> company = new ArrayList<>();
+
+        //create groupRepository with the given list
+        GroupRepository companyGroupRepository = GroupRepository.createGroupRepository(company);
+
+        //Act
+        Throwable thrown = assertThrows(IllegalArgumentException.class, ()
+                -> companyGroupRepository.removeGroupFromGroupRepository(devTeam));
+
+        //Assert
+        assertEquals(thrown.getMessage(), "Can't remove, group already belongs to groupRepository");
+    }
+
+    @Test
+    @DisplayName("Verify getGroupRepository() && removeGroupFromList() of groupRepository || Equals")
     void groupRepGetGroupRepRemoveGroup() {
 
         //Arrange
@@ -124,7 +177,7 @@ class GroupRepositoryTest {
 
 
     @Test
-    @DisplayName("Verify setter() && removeGroupFromList() of groupRepository")
+    @DisplayName("Verify setter() && removeGroupFromList() of groupRepository || Equals")
     void groupRepSetRemoveGroup() {
 
         //Arrange
@@ -157,51 +210,5 @@ class GroupRepositoryTest {
 
         assertEquals(anotherCompanyGroupRep.getGroupRepository(), companyGroupRepository.getGroupRepository());
     }
-
-    /*@Test
-    @DisplayName("Verify setter() && removeGroupFromList() of groupRepository with System.out.print")
-    void groupRepSetRemoveGroupSOUT() throws Exception {
-
-        //need to throw exception to see the System.out.print defined in method()
-
-        //Arrange
-        //Create 2 groups
-        LocalDate dateOfCreation = LocalDate.of(2020, 01, 26);
-        String denomination = "DevTeam Group";
-
-        LocalDate dateOfCreation2 = LocalDate.of(2020, 01, 26);
-        String denomination2 = "Consultants Group";
-
-        Group devTeam = new Group(dateOfCreation, denomination);
-        Group consultTeam = new Group(dateOfCreation2, denomination2);
-
-        //define groupRepository
-        ArrayList<Group> company = new ArrayList<>();
-        GroupRepository companyGroupRepository = new GroupRepository(company);
-
-        //Add groups to lists
-        companyGroupRepository.addGroupToList(devTeam);
-        companyGroupRepository.addGroupToList(consultTeam);
-
-
-        //Act
-        ArrayList<Group> anotherCompany = new ArrayList<>();
-        GroupRepository anotherCompanyGroupRep = new GroupRepository(anotherCompany);
-
-        anotherCompanyGroupRep.addGroupToList(devTeam);
-
-
-        anotherCompanyGroupRepository.removeGroupFromList(consultTeam);
-
-
-        //Assert
-        //redirect output as in:
-        // https://limzhenghong.wordpress.com/2015/03/18/junit-with-system-out-println/
-        OutputStream os = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(os);
-        System.setOut(ps);
-
-        assertEquals("Can't remove, group does not belong.", os.toString());
-    }*/
 
 }
