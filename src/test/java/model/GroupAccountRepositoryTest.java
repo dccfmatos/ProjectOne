@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GroupAccountRepositoryTest {
 
     @Test
-    @DisplayName("Verify GroupAccountRepository constructor && equals")
+    @DisplayName("Verify GroupAccountRepository constructor || Equals")
     public void groupAccountRepositoryConstructorEquals() {
 
         // Arrange
@@ -27,7 +27,7 @@ class GroupAccountRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify getGroupAccountId() of groupAccountRepository")
+    @DisplayName("Verify getGroupAccountId() of groupAccountRepository || Equals")
     public void accountGetAccountId() {
 
         // Arrange
@@ -44,7 +44,7 @@ class GroupAccountRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify getGroupAccount() of groupAccountRepository")
+    @DisplayName("Verify getGroupAccount() of groupAccountRepository || Equals")
     public void accountGetGroupAccount()  {
 
         // Arrange
@@ -61,7 +61,7 @@ class GroupAccountRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify setGroupAccount() of groupAccountRepository")
+    @DisplayName("Verify setGroupAccount() of groupAccountRepository || Equals")
     public void accountSetGroupAccount() {
 
         // Arrange
@@ -86,7 +86,7 @@ class GroupAccountRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify setGroupAccountId() of groupAccountRepository")
+    @DisplayName("Verify setGroupAccountId() of groupAccountRepository || Equals")
     public void accountSetGroupAccountId() {
 
         // Arrange
@@ -109,6 +109,5 @@ class GroupAccountRepositoryTest {
         //verify setter method
         assertEquals(id2, groupAccountRepository.getGroupAccountId());
     }
-
 
 }
