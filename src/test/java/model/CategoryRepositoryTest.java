@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CategoryRepositoryTest {
 
     @Test
-    @DisplayName("Verify CategoryRepository constructor && equals")
+    @DisplayName("Verify CategoryRepository constructor || Equals")
     public void accountRepConstructorEquals() {
 
         // Arrange
@@ -26,7 +26,7 @@ class CategoryRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify getCategoryRepository() of CategoryRepository | assertEquals")
+    @DisplayName("Verify getCategoryRepository() of CategoryRepository || assertEquals")
     public void categoryRepGetCatRep() {
 
         // Arrange
@@ -42,7 +42,7 @@ class CategoryRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify getCategoryRepository() of CategoryRepository | assertNotEquals")
+    @DisplayName("Verify getCategoryRepository() of CategoryRepository || assertNotEquals")
     public void categoryRepGetCatRepNE() {
 
         // Arrange
@@ -65,7 +65,7 @@ class CategoryRepositoryTest {
     }
 
     @Test
-    @DisplayName("Verify setCategoryRepository() | assertEquals")
+    @DisplayName("Verify setCategoryRepository() || assertEquals")
     public void categoryRepSetCatRep() {
 
         // Arrange
@@ -87,9 +87,8 @@ class CategoryRepositoryTest {
         assertEquals(categoryRepository1.getCategoryRepository(), list1);
     }
 
-
     @Test
-    @DisplayName("VVerify addCategoryToCategoryRepository | add 1")
+    @DisplayName("VVerify addCategoryToCategoryRepository || add 1")
     public void categoryAddToRepository() {
 
         // Arrange
