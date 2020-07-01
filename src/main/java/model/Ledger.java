@@ -8,7 +8,11 @@ public class Ledger {
 
     private ArrayList<Transaction> records;
 
-    public Ledger(ArrayList<Transaction> records) {
+    public static Ledger createLedger(ArrayList<Transaction> records){
+        return new Ledger(records);
+    }
+
+    private Ledger(ArrayList<Transaction> records) {
         this.records = records;
     }
 
@@ -25,10 +29,11 @@ public class Ledger {
         this.records = records;
     }
 
-    public void addTransaction(Transaction transaction){
+    public Transaction addTransaction(Transaction transaction){
         if(transaction != null) {
             this.records.add(transaction);
         }
+        return transaction;
     }
 
 

@@ -35,8 +35,8 @@ class LedgerTest {
         ArrayList<Transaction> records2 = new ArrayList<>();
 
 
-        Ledger ledger = new Ledger(records);
-        Ledger ledger2 = new Ledger(records);
+        Ledger ledger = Ledger.createLedger(records);
+        Ledger ledger2 = Ledger.createLedger(records);
 
 
         // Assert
@@ -65,7 +65,7 @@ class LedgerTest {
         records.add(transaction);
         records.add(transaction2);
 
-        Ledger ledger = new Ledger(records);
+        Ledger ledger = Ledger.createLedger(records);
 
 
         // Assert
@@ -97,7 +97,7 @@ class LedgerTest {
         ArrayList<Transaction> records2 = new ArrayList<>();
 
 
-        Ledger ledger = new Ledger(records);
+        Ledger ledger = Ledger.createLedger(records);
 
         ledger.setRecords(records2);
 
@@ -129,7 +129,7 @@ class LedgerTest {
         records.add(transaction);
 
 
-        Ledger ledger = new Ledger(records);
+        Ledger ledger = Ledger.createLedger(records);
         ledger.addTransaction(transaction2);
 
         ArrayList<Transaction> records2 = new ArrayList<>();
@@ -165,7 +165,7 @@ class LedgerTest {
         records.add(transaction2);
 
 
-        Ledger ledger = new Ledger(records);
+        Ledger ledger = Ledger.createLedger(records);
 
         //create transaction thru ledger
         Transaction ledgerTransaction = ledger.createTransaction(account, movType, category, amount, description, date);
