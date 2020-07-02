@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CLI_US02CreateGroupTest {
+    class CLI_US02CreateGroupTest {
 
     @Test
     @DisplayName("Verify controller CLI_US02CreateGroup")
@@ -27,9 +27,16 @@ class CLI_US02CreateGroupTest {
 
         CLI_US02CreateGroup createGroupController = new CLI_US02CreateGroup();
 
-        createGroupController.controllersCLI_US02CreateGroup(dateOfCreation, denomination, groupRepository);
+        Group group = createGroupController.controllersCLI_US02CreateGroup(dateOfCreation, denomination, groupRepository);
+
+        Group expected = Group.createGroupWithoutMembers(LocalDate.of(2020, 01, 26), "DevTeam Group");
+        ArrayList<Group> expectedList = new ArrayList<>();
+        GroupRepository expectedRepository = GroupRepository.createGroupRepository(expectedList);
+        expectedRepository.addGroupToGroupRepository(expected);
+
 
         //Assert
+        assertEquals(expected, group);
 
     }
 }
