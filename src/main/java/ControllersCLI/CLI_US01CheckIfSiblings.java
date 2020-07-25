@@ -1,6 +1,7 @@
 package ControllersCLI;
 
 
+import DTO.DTO_Boolean;
 import DTO.DTO_US01CheckIfSiblings;
 import DTO_Assembler.DTO_Assembler_US01CheckIfSiblings;
 import Services.Service_US01CheckIfSiblings;
@@ -11,16 +12,17 @@ import java.time.LocalDate;
 
 public class CLI_US01CheckIfSiblings {
 
-    public boolean controllersCLI_US01CheckIfSiblings(String personSocialNumber, String personToAnalyzeSocialNumber,
-                                                      PersonRepository personRepository, Service_US01CheckIfSiblings service_us01CheckIfSiblings) {
+    public DTO_Boolean controllersCLI_US01CheckIfSiblings(String personSocialNumber, String personToAnalyzeSocialNumber,
+                                                          PersonRepository personRepository, Service_US01CheckIfSiblings service_us01CheckIfSiblings) {
 //        Person person = personRepository.checkIfPersonExistsInRepository(personSocialNumber);
 //        Person personToAnalyze = personRepository.checkIfPersonExistsInRepository(personToAnalyzeSocialNumber);
 
         DTO_Assembler_US01CheckIfSiblings dto_Assembler = new DTO_Assembler_US01CheckIfSiblings();
         DTO_US01CheckIfSiblings dtoFromPrimitiveTypes = dto_Assembler.createDTOFromPrimitiveTypes(personSocialNumber, personToAnalyzeSocialNumber);
 
+        DTO_Boolean dto_checkIfSiblings = service_us01CheckIfSiblings.controllersCLI_US01CheckIfSiblings(dtoFromPrimitiveTypes, personRepository);
 
-        return service_us01CheckIfSiblings.controllersCLI_US01CheckIfSiblings(dtoFromPrimitiveTypes, personRepository);
+        return dto_checkIfSiblings;
     }
 
 }
