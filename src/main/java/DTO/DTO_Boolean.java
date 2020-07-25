@@ -6,21 +6,12 @@ public class DTO_Boolean {
     private boolean result;
     private String msg;
 
-    public DTO_Boolean(boolean result, String msg) {
+    public DTO_Boolean(boolean result) {
         this.result = result;
-        this.msg = msg;
     }
 
     public boolean isResult() {
         return result;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
     }
 
     public void setResult(boolean result) {

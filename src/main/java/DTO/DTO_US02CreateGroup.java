@@ -9,6 +9,7 @@ public class DTO_US02CreateGroup {
     LocalDate dateOfCreation;
     String denomination;
 
+    //DTO constructor for US02
     public DTO_US02CreateGroup(LocalDate dateOfCreation, String denomination) {
         this.dateOfCreation = dateOfCreation;
         this.denomination = denomination;

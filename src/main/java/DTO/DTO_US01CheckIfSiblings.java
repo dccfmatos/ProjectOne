@@ -1,7 +1,5 @@
 package DTO;
 
-import DTO_Assembler.DTO_Assembler_US01CheckIfSiblings;
-import model.PersonRepository;
 
 import java.util.Objects;
 
@@ -10,6 +8,7 @@ public class DTO_US01CheckIfSiblings {
     String personSocialNumber;
     String personToAnalyzeSocialNumber;
 
+    //constructor for DTO_US01
     public DTO_US01CheckIfSiblings(String personSocialNumber, String personToAnalyzeSocialNumber) {
         this.personSocialNumber = personSocialNumber;
         this.personToAnalyzeSocialNumber = personToAnalyzeSocialNumber;
