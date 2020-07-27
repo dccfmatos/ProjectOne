@@ -28,6 +28,13 @@ public class GroupRepository {
         return groupRepository;
     }
 
+    public boolean groupDoesBelong(Group group){
+        if(groupRepository.contains(group)){
+            return true;
+        }
+        return false;
+    }
+
     public ArrayList<Group> removeGroupFromGroupRepository(Group group) {
         if (groupRepository.contains(group)) {
             groupRepository.remove(group);

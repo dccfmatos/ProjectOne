@@ -16,12 +16,12 @@ public class Person {
     private String socialNumber;
 
     //Constructors
-    public static Person createPerson(String name, LocalDate birthdate) {
-        return new Person(name, birthdate);
+    public static Person createPerson(String socialNumber, String name, LocalDate birthdate) {
+        return new Person(socialNumber, name, birthdate);
     }
 
 
-    private Person(String name, LocalDate birthdate) {
+    private Person(String socialNumber, String name, LocalDate birthdate) {
         if (name == null) {
             throw new IllegalArgumentException("Can't create Person. Invalid name.");
         } else {

@@ -18,11 +18,12 @@ class PersonTest {
         //create parameters for person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String socialNumber = "123456";
 
         //Act
         //Create persons
-        Person maria = Person.createPerson(name, birthdate);
-        Person diana = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(socialNumber, name, birthdate);
+        Person diana = Person.createPerson(socialNumber, name, birthdate);
 
         //Assert
         //Verify if constructor works fine and if object is the same
@@ -37,19 +38,20 @@ class PersonTest {
         //create parameters for person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         String motherName = "Susan";
         LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherSocialNumber = "78946";
 
         String fatherName = "Tomas";
         LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherSocialNumber = "1594847";
 
 
         //create person mother and father
-        Person mother = Person.createPerson(motherName, motherBirthdate);
-        Person father = Person.createPerson(fatherName, fatherBirthdate);
-
-        String mariaSocialNumber = "123456";
+        Person mother = Person.createPerson(motherSocialNumber, motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherSocialNumber, fatherName, fatherBirthdate);
 
 
         //Act
@@ -98,14 +100,14 @@ class PersonTest {
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson("159489" ,girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson("789453", boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -130,20 +132,21 @@ class PersonTest {
         //create parameters for person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         String motherName = "Susan";
         LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherSocialNumber = "1234879";
 
         String fatherName = "Tomas";
         LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherSocialNumber = "789456";
+
 
 
         //create person mother and father
-        Person mother = Person.createPerson(motherName, motherBirthdate);
-        Person father = Person.createPerson(fatherName, fatherBirthdate);
-
-        String mariaSocialNumber = "123456";
-
+        Person mother = Person.createPerson(motherSocialNumber, motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherSocialNumber, fatherName, fatherBirthdate);
 
         //Act
         //Create persons
@@ -162,10 +165,11 @@ class PersonTest {
         //create parameters for person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //Act
         //Create persons
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //Assert
         //Verify getter method
@@ -180,10 +184,11 @@ class PersonTest {
         //create parameters for person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //Act
         //Create persons
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //Assert
         //Verify getter method
@@ -224,16 +229,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
+        String boySocialNumber = "789456";
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -289,14 +296,16 @@ class PersonTest {
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingName, girlSiblingBirthdate);
+        String girlSocialNumber = "123456";
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
+        String boySocialNumber = "123456";
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -348,16 +357,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
+        String boySocialNumber = "789456";
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -407,16 +418,19 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
+
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -447,11 +461,14 @@ class PersonTest {
 
         String fatherName = "Tomas";
         LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String motherSocialNumber = "123456";
+        String fatherSocialNumber = "789456";
+
 
 
         //create person mother and father
-        Person mother = Person.createPerson(motherName, motherBirthdate);
-        Person father = Person.createPerson(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherSocialNumber, motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherSocialNumber, fatherName, fatherBirthdate);
 
         String mariaSocialNumber = "123456";
 
@@ -474,9 +491,11 @@ class PersonTest {
         //create parameters for person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "789456";
+
         //Act
         //Create persons
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
         String newName = "Zoey";
         maria.setName(newName);
 
@@ -493,9 +512,11 @@ class PersonTest {
         //create parameters for person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "789456";
+
         //Act
         //Create persons
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         LocalDate expectedBirthdate = LocalDate.of(1992, 06, 18);
         maria.setBirthdate(expectedBirthdate);
@@ -539,16 +560,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -603,16 +626,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -666,16 +691,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -727,16 +754,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -790,16 +819,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -849,16 +880,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -911,16 +944,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -930,7 +965,7 @@ class PersonTest {
         //Create persons
         Person maria = Person.createPersonWSiblings(name, address, birthdate, birthplace, mother, father, siblings, null);
 
-        Person newSibling = Person.createPerson("test", LocalDate.of(1995, 8, 7));
+        Person newSibling = Person.createPerson("789463", "test", LocalDate.of(1995, 8, 7));
         maria.addSiblings(newSibling);
 
         ArrayList<Person> expectedSiblings = new ArrayList();
@@ -977,16 +1012,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
         siblings.add(girlSibling);
         siblings.add(boySibling);
@@ -1037,16 +1074,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1097,16 +1136,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1157,16 +1198,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1217,16 +1260,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1277,16 +1322,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1337,16 +1384,18 @@ class PersonTest {
         //create parameters for girlSibling
         String girlSiblingName = "Lucy";
         LocalDate girlSiblingBirthdate = LocalDate.of(1998, 10, 8);
+        String girlSocialNumber = "123456";
+        String boySocialNumber = "789456";
 
         //create Person girSibling
-        Person girlSibling = Person.createPerson(girlSiblingName, girlSiblingBirthdate);
+        Person girlSibling = Person.createPerson(girlSocialNumber, girlSiblingName, girlSiblingBirthdate);
 
         //create parameters for boySibling
         String boySiblingName = "Bob";
         LocalDate boySiblingBirthdate = LocalDate.of(1989, 10, 8);
 
         //create Person boySibling
-        Person boySibling = Person.createPerson(boySiblingName, boySiblingBirthdate);
+        Person boySibling = Person.createPerson(boySocialNumber, boySiblingName, boySiblingBirthdate);
 
 
         siblings.add(girlSibling);
@@ -1442,7 +1491,7 @@ class PersonTest {
 
         //Act
         Throwable thrown = assertThrows(RuntimeException.class, ()
-                -> Person.createPerson(null, birthdate));
+                -> Person.createPerson("7897", null, birthdate));
 
         //Assert
         assertEquals(thrown.getMessage(), "Can't create Person. Invalid name.");

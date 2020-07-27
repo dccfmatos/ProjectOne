@@ -60,11 +60,15 @@ class GroupTest {
         String description = "Group with devTeam members";
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String dianaSocialNumber = "784648";
+        String johnSocialNumber = "854125";
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson(dianaSocialNumber, "Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -80,9 +84,13 @@ class GroupTest {
         ArrayList<Person> membersConsultTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeCT = new ArrayList<Person>();
 
-        Person max = Person.createPerson("Max", LocalDate.of(2017, 1, 1));
-        Person molly = Person.createPerson("Molly", LocalDate.of(2019, 8, 16));
-        Person susan = Person.createPerson("Susan", LocalDate.of(1992, 9, 16));
+        String maxSocialNumber = "12346";
+        String mollySocialNumber = "98756";
+        String susanSocialNumber = "15478";
+
+        Person max = Person.createPerson(maxSocialNumber, "Max", LocalDate.of(2017, 1, 1));
+        Person molly = Person.createPerson(mollySocialNumber, "Molly", LocalDate.of(2019, 8, 16));
+        Person susan = Person.createPerson(susanSocialNumber, "Susan", LocalDate.of(1992, 9, 16));
 
         membersConsultTeam.add(max);
         membersConsultTeam.add(molly);
@@ -111,11 +119,15 @@ class GroupTest {
         String description = "Group with devTeam members";
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String dianaSocialNumber = "784648";
+        String johnSocialNumber = "854125";
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson(dianaSocialNumber, "Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -149,10 +161,15 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String dianaSocialNumber = "784648";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson(dianaSocialNumber, "Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -168,9 +185,13 @@ class GroupTest {
         ArrayList<Person> membersConsultTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeCT = new ArrayList<Person>();
 
-        Person max = Person.createPerson("Max", LocalDate.of(2017, 1, 1));
-        Person molly = Person.createPerson("Molly", LocalDate.of(2019, 8, 16));
-        Person susan = Person.createPerson("Susan", LocalDate.of(1992, 9, 16));
+        String maxSocialNumber = "12346";
+        String mollySocialNumber = "98756";
+        String susanSocialNumber = "15478";
+
+        Person max = Person.createPerson(maxSocialNumber, "Max", LocalDate.of(2017, 1, 1));
+        Person molly = Person.createPerson(mollySocialNumber, "Molly", LocalDate.of(2019, 8, 16));
+        Person susan = Person.createPerson(susanSocialNumber, "Susan", LocalDate.of(1992, 9, 16));
 
         membersConsultTeam.add(max);
         membersConsultTeam.add(molly);
@@ -199,10 +220,15 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String dianaSocialNumber = "784648";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson(dianaSocialNumber, "Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -240,10 +266,15 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String dianaSocialNumber = "784648";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson(dianaSocialNumber, "Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -274,10 +305,15 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String dianaSocialNumber = "784648";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson(dianaSocialNumber, "Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -314,10 +350,15 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person diana = Person.createPerson("Diana", LocalDate.of(1992, 7, 15));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String dianaSocialNumber = "784648";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person diana = Person.createPerson(dianaSocialNumber, "Diana", LocalDate.of(1992, 7, 15));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -356,9 +397,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -392,9 +437,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -431,9 +480,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -466,9 +519,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -508,9 +565,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -549,9 +610,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -589,9 +654,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -621,9 +690,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -658,9 +731,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -693,9 +770,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);
@@ -731,9 +812,13 @@ class GroupTest {
         ArrayList<Person> membersDevTeam = new ArrayList<Person>();
         ArrayList<Person> peopleInChargeDT = new ArrayList<Person>();
 
-        Person maria = Person.createPerson("Maria", LocalDate.of(1976, 10, 12));
-        Person jose = Person.createPerson("Jose", LocalDate.of(1979, 11, 3));
-        Person john = Person.createPerson("John", LocalDate.of(1960, 10, 22));
+        String mariaSocialNumber = "123456";
+        String joseSocialNumber = "789456";
+        String johnSocialNumber = "854125";
+
+        Person maria = Person.createPerson(mariaSocialNumber, "Maria", LocalDate.of(1976, 10, 12));
+        Person jose = Person.createPerson(joseSocialNumber, "Jose", LocalDate.of(1979, 11, 3));
+        Person john = Person.createPerson(johnSocialNumber, "John", LocalDate.of(1960, 10, 22));
 
         membersDevTeam.add(maria);
         membersDevTeam.add(jose);

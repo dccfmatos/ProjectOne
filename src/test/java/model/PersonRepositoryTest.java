@@ -20,9 +20,10 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //create object Person
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //create arrayList of persons
         ArrayList<Person> personsList1 = new ArrayList<>();
@@ -60,9 +61,10 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //create object Person
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //create arrayList of persons
         ArrayList<Person> personsList1 = new ArrayList<>();
@@ -91,9 +93,10 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //create object Person
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //create arrayList of persons
         ArrayList<Person> personsList1 = new ArrayList<>();
@@ -119,9 +122,10 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //create object Person
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //create arrayList of persons
         ArrayList<Person> personsList1 = new ArrayList<>();
@@ -146,16 +150,18 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //create object Person
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //create parameters for object Person
         String name2 = "Oreo";
         LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
+        String oreoSocialNumber = "7894648";
 
         //create another object Person
-        Person oreo = Person.createPerson(name2, birthdate2);
+        Person oreo = Person.createPerson(oreoSocialNumber, name2, birthdate2);
 
         //create arrayList of persons
         ArrayList<Person> personsList1 = new ArrayList<>();
@@ -189,16 +195,18 @@ class PersonRepositoryTest {
         //create parameters for object Person
         String name = "Maria";
         LocalDate birthdate = LocalDate.of(1992, 06, 15);
+        String mariaSocialNumber = "123456";
 
         //create object Person
-        Person maria = Person.createPerson(name, birthdate);
+        Person maria = Person.createPerson(mariaSocialNumber, name, birthdate);
 
         //create parameters for object Person
         String name2 = "Oreo";
         LocalDate birthdate2 = LocalDate.of(1992, 06, 18);
+        String oreoSocialNumber = "784687";
 
         //create another object Person
-        Person oreo = Person.createPerson(name2, birthdate2);
+        Person oreo = Person.createPerson(oreoSocialNumber, name2, birthdate2);
 
         //create arrayList of persons
         ArrayList<Person> personsList1 = new ArrayList<>();
@@ -235,12 +243,14 @@ class PersonRepositoryTest {
 
         String motherName = "Susan";
         LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherSocialNumber = "7894688";
 
         String fatherName = "Tomas";
         LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherSocialNumber = "1597863";
 
-        Person mother = Person.createPerson(motherName, motherBirthdate);
-        Person father = Person.createPerson(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherSocialNumber, motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherSocialNumber, fatherName, fatherBirthdate);
 
         //create object Person
         Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
@@ -286,12 +296,14 @@ class PersonRepositoryTest {
 
         String motherName = "Susan";
         LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherSocialNumber = "78468";
 
         String fatherName = "Tomas";
         LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherSocialNumber = "159487";
 
-        Person mother = Person.createPerson(motherName, motherBirthdate);
-        Person father = Person.createPerson(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherSocialNumber, motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherSocialNumber, fatherName, fatherBirthdate);
 
         //create object Person
         Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
@@ -335,12 +347,14 @@ class PersonRepositoryTest {
 
         String motherName = "Susan";
         LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherSocialNumber = "7833378";
 
         String fatherName = "Tomas";
         LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherSocialNumber = "1596738";
 
-        Person mother = Person.createPerson(motherName, motherBirthdate);
-        Person father = Person.createPerson(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherSocialNumber, motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherSocialNumber, fatherName, fatherBirthdate);
 
         //create object Person
         Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
@@ -382,12 +396,14 @@ class PersonRepositoryTest {
 
         String motherName = "Susan";
         LocalDate motherBirthdate = LocalDate.of(1975, 10, 8);
+        String motherSocialNumber = "7849468";
 
         String fatherName = "Tomas";
         LocalDate fatherBirthdate = LocalDate.of(1973, 1, 17);
+        String fatherSocialNumber = "1594868";
 
-        Person mother = Person.createPerson(motherName, motherBirthdate);
-        Person father = Person.createPerson(fatherName, fatherBirthdate);
+        Person mother = Person.createPerson(motherSocialNumber, motherName, motherBirthdate);
+        Person father = Person.createPerson(fatherSocialNumber, fatherName, fatherBirthdate);
 
         //create object Person
         Person maria = Person.createPersonWMotherAndFather(name, birthdate, mother, father, mariaSocialNumber);
