@@ -1,6 +1,6 @@
-package DTO_Assembler;
+package mainPackage.DTO_Assembler;
 
-import DTO.DTO_US02CreateGroup;
+import mainPackage.DTO.DTO_US02CreateGroup;
 
 import java.time.LocalDate;
 

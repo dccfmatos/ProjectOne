@@ -1,5 +1,7 @@
 package model;
 
+import mainPackage.model.Person;
+import mainPackage.model.PersonRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

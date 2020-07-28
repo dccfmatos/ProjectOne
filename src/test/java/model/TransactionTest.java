@@ -1,5 +1,8 @@
 package model;
 
+import mainPackage.model.Account;
+import mainPackage.model.Category;
+import mainPackage.model.Transaction;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

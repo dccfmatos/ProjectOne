@@ -1,11 +1,10 @@
-package ControllersCLI;
+package mainPackage.ControllersCLI;
 
-import DTO.DTO_Boolean;
-import DTO.DTO_US01CheckIfSiblings;
-import DTO_Assembler.DTO_Assembler_US01CheckIfSiblings;
-import Services.Service_US01CheckIfSiblings;
-import model.PersonRepository;
-
+import mainPackage.DTO.DTO_Boolean;
+import mainPackage.DTO.DTO_US01CheckIfSiblings;
+import mainPackage.DTO_Assembler.DTO_Assembler_US01CheckIfSiblings;
+import mainPackage.Services.Service_US01CheckIfSiblings;
+import mainPackage.model.PersonRepository;
 
 
 public class CLI_US01CheckIfSiblings {

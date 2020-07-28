@@ -1,12 +1,10 @@
-package ControllersCLI;
+package mainPackage.ControllersCLI;
 
-import DTO.DTO_Group;
-import DTO.DTO_US02CreateGroup;
-import DTO_Assembler.DTO_Assembler_US02CreateGroup;
-import Services.Service_US01CheckIfSiblings;
-import Services.Service_US02CreateGroup;
-import model.Group;
-import model.GroupRepository;
+import mainPackage.DTO.DTO_Group;
+import mainPackage.DTO.DTO_US02CreateGroup;
+import mainPackage.DTO_Assembler.DTO_Assembler_US02CreateGroup;
+import mainPackage.Services.Service_US02CreateGroup;
+import mainPackage.model.GroupRepository;
 
 import java.time.LocalDate;
 

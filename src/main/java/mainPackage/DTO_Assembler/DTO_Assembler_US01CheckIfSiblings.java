@@ -1,6 +1,6 @@
-package DTO_Assembler;
+package mainPackage.DTO_Assembler;
 
-import DTO.DTO_US01CheckIfSiblings;
+import mainPackage.DTO.DTO_US01CheckIfSiblings;
 
 public class DTO_Assembler_US01CheckIfSiblings {
 

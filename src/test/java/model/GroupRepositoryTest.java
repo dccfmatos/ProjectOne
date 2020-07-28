@@ -1,5 +1,7 @@
 package model;
 
+import mainPackage.model.Group;
+import mainPackage.model.GroupRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

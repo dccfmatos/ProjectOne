@@ -1,5 +1,7 @@
 package model;
 
+import mainPackage.model.Category;
+import mainPackage.model.CategoryRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

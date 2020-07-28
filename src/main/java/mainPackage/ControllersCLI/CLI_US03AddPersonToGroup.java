@@ -1,9 +1,7 @@
-package ControllersCLI;
+package mainPackage.ControllersCLI;
 
-import model.Group;
-import model.Person;
-
-import java.time.LocalDate;
+import mainPackage.model.Group;
+import mainPackage.model.Person;
 
 public class CLI_US03AddPersonToGroup {
 
