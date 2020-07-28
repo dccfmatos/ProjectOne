@@ -1,9 +1,11 @@
-package model;
+package mainPackage.model;
 
-import javax.imageio.IIOException;
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
+@Repository
 public class GroupRepository {
 
     private ArrayList<Group> groupRepository;

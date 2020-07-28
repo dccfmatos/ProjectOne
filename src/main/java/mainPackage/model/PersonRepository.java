@@ -1,8 +1,11 @@
-package model;
+package mainPackage.model;
+
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
+@Repository
 public class PersonRepository {
 
     private ArrayList<Person> personRepository;

@@ -1,13 +1,13 @@
-package Services;
+package mainPackage.Services;
 
-import DTO.DTO_Group;
-import DTO.DTO_US02CreateGroup;
-import DTO_Assembler.DTO_Assembler_Group;
-import model.Group;
-import model.GroupRepository;
+import mainPackage.DTO.DTO_Group;
+import mainPackage.DTO.DTO_US02CreateGroup;
+import mainPackage.DTO_Assembler.DTO_Assembler_Group;
+import mainPackage.model.Group;
+import mainPackage.model.GroupRepository;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-
+@Service
 public class Service_US02CreateGroup {
     public DTO_Group controllersCLI_US02CreateGroup(DTO_US02CreateGroup dtoUs02CreateGroup, GroupRepository groupRepository) {
 

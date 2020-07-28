@@ -1,7 +1,10 @@
-package model;
+package mainPackage.model;
+
+import org.springframework.stereotype.Repository;
 
 import java.util.Objects;
 
+@Repository
 public class GroupAccountRepository {
 
     private GroupAccount groupAccount;

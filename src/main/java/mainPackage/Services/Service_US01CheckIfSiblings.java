@@ -1,11 +1,13 @@
-package Services;
+package mainPackage.Services;
 
-import DTO.DTO_Boolean;
-import DTO.DTO_US01CheckIfSiblings;
-import DTO_Assembler.DTO_Assembler_Boolean;
-import model.Person;
-import model.PersonRepository;
+import mainPackage.DTO.DTO_Boolean;
+import mainPackage.DTO.DTO_US01CheckIfSiblings;
+import mainPackage.DTO_Assembler.DTO_Assembler_Boolean;
+import mainPackage.model.Person;
+import mainPackage.model.PersonRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Service_US01CheckIfSiblings {
 
     //service should return a DTO
