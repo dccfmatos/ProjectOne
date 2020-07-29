@@ -30,11 +30,12 @@ public class GroupRepository {
         return groupRepository;
     }
 
-    public boolean groupDoesBelong(Group group){
-        if(groupRepository.contains(group)){
-            return true;
+
+    public Group findGroup(Group groupToFind){
+        if(groupRepository.contains(groupToFind)){
+            return groupToFind;
         }
-        return false;
+        return null;
     }
 
     public ArrayList<Group> removeGroupFromGroupRepository(Group group) {

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Objects;
 
-@Repository
+
 public class AccountRepository {
 
 

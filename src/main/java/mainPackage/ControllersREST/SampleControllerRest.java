@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SampleControllerRest {
     @GetMapping("/hello")
-    public String hello (@RequestParam(value= "name", defaultValue = "Dia4na") String name) {
+    public String hello (@RequestParam(value= "name", defaultValue = "Diana") String name) {
         return String.format("Hello %s", name);
     }
 
