@@ -27,6 +27,7 @@ public class Person {
         } else {
             this.name = name;
             this.birthdate = birthdate;
+            this.socialNumber = socialNumber;
         }
     }
 

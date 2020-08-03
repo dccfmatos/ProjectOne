@@ -26,7 +26,7 @@ public class REST_CreateGroup {
                 groupToCreate.getDateOfCreation(), groupToCreate.getDenomination());
 
         //will receive a DTO from service
-        DTO_Group dto_group = service_createGroup.controllersCLI_CreateGroup(dtoGroupToCreate);
+        DTO_Group dto_group = service_createGroup.service_CreateGroup(dtoGroupToCreate);
 
         return new ResponseEntity<>(dto_group, HttpStatus.CREATED);
     }

@@ -15,7 +15,7 @@ public class Service_CreateGroup {
     @Autowired
     GroupRepository groupRepository;
 
-    public DTO_Group controllersCLI_CreateGroup(DTO_CreateGroup dtoGroupToCreate) {
+    public DTO_Group service_CreateGroup(DTO_CreateGroup dtoGroupToCreate) {
 
         //create group with info from the DTO
         Group group = Group.createGroupWithoutMembers(dtoGroupToCreate.getDateOfCreation(), dtoGroupToCreate.getDenomination());

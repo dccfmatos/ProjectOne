@@ -62,6 +62,17 @@ public class PersonRepository {
         return personRepository;
     }
 
+    public Person getPersonFromRep(String personSocialNumber) {
+
+        for (Person personToAnalyse : personRepository) {
+
+            if(personToAnalyse.getSocialNumber().equals(personSocialNumber)){
+                return personToAnalyse;
+            };
+        }
+        return null;
+    }
+
     //Sets
     public void setPersonRepository(ArrayList<Person> personRepository) {
         this.personRepository = personRepository;
