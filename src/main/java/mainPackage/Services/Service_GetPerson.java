@@ -24,13 +24,14 @@ public class Service_GetPerson {
         Person personFromRep = personRepository.getPersonFromRep(personSocialNumber);
 
         //Create DTO to return
+       /*
 //        DTO_Person dto_personToReturn = DTO_Assembler_Person.createDTOFromDomain(personFromRep.getName(), personFromRep.getAddress(),
 //                personFromRep.getBirthdate(), personFromRep.getBirthplace(),personFromRep.getMotherP(),
 //                personFromRep.getFatherP(), personFromRep.getSiblings(), personFromRep.getSocialNumber());
-
+*/
         DTO_Person dto_personToReturn = DTO_Assembler_Person.createDTOFromDomain(personFromRep);
 
-        //return DTO
+        //return DTO_Person (is info does not exist in some of the fields, it will be "null"
         return dto_personToReturn;
     }
 }

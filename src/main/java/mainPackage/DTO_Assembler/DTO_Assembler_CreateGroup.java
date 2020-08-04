@@ -6,15 +6,8 @@ import java.time.LocalDate;
 
 //class Assembler creates DTO
 public class DTO_Assembler_CreateGroup {
+    public static DTO_CreateGroup createDTOFromPrimitiveTypes(LocalDate dateOfCreation, String denomination){
 
-    public DTO_CreateGroup createDTOFromPrimitiveTypes(LocalDate dateOfCreation, String denomination){
-
-        //create DTO from primitive types
-        DTO_CreateGroup dtoCreateGroup = new DTO_CreateGroup(dateOfCreation, denomination);
-
-        //return DTO
-        return  dtoCreateGroup;
-
+        return new DTO_CreateGroup(dateOfCreation, denomination);
     }
-
 }

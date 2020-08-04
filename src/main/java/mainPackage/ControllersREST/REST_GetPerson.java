@@ -16,18 +16,21 @@ public class REST_GetPerson {
     @Autowired
     private Service_GetPerson service_getPerson;
 
+    //URI for testing in Postman
     @GetMapping("/persons/{personSocialNumber}")
 
     //API should return a person in a jSON file
+    //need to replace variable "{personSocialNumber}" in path, by the needed socialnumber of person
     public ResponseEntity<Object> controllersREST_GetPerson(@PathVariable final String personSocialNumber) {
 
         //needs to create a DTO to send to service
-        DTO_Assembler_PersonSocialNumber dto_Assembler = new DTO_Assembler_PersonSocialNumber();
-        DTO_PersonSocialNumber dtoFromPrimitiveTypes = dto_Assembler.createDTOFromPrimitiveTypes(personSocialNumber);
+        DTO_PersonSocialNumber dtoFromPrimitiveTypes = DTO_Assembler_PersonSocialNumber.createDTOFromPrimitiveTypes(personSocialNumber);
 
         //will receive a DTO from service
         DTO_Person dtoGetPerson = service_getPerson.service_GetPerson(dtoFromPrimitiveTypes);
 
+        //should return an Object of type person
+        //shoul return status "ok" is everything's ok
         return new ResponseEntity<>(dtoGetPerson, HttpStatus.OK);
     }
 
