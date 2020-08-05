@@ -22,7 +22,7 @@ public class Service_CreateGroup {
         groupRepository.addGroupToGroupRepository(group);
 
         //result
-        DTO_Group dtoGroupCreated = DTO_Assembler_Group.createDTOFromPrimitiveType(dtoGroupToCreate.getDateOfCreation(), dtoGroupToCreate.getDenomination());
+        DTO_Group dtoGroupCreated = DTO_Assembler_Group.createDTOFromDomain(group);
 
         //return a DTO, needed a Group DTO type (DTO_Group)
         return dtoGroupCreated;

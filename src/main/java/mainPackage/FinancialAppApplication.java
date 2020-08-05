@@ -1,5 +1,6 @@
 package mainPackage;
 
+import mainPackage.model.GroupRepository;
 import mainPackage.model.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -14,6 +15,10 @@ public class FinancialAppApplication implements ApplicationRunner {
 	@Autowired
 	PersonRepository personRepository;
 
+	@Autowired
+	GroupRepository groupRepository;
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(FinancialAppApplication.class, args);
 	}
@@ -21,7 +26,7 @@ public class FinancialAppApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments arg0) throws Exception {
 		System.out.println("Initializing DataBase");
-		Bootstrapping.loadData(personRepository);
+		Bootstrapping.loadData(personRepository, groupRepository);
 		System.out.println("Database Created");
 	}
 

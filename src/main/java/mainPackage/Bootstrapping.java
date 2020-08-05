@@ -1,5 +1,7 @@
 package mainPackage;
 
+import mainPackage.model.Group;
+import mainPackage.model.GroupRepository;
 import mainPackage.model.Person;
 import mainPackage.model.PersonRepository;
 
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 
 public class Bootstrapping {
 
-    public static void loadData(PersonRepository personRepository) {
+    public static void loadData(PersonRepository personRepository, GroupRepository groupRepository) {
 
         /*
         Person -> Rick (123456789)
@@ -66,6 +68,26 @@ public class Bootstrapping {
 
 //      Add Rick to repository
         personRepository.addPersonToPersonRepository(personRick);
+
+
+        //Array Of members
+        ArrayList<Person> groupMembers = new ArrayList<>();
+
+        ArrayList<Person> groupPIC = new ArrayList<>();
+
+        //Create Group
+        Group groupOne = Group.createGroupWithMembersAndPersonInCharge(LocalDate.of(2020, 01, 26), "GroupOne",
+                    "first group", groupMembers, groupPIC);
+
+        //Array Of groups
+        ArrayList<Group> groupList = new ArrayList<>();
+
+        groupRepository.addGroupToGroupRepository(groupOne);
+
+        groupOne.addPersonToGroup(personRick);
+        groupOne.addPersonToGroup(personMonica);
+
+        groupPIC.add(personMonica);
 
     }
 

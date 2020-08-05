@@ -31,9 +31,11 @@ public class GroupRepository {
     }
 
 
-    public Group findGroup(Group groupToFind){
-        if(groupRepository.contains(groupToFind)){
-            return groupToFind;
+    public Group getGroupFromRep(String groupDenomination){
+        for (Group groupToAnalyse : groupRepository) {
+            if(groupToAnalyse.getDenomination().equals(groupDenomination)){
+                return groupToAnalyse;
+            }
         }
         return null;
     }

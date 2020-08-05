@@ -31,7 +31,7 @@ public class Service_GetPerson {
 */
         DTO_Person dto_personToReturn = DTO_Assembler_Person.createDTOFromDomain(personFromRep);
 
-        //return DTO_Person (is info does not exist in some of the fields, it will be "null"
+        //return DTO_Person (if info does not exist in some of the fields, it will be "null")
         return dto_personToReturn;
     }
 }
